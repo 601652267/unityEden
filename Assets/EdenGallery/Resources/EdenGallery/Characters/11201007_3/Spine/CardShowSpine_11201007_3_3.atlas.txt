@@ -1,0 +1,48 @@
+
+CardShowSpine_11201007_3_3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chakelasi
+  rotate: false
+  xy: 2, 520
+  size: 1608, 1166
+  orig: 1608, 1166
+  offset: 0, 0
+  index: -1
+feijian1
+  rotate: false
+  xy: 2, 324
+  size: 386, 194
+  orig: 386, 194
+  offset: 0, 0
+  index: -1
+feijian2
+  rotate: false
+  xy: 1612, 1502
+  size: 366, 184
+  orig: 366, 184
+  offset: 0, 0
+  index: -1
+feijian3
+  rotate: false
+  xy: 2, 2
+  size: 220, 320
+  orig: 220, 320
+  offset: 0, 0
+  index: -1
+feijian4
+  rotate: true
+  xy: 390, 340
+  size: 178, 255
+  orig: 178, 255
+  offset: 0, 0
+  index: -1
+feijian5
+  rotate: false
+  xy: 1612, 1287
+  size: 210, 213
+  orig: 210, 213
+  offset: 0, 0
+  index: -1

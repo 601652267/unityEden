@@ -1,0 +1,118 @@
+
+CardShowSpine_11300060_3_2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pic 31
+  rotate: false
+  xy: 2, 16
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+pic 57
+  rotate: false
+  xy: 1067, 11
+  size: 408, 457
+  orig: 408, 457
+  offset: 0, 0
+  index: -1
+pic 58
+  rotate: true
+  xy: 1741, 967
+  size: 310, 257
+  orig: 310, 257
+  offset: 0, 0
+  index: -1
+pic 60
+  rotate: false
+  xy: 1378, 1199
+  size: 361, 78
+  orig: 361, 78
+  offset: 0, 0
+  index: -1
+pic 61
+  rotate: true
+  xy: 2, 324
+  size: 588, 1018
+  orig: 588, 1018
+  offset: 0, 0
+  index: -1
+pic 62
+  rotate: true
+  xy: 1413, 760
+  size: 437, 310
+  orig: 437, 310
+  offset: 0, 0
+  index: -1
+pic 63
+  rotate: false
+  xy: 2, 914
+  size: 531, 1130
+  orig: 531, 1130
+  offset: 0, 0
+  index: -1
+pic 64
+  rotate: true
+  xy: 2, 23
+  size: 299, 1063
+  orig: 299, 1063
+  offset: 0, 0
+  index: -1
+pic 65
+  rotate: true
+  xy: 906, 1190
+  size: 484, 470
+  orig: 484, 470
+  offset: 0, 0
+  index: -1
+pic 66
+  rotate: true
+  xy: 535, 989
+  size: 685, 369
+  orig: 685, 369
+  offset: 0, 0
+  index: -1
+pic 67
+  rotate: false
+  xy: 1378, 1279
+  size: 571, 395
+  orig: 571, 395
+  offset: 0, 0
+  index: -1
+pic 68
+  rotate: true
+  xy: 1477, 352
+  size: 406, 433
+  orig: 406, 433
+  offset: 0, 0
+  index: -1
+pic 69
+  rotate: false
+  xy: 906, 941
+  size: 505, 247
+  orig: 505, 247
+  offset: 0, 0
+  index: -1
+pic 70
+  rotate: false
+  xy: 1477, 2
+  size: 462, 348
+  orig: 462, 348
+  offset: 0, 0
+  index: -1
+pic 71
+  rotate: true
+  xy: 1022, 470
+  size: 469, 376
+  orig: 469, 376
+  offset: 0, 0
+  index: -1
+pic 75
+  rotate: false
+  xy: 535, 1676
+  size: 1494, 368
+  orig: 1494, 368
+  offset: 0, 0
+  index: -1

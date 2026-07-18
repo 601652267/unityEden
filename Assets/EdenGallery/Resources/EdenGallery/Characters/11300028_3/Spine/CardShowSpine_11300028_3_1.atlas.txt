@@ -1,0 +1,34 @@
+
+CardShowSpine_11300028_3_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_12
+  rotate: false
+  xy: 2, 2
+  size: 79, 140
+  orig: 79, 140
+  offset: 0, 0
+  index: -1
+1_31
+  rotate: true
+  xy: 2, 144
+  size: 217, 753
+  orig: 217, 753
+  offset: 0, 0
+  index: -1
+1_32
+  rotate: false
+  xy: 2, 363
+  size: 796, 640
+  orig: 796, 640
+  offset: 0, 0
+  index: -1
+1_33
+  rotate: true
+  xy: 800, 558
+  size: 445, 219
+  orig: 445, 219
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+CardShowSpine_11202013_3_bg.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hai
+  rotate: false
+  xy: 2, 776
+  size: 1016, 240
+  orig: 1016, 240
+  offset: 0, 0
+  index: -1
+jaioshi03
+  rotate: false
+  xy: 2, 515
+  size: 872, 259
+  orig: 872, 259
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,34 @@
+
+CardShowSping_11300065_3_b.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dte109
+  rotate: false
+  xy: 1008, 1142
+  size: 682, 887
+  orig: 682, 887
+  offset: 0, 0
+  index: -1
+dte110
+  rotate: true
+  xy: 2, 2
+  size: 886, 923
+  orig: 886, 923
+  offset: 0, 0
+  index: -1
+dte112
+  rotate: false
+  xy: 2, 890
+  size: 1004, 1139
+  orig: 1004, 1139
+  offset: 0, 0
+  index: -1
+dte97
+  rotate: false
+  xy: 927, 29
+  size: 518, 859
+  orig: 518, 859
+  offset: 0, 0
+  index: -1

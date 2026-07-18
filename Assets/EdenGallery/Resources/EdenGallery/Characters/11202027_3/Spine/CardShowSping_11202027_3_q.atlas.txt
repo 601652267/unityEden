@@ -1,0 +1,20 @@
+
+CardShowSping_11202027_3_q.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eff
+  rotate: false
+  xy: 2, 2
+  size: 2034, 310
+  orig: 2034, 310
+  offset: 0, 0
+  index: -1
+snow
+  rotate: false
+  xy: 2, 314
+  size: 2034, 1151
+  orig: 2034, 1151
+  offset: 0, 0
+  index: -1

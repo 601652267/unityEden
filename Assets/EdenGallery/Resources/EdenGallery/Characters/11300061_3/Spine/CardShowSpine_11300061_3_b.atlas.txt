@@ -1,0 +1,167 @@
+
+CardShowSpine_11300061_3_b.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+slzj123
+  rotate: false
+  xy: 1648, 1361
+  size: 78, 73
+  orig: 78, 73
+  offset: 0, 0
+  index: -1
+slzj124
+  rotate: false
+  xy: 1770, 1546
+  size: 65, 66
+  orig: 65, 66
+  offset: 0, 0
+  index: -1
+slzj126
+  rotate: false
+  xy: 873, 33
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+slzj132
+  rotate: false
+  xy: 1366, 659
+  size: 54, 55
+  orig: 54, 55
+  offset: 0, 0
+  index: -1
+slzj134
+  rotate: false
+  xy: 1960, 1732
+  size: 51, 49
+  orig: 51, 49
+  offset: 0, 0
+  index: -1
+slzj135
+  rotate: true
+  xy: 2, 2
+  size: 22, 25
+  orig: 22, 25
+  offset: 0, 0
+  index: -1
+slzj147
+  rotate: true
+  xy: 793, 2
+  size: 77, 78
+  orig: 77, 78
+  offset: 0, 0
+  index: -1
+slzj150
+  rotate: false
+  xy: 793, 81
+  size: 770, 131
+  orig: 770, 131
+  offset: 0, 0
+  index: -1
+slzj160
+  rotate: false
+  xy: 1669, 1518
+  size: 99, 528
+  orig: 99, 528
+  offset: 0, 0
+  index: -1
+slzj161
+  rotate: true
+  xy: 2, 655
+  size: 186, 1247
+  orig: 186, 1247
+  offset: 0, 0
+  index: -1
+slzj162
+  rotate: true
+  xy: 1251, 655
+  size: 186, 113
+  orig: 186, 113
+  offset: 0, 0
+  index: -1
+slzj163
+  rotate: false
+  xy: 1893, 1614
+  size: 65, 167
+  orig: 65, 167
+  offset: 0, 0
+  index: -1
+slzj164
+  rotate: false
+  xy: 1770, 1614
+  size: 121, 167
+  orig: 121, 167
+  offset: 0, 0
+  index: -1
+slzj165
+  rotate: false
+  xy: 1366, 716
+  size: 136, 125
+  orig: 136, 125
+  offset: 0, 0
+  index: -1
+slzj167
+  rotate: false
+  xy: 1504, 792
+  size: 68, 49
+  orig: 68, 49
+  offset: 0, 0
+  index: -1
+slzj168
+  rotate: false
+  xy: 1770, 1783
+  size: 245, 263
+  orig: 245, 263
+  offset: 0, 0
+  index: -1
+slzj169
+  rotate: false
+  xy: 2, 26
+  size: 789, 627
+  orig: 789, 627
+  offset: 0, 0
+  index: -1
+slzj171
+  rotate: true
+  xy: 793, 214
+  size: 439, 699
+  orig: 439, 699
+  offset: 0, 0
+  index: -1
+slzj173
+  rotate: false
+  xy: 2, 1436
+  size: 1665, 610
+  orig: 1665, 610
+  offset: 0, 0
+  index: -1
+slzj174
+  rotate: true
+  xy: 1669, 1436
+  size: 80, 87
+  orig: 80, 87
+  offset: 0, 0
+  index: -1
+slzj175
+  rotate: true
+  xy: 2017, 2019
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+slzj176
+  rotate: false
+  xy: 1648, 1346
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+slzj177
+  rotate: false
+  xy: 2, 843
+  size: 1644, 591
+  orig: 1644, 591
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,41 @@
+
+CardShowSpine_11202014_3_q.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hua
+  rotate: false
+  xy: 811, 151
+  size: 171, 120
+  orig: 171, 120
+  offset: 0, 0
+  index: -1
+hua1
+  rotate: true
+  xy: 603, 273
+  size: 227, 402
+  orig: 227, 402
+  offset: 0, 0
+  index: -1
+hua2
+  rotate: false
+  xy: 603, 55
+  size: 206, 216
+  orig: 206, 216
+  offset: 0, 0
+  index: -1
+hua3
+  rotate: false
+  xy: 603, 502
+  size: 312, 482
+  orig: 312, 482
+  offset: 0, 0
+  index: -1
+hua4
+  rotate: false
+  xy: 2, 2
+  size: 599, 982
+  orig: 599, 982
+  offset: 0, 0
+  index: -1

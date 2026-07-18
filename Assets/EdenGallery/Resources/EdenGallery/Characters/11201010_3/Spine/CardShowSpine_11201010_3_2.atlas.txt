@@ -1,0 +1,132 @@
+
+CardShowSpine_11201010_3_2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+benzai
+  rotate: false
+  xy: 1656, 820
+  size: 237, 416
+  orig: 237, 416
+  offset: 0, 0
+  index: -1
+chuanglian
+  rotate: true
+  xy: 2, 9
+  size: 510, 916
+  orig: 510, 916
+  offset: 0, 0
+  index: -1
+dengzi
+  rotate: false
+  xy: 1010, 575
+  size: 644, 651
+  orig: 644, 651
+  offset: 0, 0
+  index: -1
+huajia
+  rotate: false
+  xy: 2, 521
+  size: 1006, 1463
+  orig: 1006, 1463
+  offset: 0, 0
+  index: -1
+shuben
+  rotate: true
+  xy: 1582, 1424
+  size: 560, 432
+  orig: 560, 432
+  offset: 0, 0
+  index: -1
+suye1
+  rotate: false
+  xy: 1582, 1238
+  size: 325, 184
+  orig: 325, 184
+  offset: 0, 0
+  index: -1
+suye2
+  rotate: false
+  xy: 1656, 570
+  size: 293, 248
+  orig: 293, 248
+  offset: 0, 0
+  index: -1
+yezi1
+  rotate: false
+  xy: 1529, 352
+  size: 94, 221
+  orig: 94, 221
+  offset: 0, 0
+  index: -1
+yezi10
+  rotate: false
+  xy: 1625, 410
+  size: 185, 158
+  orig: 185, 158
+  offset: 0, 0
+  index: -1
+yezi2
+  rotate: false
+  xy: 920, 2
+  size: 313, 186
+  orig: 313, 186
+  offset: 0, 0
+  index: -1
+yezi3
+  rotate: false
+  xy: 1812, 406
+  size: 158, 162
+  orig: 158, 162
+  offset: 0, 0
+  index: -1
+yezi4
+  rotate: true
+  xy: 1505, 207
+  size: 143, 109
+  orig: 143, 109
+  offset: 0, 0
+  index: -1
+yezi5
+  rotate: false
+  xy: 1625, 322
+  size: 117, 86
+  orig: 117, 86
+  offset: 0, 0
+  index: -1
+yezi6
+  rotate: true
+  xy: 1237, 212
+  size: 153, 266
+  orig: 153, 266
+  offset: 0, 0
+  index: -1
+yezi7
+  rotate: false
+  xy: 920, 190
+  size: 315, 329
+  orig: 315, 329
+  offset: 0, 0
+  index: -1
+yezi8
+  rotate: false
+  xy: 1909, 1248
+  size: 134, 174
+  orig: 134, 174
+  offset: 0, 0
+  index: -1
+yezi9
+  rotate: false
+  xy: 1237, 367
+  size: 290, 206
+  orig: 290, 206
+  offset: 0, 0
+  index: -1
+zhubao
+  rotate: false
+  xy: 1010, 1228
+  size: 570, 756
+  orig: 570, 756
+  offset: 0, 0
+  index: -1

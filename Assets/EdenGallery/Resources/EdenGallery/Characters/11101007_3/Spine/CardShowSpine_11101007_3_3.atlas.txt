@@ -1,0 +1,76 @@
+
+CardShowSpine_11101007_3_3.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_102
+  rotate: true
+  xy: 1127, 63
+  size: 875, 446
+  orig: 875, 446
+  offset: 0, 0
+  index: -1
+1_110
+  rotate: false
+  xy: 1575, 2
+  size: 376, 356
+  orig: 376, 356
+  offset: 0, 0
+  index: -1
+1_111
+  rotate: false
+  xy: 2, 250
+  size: 1123, 688
+  orig: 1123, 688
+  offset: 0, 0
+  index: -1
+1_112
+  rotate: false
+  xy: 330, 130
+  size: 508, 118
+  orig: 508, 118
+  offset: 0, 0
+  index: -1
+1_113
+  rotate: true
+  xy: 1936, 423
+  size: 515, 102
+  orig: 515, 102
+  offset: 0, 0
+  index: -1
+1_114
+  rotate: true
+  xy: 1575, 360
+  size: 578, 359
+  orig: 578, 359
+  offset: 0, 0
+  index: -1
+1_115
+  rotate: false
+  xy: 2, 116
+  size: 326, 132
+  orig: 326, 132
+  offset: 0, 0
+  index: -1
+1_116
+  rotate: false
+  xy: 1936, 368
+  size: 89, 53
+  orig: 89, 53
+  offset: 0, 0
+  index: -1
+1_37
+  rotate: false
+  xy: 1942, 364
+  size: 2, 2
+  orig: 2, 2
+  offset: 0, 0
+  index: -1
+1_51
+  rotate: false
+  xy: 1936, 362
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,76 @@
+
+CardShowSpine_11300011_3_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texiao10
+  rotate: false
+  xy: 649, 908
+  size: 180, 78
+  orig: 180, 78
+  offset: 0, 0
+  index: -1
+texiao11
+  rotate: false
+  xy: 2, 2
+  size: 38, 36
+  orig: 38, 36
+  offset: 0, 0
+  index: -1
+texiao12
+  rotate: true
+  xy: 667, 434
+  size: 472, 225
+  orig: 472, 225
+  offset: 0, 0
+  index: -1
+texiao13
+  rotate: false
+  xy: 2, 116
+  size: 224, 61
+  orig: 224, 61
+  offset: 0, 0
+  index: -1
+texiao14
+  rotate: false
+  xy: 2, 40
+  size: 158, 74
+  orig: 158, 74
+  offset: 0, 0
+  index: -1
+texiao15
+  rotate: false
+  xy: 667, 393
+  size: 142, 39
+  orig: 142, 39
+  offset: 0, 0
+  index: -1
+texiao16
+  rotate: false
+  xy: 228, 147
+  size: 178, 30
+  orig: 178, 30
+  offset: 0, 0
+  index: -1
+texiao8
+  rotate: false
+  xy: 2, 179
+  size: 663, 353
+  orig: 663, 353
+  offset: 0, 0
+  index: -1
+texiao9
+  rotate: false
+  xy: 831, 947
+  size: 99, 39
+  orig: 99, 39
+  offset: 0, 0
+  index: -1
+youwuqi
+  rotate: false
+  xy: 2, 534
+  size: 645, 452
+  orig: 645, 452
+  offset: 0, 0
+  index: -1

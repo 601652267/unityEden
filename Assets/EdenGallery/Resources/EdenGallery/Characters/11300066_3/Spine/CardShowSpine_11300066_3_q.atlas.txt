@@ -1,0 +1,153 @@
+
+CardShowSpine_11300066_3_q.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bjt13
+  rotate: true
+  xy: 648, 506
+  size: 318, 929
+  orig: 318, 929
+  offset: 0, 0
+  index: -1
+bjt15
+  rotate: true
+  xy: 1356, 927
+  size: 242, 652
+  orig: 242, 652
+  offset: 0, 0
+  index: -1
+bjt2
+  rotate: false
+  xy: 2, 70
+  size: 574, 673
+  orig: 574, 673
+  offset: 0, 0
+  index: -1
+bjt3
+  rotate: false
+  xy: 648, 1299
+  size: 743, 715
+  orig: 743, 715
+  offset: 0, 0
+  index: -1
+bjt4
+  rotate: false
+  xy: 1362, 249
+  size: 201, 104
+  orig: 201, 104
+  offset: 0, 0
+  index: -1
+bjt5
+  rotate: false
+  xy: 1356, 826
+  size: 31, 99
+  orig: 31, 99
+  offset: 0, 0
+  index: -1
+bjt5a
+  rotate: true
+  xy: 578, 680
+  size: 63, 68
+  orig: 63, 68
+  offset: 0, 0
+  index: -1
+bjt6
+  rotate: false
+  xy: 1579, 507
+  size: 37, 40
+  orig: 37, 40
+  offset: 0, 0
+  index: -1
+bjt7
+  rotate: false
+  xy: 427, 17
+  size: 38, 51
+  orig: 38, 51
+  offset: 0, 0
+  index: -1
+bjt72
+  rotate: false
+  xy: 648, 826
+  size: 706, 471
+  orig: 706, 471
+  offset: 0, 0
+  index: -1
+bjt73
+  rotate: true
+  xy: 1624, 77
+  size: 470, 349
+  orig: 470, 349
+  offset: 0, 0
+  index: -1
+bjt74
+  rotate: false
+  xy: 1579, 549
+  size: 375, 376
+  orig: 375, 376
+  offset: 0, 0
+  index: -1
+bjt75
+  rotate: false
+  xy: 2, 745
+  size: 644, 1269
+  orig: 644, 1269
+  offset: 0, 0
+  index: -1
+bjt77
+  rotate: true
+  xy: 2, 2
+  size: 66, 423
+  orig: 66, 423
+  offset: 0, 0
+  index: -1
+bjt78
+  rotate: true
+  xy: 578, 202
+  size: 151, 782
+  orig: 151, 782
+  offset: 0, 0
+  index: -1
+bjt79
+  rotate: false
+  xy: 578, 355
+  size: 1044, 149
+  orig: 1044, 149
+  offset: 0, 0
+  index: -1
+bjt8
+  rotate: false
+  xy: 2010, 1136
+  size: 20, 33
+  orig: 20, 33
+  offset: 0, 0
+  index: -1
+bjt80
+  rotate: false
+  xy: 1719, 1171
+  size: 319, 843
+  orig: 319, 843
+  offset: 0, 0
+  index: -1
+bjt81
+  rotate: false
+  xy: 1393, 1189
+  size: 324, 825
+  orig: 324, 825
+  offset: 0, 0
+  index: -1
+bjt84
+  rotate: false
+  xy: 578, 78
+  size: 755, 122
+  orig: 755, 122
+  offset: 0, 0
+  index: -1
+bjt9
+  rotate: true
+  xy: 1356, 1270
+  size: 27, 35
+  orig: 27, 35
+  offset: 0, 0
+  index: -1

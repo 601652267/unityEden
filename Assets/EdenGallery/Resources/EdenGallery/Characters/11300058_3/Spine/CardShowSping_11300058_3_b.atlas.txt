@@ -1,0 +1,83 @@
+
+CardShowSping_11300058_3_b.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG
+  rotate: false
+  xy: 2, 1119
+  size: 917, 895
+  orig: 917, 895
+  offset: 0, 0
+  index: -1
+cao02
+  rotate: true
+  xy: 1811, 395
+  size: 307, 198
+  orig: 307, 198
+  offset: 0, 0
+  index: -1
+caodi
+  rotate: false
+  xy: 2, 5
+  size: 786, 288
+  orig: 786, 288
+  offset: 0, 0
+  index: -1
+caoqian
+  rotate: true
+  xy: 1860, 1655
+  size: 359, 172
+  orig: 359, 172
+  offset: 0, 0
+  index: -1
+dimian
+  rotate: false
+  xy: 2, 295
+  size: 788, 430
+  orig: 788, 430
+  offset: 0, 0
+  index: -1
+huangcao
+  rotate: false
+  xy: 2, 727
+  size: 903, 390
+  orig: 903, 390
+  offset: 0, 0
+  index: -1
+huic
+  rotate: true
+  xy: 907, 56
+  size: 787, 439
+  orig: 787, 439
+  offset: 0, 0
+  index: -1
+shu02
+  rotate: true
+  xy: 1348, 280
+  size: 422, 461
+  orig: 422, 461
+  offset: 0, 0
+  index: -1
+shu021
+  rotate: false
+  xy: 1348, 2
+  size: 249, 276
+  orig: 249, 276
+  offset: 0, 0
+  index: -1
+shuqian
+  rotate: false
+  xy: 921, 845
+  size: 543, 1169
+  orig: 543, 1169
+  offset: 0, 0
+  index: -1
+yun
+  rotate: true
+  xy: 1466, 704
+  size: 1310, 392
+  orig: 1310, 392
+  offset: 0, 0
+  index: -1

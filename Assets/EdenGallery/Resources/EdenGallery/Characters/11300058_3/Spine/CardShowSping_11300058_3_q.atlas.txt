@@ -1,0 +1,97 @@
+
+CardShowSping_11300058_3_q.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang
+  rotate: true
+  xy: 933, 484
+  size: 538, 984
+  orig: 538, 984
+  offset: 0, 0
+  index: -1
+huabansui
+  rotate: false
+  xy: 2, 138
+  size: 929, 884
+  orig: 929, 884
+  offset: 0, 0
+  index: -1
+hub01
+  rotate: false
+  xy: 1919, 899
+  size: 53, 40
+  orig: 53, 40
+  offset: 0, 0
+  index: -1
+hub02
+  rotate: false
+  xy: 1919, 941
+  size: 56, 81
+  orig: 56, 81
+  offset: 0, 0
+  index: -1
+hub03
+  rotate: false
+  xy: 79, 122
+  size: 24, 14
+  orig: 24, 14
+  offset: 0, 0
+  index: -1
+hub04
+  rotate: false
+  xy: 1977, 980
+  size: 33, 42
+  orig: 33, 42
+  offset: 0, 0
+  index: -1
+hub05
+  rotate: false
+  xy: 2, 102
+  size: 75, 34
+  orig: 75, 34
+  offset: 0, 0
+  index: -1
+hub06
+  rotate: false
+  xy: 2, 72
+  size: 20, 28
+  orig: 20, 28
+  offset: 0, 0
+  index: -1
+hub07
+  rotate: false
+  xy: 2012, 1008
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+hub08
+  rotate: false
+  xy: 1977, 958
+  size: 10, 20
+  orig: 10, 20
+  offset: 0, 0
+  index: -1
+hub09
+  rotate: false
+  xy: 1919, 879
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+hubzs
+  rotate: true
+  xy: 1888, 445
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+qianhua
+  rotate: false
+  xy: 933, 2
+  size: 953, 480
+  orig: 953, 480
+  offset: 0, 0
+  index: -1

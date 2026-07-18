@@ -1,0 +1,97 @@
+
+CardShowSpine_11201007_3_2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hulaquan
+  rotate: false
+  xy: 2, 432
+  size: 1136, 1608
+  orig: 1136, 1608
+  offset: 0, 0
+  index: -1
+qiqiu1
+  rotate: true
+  xy: 1140, 1017
+  size: 1023, 793
+  orig: 1023, 793
+  offset: 0, 0
+  index: -1
+qiqiu2
+  rotate: true
+  xy: 1140, 471
+  size: 544, 684
+  orig: 544, 684
+  offset: 0, 0
+  index: -1
+qiqiu3
+  rotate: false
+  xy: 2, 2
+  size: 371, 428
+  orig: 371, 428
+  offset: 0, 0
+  index: -1
+qiqiu4
+  rotate: false
+  xy: 874, 55
+  size: 160, 375
+  orig: 160, 375
+  offset: 0, 0
+  index: -1
+qiqiu5
+  rotate: false
+  xy: 646, 86
+  size: 226, 344
+  orig: 226, 344
+  offset: 0, 0
+  index: -1
+qiqiu6
+  rotate: false
+  xy: 375, 83
+  size: 269, 347
+  orig: 269, 347
+  offset: 0, 0
+  index: -1
+qiqiu7
+  rotate: true
+  xy: 1826, 473
+  size: 153, 202
+  orig: 153, 202
+  offset: 0, 0
+  index: -1
+qiu1
+  rotate: true
+  xy: 1826, 811
+  size: 204, 203
+  orig: 204, 203
+  offset: 0, 0
+  index: -1
+qiu2
+  rotate: false
+  xy: 1826, 628
+  size: 183, 181
+  orig: 183, 181
+  offset: 0, 0
+  index: -1
+qiu3
+  rotate: true
+  xy: 1036, 285
+  size: 145, 143
+  orig: 145, 143
+  offset: 0, 0
+  index: -1
+qiu4
+  rotate: false
+  xy: 1935, 1945
+  size: 96, 95
+  orig: 96, 95
+  offset: 0, 0
+  index: -1
+qiu5
+  rotate: false
+  xy: 375, 11
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,265 @@
+
+CardShowSpine_11200001_3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_0
+  rotate: true
+  xy: 2, 2
+  size: 1259, 332
+  orig: 1259, 332
+  offset: 0, 0
+  index: -1
+1_1
+  rotate: false
+  xy: 336, 610
+  size: 566, 651
+  orig: 566, 651
+  offset: 0, 0
+  index: -1
+1_10
+  rotate: false
+  xy: 1035, 205
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+1_11
+  rotate: false
+  xy: 1200, 176
+  size: 56, 60
+  orig: 56, 60
+  offset: 0, 0
+  index: -1
+1_12
+  rotate: false
+  xy: 734, 89
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+1_13
+  rotate: false
+  xy: 1942, 515
+  size: 44, 50
+  orig: 44, 50
+  offset: 0, 0
+  index: -1
+1_14
+  rotate: true
+  xy: 1273, 251
+  size: 221, 241
+  orig: 221, 241
+  offset: 0, 0
+  index: -1
+1_15
+  rotate: false
+  xy: 811, 202
+  size: 222, 270
+  orig: 222, 270
+  offset: 0, 0
+  index: -1
+1_16
+  rotate: true
+  xy: 1596, 492
+  size: 251, 285
+  orig: 251, 285
+  offset: 0, 0
+  index: -1
+1_17
+  rotate: true
+  xy: 336, 38
+  size: 110, 218
+  orig: 110, 218
+  offset: 0, 0
+  index: -1
+1_18
+  rotate: true
+  xy: 1862, 1466
+  size: 236, 175
+  orig: 236, 175
+  offset: 0, 0
+  index: -1
+1_19
+  rotate: false
+  xy: 1079, 141
+  size: 119, 95
+  orig: 119, 95
+  offset: 0, 0
+  index: -1
+1_2
+  rotate: false
+  xy: 1263, 772
+  size: 363, 319
+  orig: 363, 319
+  offset: 0, 0
+  index: -1
+1_20
+  rotate: true
+  xy: 974, 63
+  size: 137, 103
+  orig: 137, 103
+  offset: 0, 0
+  index: -1
+1_21
+  rotate: false
+  xy: 904, 1138
+  size: 66, 123
+  orig: 66, 123
+  offset: 0, 0
+  index: -1
+1_22
+  rotate: true
+  xy: 1516, 242
+  size: 230, 218
+  orig: 230, 218
+  offset: 0, 0
+  index: -1
+1_23
+  rotate: false
+  xy: 1862, 1704
+  size: 174, 331
+  orig: 174, 331
+  offset: 0, 0
+  index: -1
+1_24
+  rotate: true
+  xy: 811, 52
+  size: 148, 161
+  orig: 148, 161
+  offset: 0, 0
+  index: -1
+1_25
+  rotate: false
+  xy: 1883, 567
+  size: 103, 176
+  orig: 103, 176
+  offset: 0, 0
+  index: -1
+1_26
+  rotate: false
+  xy: 1035, 238
+  size: 236, 234
+  orig: 236, 234
+  offset: 0, 0
+  index: -1
+1_27
+  rotate: false
+  xy: 1429, 1093
+  size: 411, 361
+  orig: 411, 361
+  offset: 0, 0
+  index: -1
+1_28
+  rotate: false
+  xy: 336, 150
+  size: 473, 458
+  orig: 473, 458
+  offset: 0, 0
+  index: -1
+1_29
+  rotate: false
+  xy: 991, 1456
+  size: 869, 579
+  orig: 869, 579
+  offset: 0, 0
+  index: -1
+1_3
+  rotate: false
+  xy: 1263, 1101
+  size: 61, 15
+  orig: 61, 15
+  offset: 0, 0
+  index: -1
+1_30
+  rotate: false
+  xy: 1628, 745
+  size: 338, 346
+  orig: 338, 346
+  offset: 0, 0
+  index: -1
+1_31
+  rotate: false
+  xy: 2, 1263
+  size: 987, 772
+  orig: 987, 772
+  offset: 0, 0
+  index: -1
+1_32
+  rotate: true
+  xy: 991, 1118
+  size: 336, 436
+  orig: 336, 436
+  offset: 0, 0
+  index: -1
+1_33
+  rotate: false
+  xy: 1280, 474
+  size: 314, 296
+  orig: 314, 296
+  offset: 0, 0
+  index: -1
+1_34
+  rotate: true
+  xy: 904, 474
+  size: 289, 374
+  orig: 289, 374
+  offset: 0, 0
+  index: -1
+1_35
+  rotate: false
+  xy: 1736, 248
+  size: 194, 242
+  orig: 194, 242
+  offset: 0, 0
+  index: -1
+1_36
+  rotate: true
+  xy: 556, 35
+  size: 113, 176
+  orig: 113, 176
+  offset: 0, 0
+  index: -1
+1_4
+  rotate: false
+  xy: 336, 7
+  size: 46, 29
+  orig: 46, 29
+  offset: 0, 0
+  index: -1
+1_5
+  rotate: false
+  xy: 811, 475
+  size: 38, 52
+  orig: 38, 52
+  offset: 0, 0
+  index: -1
+1_6
+  rotate: false
+  xy: 904, 765
+  size: 357, 351
+  orig: 357, 351
+  offset: 0, 0
+  index: -1
+1_7
+  rotate: false
+  xy: 1079, 68
+  size: 46, 71
+  orig: 46, 71
+  offset: 0, 0
+  index: -1
+1_8
+  rotate: false
+  xy: 811, 529
+  size: 82, 79
+  orig: 82, 79
+  offset: 0, 0
+  index: -1
+1_9
+  rotate: false
+  xy: 1883, 492
+  size: 57, 73
+  orig: 57, 73
+  offset: 0, 0
+  index: -1

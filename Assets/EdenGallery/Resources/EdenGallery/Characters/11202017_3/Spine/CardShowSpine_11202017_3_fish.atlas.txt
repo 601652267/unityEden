@@ -1,0 +1,83 @@
+
+CardShowSpine_11202017_3_fish.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ronghou_3_10
+  rotate: false
+  xy: 220, 260
+  size: 158, 109
+  orig: 158, 109
+  offset: 0, 0
+  index: -1
+ronghou_3_11
+  rotate: false
+  xy: 220, 154
+  size: 156, 104
+  orig: 156, 104
+  offset: 0, 0
+  index: -1
+ronghou_3_12
+  rotate: true
+  xy: 422, 416
+  size: 91, 78
+  orig: 91, 78
+  offset: 0, 0
+  index: -1
+ronghou_3_13
+  rotate: false
+  xy: 196, 42
+  size: 118, 110
+  orig: 118, 110
+  offset: 0, 0
+  index: -1
+ronghou_3_14
+  rotate: false
+  xy: 2, 212
+  size: 216, 164
+  orig: 216, 164
+  offset: 0, 0
+  index: -1
+ronghou_3_15
+  rotate: false
+  xy: 266, 371
+  size: 154, 136
+  orig: 154, 136
+  offset: 0, 0
+  index: -1
+ronghou_3_16
+  rotate: false
+  xy: 2, 64
+  size: 192, 146
+  orig: 192, 146
+  offset: 0, 0
+  index: -1
+ronghou_3_7
+  rotate: false
+  xy: 2, 2
+  size: 75, 60
+  orig: 75, 60
+  offset: 0, 0
+  index: -1
+ronghou_3_8
+  rotate: true
+  xy: 380, 261
+  size: 108, 94
+  orig: 108, 94
+  offset: 0, 0
+  index: -1
+ronghou_3_89
+  rotate: false
+  xy: 2, 378
+  size: 262, 129
+  orig: 262, 129
+  offset: 0, 0
+  index: -1
+ronghou_3_9
+  rotate: true
+  xy: 316, 41
+  size: 111, 101
+  orig: 111, 101
+  offset: 0, 0
+  index: -1

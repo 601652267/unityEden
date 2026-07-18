@@ -1,0 +1,48 @@
+
+CardShowSpine_11202016_3_2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+T90
+  rotate: false
+  xy: 2, 255
+  size: 413, 356
+  orig: 413, 356
+  offset: 0, 0
+  index: -1
+T91
+  rotate: false
+  xy: 2, 2
+  size: 128, 53
+  orig: 128, 53
+  offset: 0, 0
+  index: -1
+T92
+  rotate: false
+  xy: 825, 877
+  size: 175, 138
+  orig: 175, 138
+  offset: 0, 0
+  index: -1
+T95
+  rotate: false
+  xy: 2, 57
+  size: 462, 196
+  orig: 462, 196
+  offset: 0, 0
+  index: -1
+T96
+  rotate: false
+  xy: 2, 613
+  size: 428, 402
+  orig: 428, 402
+  offset: 0, 0
+  index: -1
+T97
+  rotate: false
+  xy: 432, 747
+  size: 391, 268
+  orig: 391, 268
+  offset: 0, 0
+  index: -1

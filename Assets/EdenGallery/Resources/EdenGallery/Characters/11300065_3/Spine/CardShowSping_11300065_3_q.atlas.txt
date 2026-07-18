@@ -1,0 +1,167 @@
+
+CardShowSping_11300065_3_q.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dte1
+  rotate: false
+  xy: 287, 169
+  size: 130, 57
+  orig: 130, 57
+  offset: 0, 0
+  index: -1
+dte10
+  rotate: true
+  xy: 1447, 289
+  size: 137, 44
+  orig: 137, 44
+  offset: 0, 0
+  index: -1
+dte101
+  rotate: false
+  xy: 1003, 657
+  size: 745, 133
+  orig: 745, 133
+  offset: 0, 0
+  index: -1
+dte102
+  rotate: false
+  xy: 447, 220
+  size: 556, 167
+  orig: 556, 167
+  offset: 0, 0
+  index: -1
+dte103
+  rotate: false
+  xy: 2, 228
+  size: 443, 562
+  orig: 443, 562
+  offset: 0, 0
+  index: -1
+dte104
+  rotate: true
+  xy: 1003, 510
+  size: 145, 675
+  orig: 145, 675
+  offset: 0, 0
+  index: -1
+dte105
+  rotate: false
+  xy: 447, 389
+  size: 554, 401
+  orig: 554, 401
+  offset: 0, 0
+  index: -1
+dte106
+  rotate: false
+  xy: 2, 792
+  size: 1994, 1254
+  orig: 1994, 1254
+  offset: 0, 0
+  index: -1
+dte107
+  rotate: false
+  xy: 2, 2
+  size: 89, 34
+  orig: 89, 34
+  offset: 0, 0
+  index: -1
+dte108
+  rotate: false
+  xy: 1750, 664
+  size: 101, 32
+  orig: 101, 32
+  offset: 0, 0
+  index: -1
+dte11
+  rotate: false
+  xy: 1998, 1906
+  size: 47, 140
+  orig: 47, 140
+  offset: 0, 0
+  index: -1
+dte12
+  rotate: false
+  xy: 172, 77
+  size: 65, 39
+  orig: 65, 39
+  offset: 0, 0
+  index: -1
+dte13
+  rotate: false
+  xy: 1750, 698
+  size: 219, 92
+  orig: 219, 92
+  offset: 0, 0
+  index: -1
+dte14
+  rotate: false
+  xy: 1368, 428
+  size: 188, 80
+  orig: 188, 80
+  offset: 0, 0
+  index: -1
+dte15
+  rotate: false
+  xy: 1368, 198
+  size: 39, 58
+  orig: 39, 58
+  offset: 0, 0
+  index: -1
+dte16
+  rotate: true
+  xy: 1005, 188
+  size: 320, 361
+  orig: 320, 361
+  offset: 0, 0
+  index: -1
+dte2
+  rotate: true
+  xy: 1680, 515
+  size: 140, 53
+  orig: 140, 53
+  offset: 0, 0
+  index: -1
+dte3
+  rotate: false
+  xy: 1368, 258
+  size: 77, 168
+  orig: 77, 168
+  offset: 0, 0
+  index: -1
+dte5
+  rotate: true
+  xy: 2, 118
+  size: 108, 283
+  orig: 108, 283
+  offset: 0, 0
+  index: -1
+dte6
+  rotate: false
+  xy: 287, 129
+  size: 58, 38
+  orig: 58, 38
+  offset: 0, 0
+  index: -1
+dte7
+  rotate: false
+  xy: 1998, 1767
+  size: 42, 137
+  orig: 42, 137
+  offset: 0, 0
+  index: -1
+dte8
+  rotate: false
+  xy: 1558, 466
+  size: 93, 42
+  orig: 93, 42
+  offset: 0, 0
+  index: -1
+dte9
+  rotate: false
+  xy: 2, 38
+  size: 168, 78
+  orig: 168, 78
+  offset: 0, 0
+  index: -1

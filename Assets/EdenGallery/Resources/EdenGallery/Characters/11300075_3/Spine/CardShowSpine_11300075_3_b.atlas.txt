@@ -1,0 +1,41 @@
+
+CardShowSpine_11300075_3_b.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beijing01
+  rotate: false
+  xy: 1314, 1516
+  size: 383, 204
+  orig: 383, 204
+  offset: 0, 0
+  index: -1
+beijing02
+  rotate: false
+  xy: 2, 2
+  size: 945, 510
+  orig: 945, 510
+  offset: 0, 0
+  index: -1
+beijing03
+  rotate: false
+  xy: 1013, 864
+  size: 168, 252
+  orig: 168, 252
+  offset: 0, 0
+  index: -1
+beijing04
+  rotate: false
+  xy: 2, 1118
+  size: 1310, 602
+  orig: 1310, 602
+  offset: 0, 0
+  index: -1
+gx01
+  rotate: false
+  xy: 2, 514
+  size: 1009, 602
+  orig: 1009, 602
+  offset: 0, 0
+  index: -1

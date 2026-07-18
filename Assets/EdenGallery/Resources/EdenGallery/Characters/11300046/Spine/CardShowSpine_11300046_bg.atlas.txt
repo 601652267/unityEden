@@ -1,0 +1,132 @@
+
+CardShowSpine_11300046_bg.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+11300046_shui01
+  rotate: false
+  xy: 0, 731
+  size: 941, 653
+  orig: 941, 653
+  offset: 0, 0
+  index: -1
+11300046_shui02
+  rotate: false
+  xy: 0, 1384
+  size: 1044, 664
+  orig: 1044, 664
+  offset: 0, 0
+  index: -1
+niao1
+  rotate: false
+  xy: 941, 1338
+  size: 86, 46
+  orig: 86, 46
+  offset: 0, 0
+  index: -1
+niao2
+  rotate: false
+  xy: 0, 52
+  size: 135, 69
+  orig: 135, 69
+  offset: 0, 0
+  index: -1
+niao3
+  rotate: true
+  xy: 1718, 803
+  size: 177, 75
+  orig: 177, 75
+  offset: 0, 0
+  index: -1
+shell01
+  rotate: true
+  xy: 941, 732
+  size: 137, 159
+  orig: 137, 159
+  offset: 0, 0
+  index: -1
+shell02
+  rotate: false
+  xy: 1009, 222
+  size: 83, 85
+  orig: 83, 85
+  offset: 0, 0
+  index: -1
+shell03
+  rotate: true
+  xy: 1122, 240
+  size: 352, 358
+  orig: 352, 358
+  offset: 0, 0
+  index: -1
+shell04
+  rotate: true
+  xy: 735, 307
+  size: 424, 387
+  orig: 424, 387
+  offset: 0, 0
+  index: -1
+shell05
+  rotate: false
+  xy: 1480, 407
+  size: 194, 185
+  orig: 194, 185
+  offset: 0, 0
+  index: -1
+shell06
+  rotate: true
+  xy: 735, 41
+  size: 266, 274
+  orig: 266, 274
+  offset: 0, 0
+  index: -1
+shui11
+  rotate: false
+  xy: 0, 121
+  size: 735, 610
+  orig: 735, 610
+  offset: 0, 0
+  index: -1
+shui12
+  rotate: true
+  xy: 1880, 1772
+  size: 276, 159
+  orig: 276, 159
+  offset: 0, 0
+  index: -1
+shuye02
+  rotate: true
+  xy: 1044, 1306
+  size: 742, 836
+  orig: 742, 836
+  offset: 0, 0
+  index: -1
+shuye03
+  rotate: true
+  xy: 1817, 1039
+  size: 267, 231
+  orig: 267, 231
+  offset: 0, 0
+  index: -1
+shuye04
+  rotate: false
+  xy: 941, 869
+  size: 387, 437
+  orig: 387, 437
+  offset: 0, 0
+  index: -1
+shuye05
+  rotate: true
+  xy: 1328, 592
+  size: 388, 390
+  orig: 388, 390
+  offset: 0, 0
+  index: -1
+shuye06
+  rotate: true
+  xy: 1328, 980
+  size: 326, 489
+  orig: 326, 489
+  offset: 0, 0
+  index: -1

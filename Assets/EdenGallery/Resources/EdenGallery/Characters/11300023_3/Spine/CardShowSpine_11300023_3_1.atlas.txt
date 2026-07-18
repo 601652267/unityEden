@@ -1,0 +1,41 @@
+
+CardShowSpine_11300023_3_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shengzi
+  rotate: false
+  xy: 0, 265
+  size: 434, 754
+  orig: 434, 754
+  offset: 0, 0
+  index: -1
+shengzi1
+  rotate: false
+  xy: 434, 92
+  size: 16, 927
+  orig: 16, 927
+  offset: 0, 0
+  index: -1
+shengzi2
+  rotate: false
+  xy: 450, 0
+  size: 13, 1019
+  orig: 13, 1019
+  offset: 0, 0
+  index: -1
+shengzi3
+  rotate: true
+  xy: 474, 314
+  size: 705, 11
+  orig: 705, 11
+  offset: 0, 0
+  index: -1
+shengzi4
+  rotate: true
+  xy: 463, 96
+  size: 923, 11
+  orig: 923, 11
+  offset: 0, 0
+  index: -1

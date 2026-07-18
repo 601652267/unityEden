@@ -1,0 +1,146 @@
+
+CardShowSpine_11202020_3_3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+l1
+  rotate: false
+  xy: 1572, 1021
+  size: 291, 456
+  orig: 291, 456
+  offset: 0, 0
+  index: -1
+l10
+  rotate: false
+  xy: 1368, 1378
+  size: 191, 99
+  orig: 191, 99
+  offset: 0, 0
+  index: -1
+l11
+  rotate: false
+  xy: 1885, 1485
+  size: 95, 65
+  orig: 95, 65
+  offset: 0, 0
+  index: -1
+l12
+  rotate: false
+  xy: 1572, 568
+  size: 312, 451
+  orig: 312, 451
+  offset: 0, 0
+  index: -1
+l13
+  rotate: false
+  xy: 1375, 261
+  size: 154, 185
+  orig: 154, 185
+  offset: 0, 0
+  index: -1
+l2
+  rotate: true
+  xy: 716, 65
+  size: 369, 524
+  orig: 369, 524
+  offset: 0, 0
+  index: -1
+l3
+  rotate: false
+  xy: 1368, 1479
+  size: 393, 544
+  orig: 393, 544
+  offset: 0, 0
+  index: -1
+l4
+  rotate: true
+  xy: 1763, 1482
+  size: 541, 120
+  orig: 541, 120
+  offset: 0, 0
+  index: -1
+l5
+  rotate: false
+  xy: 528, 17
+  size: 168, 235
+  orig: 168, 235
+  offset: 0, 0
+  index: -1
+l6
+  rotate: false
+  xy: 1242, 68
+  size: 77, 177
+  orig: 77, 177
+  offset: 0, 0
+  index: -1
+l7
+  rotate: true
+  xy: 1572, 313
+  size: 253, 324
+  orig: 253, 324
+  offset: 0, 0
+  index: -1
+l8
+  rotate: false
+  xy: 1885, 1552
+  size: 121, 245
+  orig: 121, 245
+  offset: 0, 0
+  index: -1
+l9
+  rotate: false
+  xy: 1242, 247
+  size: 131, 187
+  orig: 131, 187
+  offset: 0, 0
+  index: -1
+xiahuyu1
+  rotate: true
+  xy: 724, 436
+  size: 939, 559
+  orig: 939, 559
+  offset: 0, 0
+  index: -1
+xiahuyu6
+  rotate: false
+  xy: 2, 554
+  size: 720, 821
+  orig: 720, 821
+  offset: 0, 0
+  index: -1
+xiahuyu74
+  rotate: false
+  xy: 1885, 1799
+  size: 145, 224
+  orig: 145, 224
+  offset: 0, 0
+  index: -1
+xiahuyu76
+  rotate: true
+  xy: 1285, 448
+  size: 927, 285
+  orig: 927, 285
+  offset: 0, 0
+  index: -1
+xiahuyu77
+  rotate: false
+  xy: 2, 254
+  size: 712, 298
+  orig: 712, 298
+  offset: 0, 0
+  index: -1
+xiahuyu78
+  rotate: false
+  xy: 2, 2
+  size: 524, 250
+  orig: 524, 250
+  offset: 0, 0
+  index: -1
+xiahuyu79
+  rotate: false
+  xy: 2, 1377
+  size: 1364, 646
+  orig: 1364, 646
+  offset: 0, 0
+  index: -1

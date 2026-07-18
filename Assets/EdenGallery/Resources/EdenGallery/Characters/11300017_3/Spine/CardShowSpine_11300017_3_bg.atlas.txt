@@ -1,0 +1,90 @@
+
+CardShowSpine_11300017_3_bg.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bianfu_03_01
+  rotate: true
+  xy: 490, 583
+  size: 267, 152
+  orig: 267, 152
+  offset: 0, 0
+  index: -1
+bianfu_03_02
+  rotate: false
+  xy: 939, 650
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: -1
+jiaodiyingzi
+  rotate: false
+  xy: 939, 542
+  size: 39, 106
+  orig: 39, 106
+  offset: 0, 0
+  index: -1
+jinchu_bianfu01
+  rotate: false
+  xy: 577, 313
+  size: 265, 210
+  orig: 265, 210
+  offset: 0, 0
+  index: -1
+jinchu_bianfu02
+  rotate: true
+  xy: 577, 46
+  size: 265, 210
+  orig: 265, 210
+  offset: 0, 0
+  index: -1
+qiao_2
+  rotate: false
+  xy: 2, 852
+  size: 672, 160
+  orig: 672, 160
+  offset: 0, 0
+  index: -1
+shu_01
+  rotate: true
+  xy: 676, 740
+  size: 272, 310
+  orig: 272, 310
+  offset: 0, 0
+  index: -1
+shu_02
+  rotate: true
+  xy: 2, 2
+  size: 430, 309
+  orig: 430, 309
+  offset: 0, 0
+  index: -1
+shu_03
+  rotate: true
+  xy: 644, 525
+  size: 213, 293
+  orig: 213, 293
+  offset: 0, 0
+  index: -1
+shu_04
+  rotate: false
+  xy: 2, 434
+  size: 486, 416
+  orig: 486, 416
+  offset: 0, 0
+  index: -1
+shu_05
+  rotate: false
+  xy: 313, 148
+  size: 262, 284
+  orig: 262, 284
+  offset: 0, 0
+  index: -1
+shu_06
+  rotate: true
+  xy: 789, 84
+  size: 227, 228
+  orig: 227, 228
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,48 @@
+
+CardShowSping_11202027_3_b.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 2, 866
+  size: 2033, 1000
+  orig: 2033, 1000
+  offset: 0, 0
+  index: -1
+liuxing01
+  rotate: false
+  xy: 2, 2
+  size: 78, 430
+  orig: 78, 430
+  offset: 0, 0
+  index: -1
+liuxing02
+  rotate: false
+  xy: 82, 434
+  size: 78, 430
+  orig: 78, 430
+  offset: 0, 0
+  index: -1
+liuxing04
+  rotate: false
+  xy: 82, 2
+  size: 78, 430
+  orig: 78, 430
+  offset: 0, 0
+  index: -1
+liuxing05
+  rotate: false
+  xy: 162, 434
+  size: 78, 430
+  orig: 78, 430
+  offset: 0, 0
+  index: -1
+liuxing06
+  rotate: false
+  xy: 2, 434
+  size: 78, 430
+  orig: 78, 430
+  offset: 0, 0
+  index: -1

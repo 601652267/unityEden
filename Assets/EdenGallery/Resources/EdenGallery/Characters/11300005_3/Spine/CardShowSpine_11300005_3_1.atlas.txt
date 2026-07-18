@@ -1,0 +1,300 @@
+
+CardShowSpine_11300005_3_1.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Chest
+  rotate: true
+  xy: 1036, 305
+  size: 368, 419
+  orig: 368, 419
+  offset: 0, 0
+  index: -1
+Hair_01
+  rotate: true
+  xy: 1793, 1482
+  size: 96, 234
+  orig: 96, 234
+  offset: 0, 0
+  index: -1
+Hair_01a
+  rotate: true
+  xy: 466, 122
+  size: 28, 124
+  orig: 28, 124
+  offset: 0, 0
+  index: -1
+Hair_01b
+  rotate: true
+  xy: 2, 44
+  size: 38, 173
+  orig: 38, 173
+  offset: 0, 0
+  index: -1
+Hair_02
+  rotate: false
+  xy: 1750, 381
+  size: 104, 302
+  orig: 104, 302
+  offset: 0, 0
+  index: -1
+Hair_02a
+  rotate: false
+  xy: 1856, 326
+  size: 121, 306
+  orig: 121, 306
+  offset: 0, 0
+  index: -1
+Hair_02b
+  rotate: true
+  xy: 2, 6
+  size: 36, 159
+  orig: 36, 159
+  offset: 0, 0
+  index: -1
+Hair_02c
+  rotate: true
+  xy: 1034, 63
+  size: 32, 160
+  orig: 32, 160
+  offset: 0, 0
+  index: -1
+Hair_03
+  rotate: false
+  xy: 1793, 1580
+  size: 188, 464
+  orig: 188, 464
+  offset: 0, 0
+  index: -1
+Hair_03b
+  rotate: true
+  xy: 177, 45
+  size: 37, 166
+  orig: 37, 166
+  offset: 0, 0
+  index: -1
+Hair_03c
+  rotate: false
+  xy: 1983, 1694
+  size: 40, 169
+  orig: 40, 169
+  offset: 0, 0
+  index: -1
+Hair_04
+  rotate: false
+  xy: 1302, 84
+  size: 250, 219
+  orig: 250, 219
+  offset: 0, 0
+  index: -1
+Hair_05
+  rotate: false
+  xy: 1554, 40
+  size: 96, 283
+  orig: 96, 283
+  offset: 0, 0
+  index: -1
+Hair_xa
+  rotate: false
+  xy: 1871, 634
+  size: 106, 391
+  orig: 106, 391
+  offset: 0, 0
+  index: -1
+Hair_xb
+  rotate: false
+  xy: 1654, 341
+  size: 94, 332
+  orig: 94, 332
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 1034, 97
+  size: 206, 266
+  orig: 206, 266
+  offset: 0, 0
+  index: -1
+L_Hair
+  rotate: false
+  xy: 2, 309
+  size: 472, 733
+  orig: 472, 733
+  offset: 0, 0
+  index: -1
+L_arm
+  rotate: false
+  xy: 1457, 325
+  size: 195, 348
+  orig: 195, 348
+  offset: 0, 0
+  index: -1
+L_arm_u
+  rotate: false
+  xy: 1659, 685
+  size: 210, 340
+  orig: 210, 340
+  offset: 0, 0
+  index: -1
+L_ear
+  rotate: false
+  xy: 1652, 126
+  size: 152, 197
+  orig: 152, 197
+  offset: 0, 0
+  index: -1
+L_finger
+  rotate: false
+  xy: 397, 126
+  size: 67, 181
+  orig: 67, 181
+  offset: 0, 0
+  index: -1
+R_Hair2
+  rotate: false
+  xy: 2, 1044
+  size: 1105, 435
+  orig: 1105, 435
+  offset: 0, 0
+  index: -1
+R_arm_U
+  rotate: true
+  xy: 476, 152
+  size: 180, 352
+  orig: 180, 352
+  offset: 0, 0
+  index: -1
+R_ear
+  rotate: false
+  xy: 1806, 138
+  size: 166, 186
+  orig: 166, 186
+  offset: 0, 0
+  index: -1
+R_hand_F1
+  rotate: true
+  xy: 1954, 1112
+  size: 90, 92
+  orig: 90, 92
+  offset: 0, 0
+  index: -1
+R_hand_F2
+  rotate: true
+  xy: 1884, 1254
+  size: 226, 115
+  orig: 226, 115
+  offset: 0, 0
+  index: -1
+bodyx
+  rotate: false
+  xy: 1036, 675
+  size: 621, 350
+  orig: 621, 350
+  offset: 0, 0
+  index: -1
+canpan1
+  rotate: false
+  xy: 1109, 1181
+  size: 773, 298
+  orig: 773, 298
+  offset: 0, 0
+  index: -1
+canpan2
+  rotate: false
+  xy: 1109, 1027
+  size: 843, 152
+  orig: 843, 152
+  offset: 0, 0
+  index: -1
+eye000
+  rotate: false
+  xy: 1652, 29
+  size: 132, 36
+  orig: 132, 36
+  offset: 0, 0
+  index: -1
+eye001
+  rotate: false
+  xy: 1652, 67
+  size: 137, 57
+  orig: 137, 57
+  offset: 0, 0
+  index: -1
+eye002
+  rotate: false
+  xy: 1884, 1204
+  size: 143, 48
+  orig: 143, 48
+  offset: 0, 0
+  index: -1
+eye003
+  rotate: true
+  xy: 1983, 1865
+  size: 179, 63
+  orig: 179, 63
+  offset: 0, 0
+  index: -1
+meimao
+  rotate: true
+  xy: 2001, 1321
+  size: 159, 36
+  orig: 159, 36
+  offset: 0, 0
+  index: -1
+weiba
+  rotate: true
+  xy: 476, 334
+  size: 708, 411
+  orig: 708, 411
+  offset: 0, 0
+  index: -1
+yifu
+  rotate: true
+  xy: 889, 320
+  size: 722, 145
+  orig: 722, 145
+  offset: 0, 0
+  index: -1
+yifu2
+  rotate: false
+  xy: 2, 84
+  size: 393, 223
+  orig: 393, 223
+  offset: 0, 0
+  index: -1
+yingzi
+  rotate: false
+  xy: 2, 1481
+  size: 1789, 563
+  orig: 1789, 563
+  offset: 0, 0
+  index: -1
+zhuozi
+  rotate: true
+  xy: 830, 69
+  size: 249, 202
+  orig: 249, 202
+  offset: 0, 0
+  index: -1
+zui
+  rotate: true
+  xy: 1983, 1649
+  size: 43, 16
+  orig: 43, 16
+  offset: 0, 0
+  index: -1
+zui2
+  rotate: false
+  xy: 1654, 325
+  size: 21, 14
+  orig: 21, 14
+  offset: 0, 0
+  index: -1
+zui3
+  rotate: false
+  xy: 1457, 306
+  size: 46, 17
+  orig: 46, 17
+  offset: 0, 0
+  index: -1

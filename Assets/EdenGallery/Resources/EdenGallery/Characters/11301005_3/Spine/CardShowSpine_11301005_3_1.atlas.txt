@@ -1,0 +1,83 @@
+
+CardShowSpine_11301005_3_1.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Gluang1
+  rotate: true
+  xy: 1383, 556
+  size: 705, 324
+  orig: 705, 324
+  offset: 0, 0
+  index: -1
+Gluang2
+  rotate: true
+  xy: 1709, 340
+  size: 921, 139
+  orig: 921, 139
+  offset: 0, 0
+  index: -1
+Gluang3
+  rotate: false
+  xy: 1788, 1534
+  size: 149, 139
+  orig: 149, 139
+  offset: 0, 0
+  index: -1
+Gluang5
+  rotate: true
+  xy: 2, 52
+  size: 343, 659
+  orig: 343, 659
+  offset: 0, 0
+  index: -1
+Gluang6
+  rotate: false
+  xy: 663, 286
+  size: 691, 293
+  orig: 691, 293
+  offset: 0, 0
+  index: -1
+do1
+  rotate: false
+  xy: 2, 1328
+  size: 879, 689
+  orig: 879, 689
+  offset: 0, 0
+  index: -1
+do2
+  rotate: true
+  xy: 663, 9
+  size: 275, 923
+  orig: 275, 923
+  offset: 0, 0
+  index: -1
+do3
+  rotate: false
+  xy: 621, 581
+  size: 760, 680
+  orig: 760, 680
+  offset: 0, 0
+  index: -1
+ds3
+  rotate: false
+  xy: 883, 1675
+  size: 1136, 342
+  orig: 1136, 342
+  offset: 0, 0
+  index: -1
+ds4
+  rotate: false
+  xy: 883, 1263
+  size: 903, 410
+  orig: 903, 410
+  offset: 0, 0
+  index: -1
+dx1
+  rotate: false
+  xy: 2, 397
+  size: 617, 929
+  orig: 617, 929
+  offset: 0, 0
+  index: -1

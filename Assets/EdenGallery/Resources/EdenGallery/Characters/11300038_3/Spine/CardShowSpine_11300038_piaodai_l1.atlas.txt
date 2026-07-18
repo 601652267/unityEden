@@ -1,0 +1,13 @@
+
+CardShowSpine_11300038_piaodai_l1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+akuya_9
+  rotate: false
+  xy: 2, 293
+  size: 946, 653
+  orig: 946, 653
+  offset: 0, 0
+  index: -1

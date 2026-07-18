@@ -1,0 +1,76 @@
+
+CardShowSpine_11200004_3_2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhizhang10
+  rotate: true
+  xy: 840, 276
+  size: 235, 162
+  orig: 235, 162
+  offset: 0, 0
+  index: -1
+zhizhang11
+  rotate: false
+  xy: 643, 513
+  size: 282, 498
+  orig: 282, 498
+  offset: 0, 0
+  index: -1
+zhizhang2
+  rotate: false
+  xy: 330, 522
+  size: 311, 489
+  orig: 311, 489
+  offset: 0, 0
+  index: -1
+zhizhang3
+  rotate: false
+  xy: 2, 137
+  size: 326, 874
+  orig: 326, 874
+  offset: 0, 0
+  index: -1
+zhizhang4
+  rotate: false
+  xy: 927, 962
+  size: 54, 49
+  orig: 54, 49
+  offset: 0, 0
+  index: -1
+zhizhang5
+  rotate: false
+  xy: 2, 19
+  size: 80, 116
+  orig: 80, 116
+  offset: 0, 0
+  index: -1
+zhizhang6
+  rotate: false
+  xy: 330, 194
+  size: 298, 326
+  orig: 298, 326
+  offset: 0, 0
+  index: -1
+zhizhang7
+  rotate: false
+  xy: 840, 119
+  size: 161, 155
+  orig: 161, 155
+  offset: 0, 0
+  index: -1
+zhizhang8
+  rotate: false
+  xy: 630, 199
+  size: 208, 312
+  orig: 208, 312
+  offset: 0, 0
+  index: -1
+zhizhang9
+  rotate: true
+  xy: 330, 2
+  size: 190, 265
+  orig: 190, 265
+  offset: 0, 0
+  index: -1

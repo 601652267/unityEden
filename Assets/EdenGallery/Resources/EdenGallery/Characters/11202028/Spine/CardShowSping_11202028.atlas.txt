@@ -1,0 +1,741 @@
+
+CardShowSping_11202028.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xlm1
+  rotate: false
+  xy: 748, 2
+  size: 128, 130
+  orig: 128, 130
+  offset: 0, 0
+  index: -1
+xlm10
+  rotate: true
+  xy: 1484, 207
+  size: 18, 44
+  orig: 18, 44
+  offset: 0, 0
+  index: -1
+xlm100
+  rotate: true
+  xy: 1943, 564
+  size: 49, 103
+  orig: 49, 103
+  offset: 0, 0
+  index: -1
+xlm101
+  rotate: true
+  xy: 1441, 210
+  size: 26, 41
+  orig: 26, 41
+  offset: 0, 0
+  index: -1
+xlm102
+  rotate: false
+  xy: 1958, 722
+  size: 88, 398
+  orig: 88, 398
+  offset: 0, 0
+  index: -1
+xlm103
+  rotate: true
+  xy: 1492, 351
+  size: 90, 171
+  orig: 90, 171
+  offset: 0, 0
+  index: -1
+xlm104
+  rotate: true
+  xy: 751, 210
+  size: 80, 373
+  orig: 80, 373
+  offset: 0, 0
+  index: -1
+xlm105
+  rotate: true
+  xy: 361, 7
+  size: 51, 107
+  orig: 51, 107
+  offset: 0, 0
+  index: -1
+xlm106
+  rotate: true
+  xy: 2, 60
+  size: 409, 505
+  orig: 409, 505
+  offset: 0, 0
+  index: -1
+xlm11
+  rotate: false
+  xy: 1943, 515
+  size: 98, 47
+  orig: 98, 47
+  offset: 0, 0
+  index: -1
+xlm11a
+  rotate: true
+  xy: 231, 2
+  size: 15, 24
+  orig: 15, 24
+  offset: 0, 0
+  index: -1
+xlm11b
+  rotate: false
+  xy: 1628, 327
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+xlm12
+  rotate: true
+  xy: 1315, 367
+  size: 144, 175
+  orig: 144, 175
+  offset: 0, 0
+  index: -1
+xlm13
+  rotate: false
+  xy: 1458, 1030
+  size: 133, 199
+  orig: 133, 199
+  offset: 0, 0
+  index: -1
+xlm14
+  rotate: true
+  xy: 1166, 2
+  size: 18, 74
+  orig: 18, 74
+  offset: 0, 0
+  index: -1
+xlm15
+  rotate: true
+  xy: 1778, 448
+  size: 62, 177
+  orig: 62, 177
+  offset: 0, 0
+  index: -1
+xlm16
+  rotate: true
+  xy: 1593, 966
+  size: 154, 363
+  orig: 154, 363
+  offset: 0, 0
+  index: -1
+xlm17
+  rotate: true
+  xy: 1961, 1409
+  size: 300, 80
+  orig: 300, 80
+  offset: 0, 0
+  index: -1
+xlm18
+  rotate: true
+  xy: 509, 35
+  size: 138, 237
+  orig: 138, 237
+  offset: 0, 0
+  index: -1
+xlm19
+  rotate: true
+  xy: 1764, 246
+  size: 66, 140
+  orig: 66, 140
+  offset: 0, 0
+  index: -1
+xlm2
+  rotate: false
+  xy: 1665, 317
+  size: 123, 124
+  orig: 123, 124
+  offset: 0, 0
+  index: -1
+xlm20
+  rotate: true
+  xy: 1166, 22
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: -1
+xlm21
+  rotate: true
+  xy: 1593, 1122
+  size: 290, 364
+  orig: 290, 364
+  offset: 0, 0
+  index: -1
+xlm22
+  rotate: false
+  xy: 1064, 343
+  size: 89, 190
+  orig: 89, 190
+  offset: 0, 0
+  index: -1
+xlm23
+  rotate: true
+  xy: 1351, 195
+  size: 29, 78
+  orig: 29, 78
+  offset: 0, 0
+  index: -1
+xlm24
+  rotate: false
+  xy: 1068, 134
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+xlm25
+  rotate: true
+  xy: 1943, 615
+  size: 105, 103
+  orig: 105, 103
+  offset: 0, 0
+  index: -1
+xlm26
+  rotate: true
+  xy: 1166, 273
+  size: 70, 157
+  orig: 70, 157
+  offset: 0, 0
+  index: -1
+xlm27
+  rotate: true
+  xy: 1941, 333
+  size: 72, 95
+  orig: 72, 95
+  offset: 0, 0
+  index: -1
+xlm28
+  rotate: false
+  xy: 1957, 407
+  size: 86, 106
+  orig: 86, 106
+  offset: 0, 0
+  index: -1
+xlm29
+  rotate: true
+  xy: 1757, 722
+  size: 121, 157
+  orig: 121, 157
+  offset: 0, 0
+  index: -1
+xlm3
+  rotate: true
+  xy: 1764, 198
+  size: 46, 134
+  orig: 46, 134
+  offset: 0, 0
+  index: -1
+xlm30
+  rotate: false
+  xy: 1239, 131
+  size: 75, 29
+  orig: 75, 29
+  offset: 0, 0
+  index: -1
+xlm31
+  rotate: true
+  xy: 1906, 252
+  size: 60, 29
+  orig: 60, 29
+  offset: 0, 0
+  index: -1
+xlm32
+  rotate: false
+  xy: 1351, 226
+  size: 88, 46
+  orig: 88, 46
+  offset: 0, 0
+  index: -1
+xlm33
+  rotate: false
+  xy: 1959, 1122
+  size: 55, 21
+  orig: 55, 21
+  offset: 0, 0
+  index: -1
+xlm34
+  rotate: true
+  xy: 2023, 1756
+  size: 56, 16
+  orig: 56, 16
+  offset: 0, 0
+  index: -1
+xlm34a
+  rotate: false
+  xy: 715, 1233
+  size: 61, 18
+  orig: 61, 18
+  offset: 0, 0
+  index: -1
+xlm35
+  rotate: true
+  xy: 1949, 838
+  size: 5, 7
+  orig: 5, 7
+  offset: 0, 0
+  index: -1
+xlm36
+  rotate: false
+  xy: 1825, 166
+  size: 48, 30
+  orig: 48, 30
+  offset: 0, 0
+  index: -1
+xlm37
+  rotate: false
+  xy: 1584, 1701
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+xlm38
+  rotate: false
+  xy: 1441, 238
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+xlm39
+  rotate: true
+  xy: 1287, 68
+  size: 61, 34
+  orig: 61, 34
+  offset: 0, 0
+  index: -1
+xlm39a
+  rotate: false
+  xy: 72, 2
+  size: 54, 26
+  orig: 54, 26
+  offset: 0, 0
+  index: -1
+xlm4
+  rotate: false
+  xy: 1916, 728
+  size: 31, 115
+  orig: 31, 115
+  offset: 0, 0
+  index: -1
+xlm40
+  rotate: false
+  xy: 1351, 175
+  size: 74, 18
+  orig: 74, 18
+  offset: 0, 0
+  index: -1
+xlm40a
+  rotate: true
+  xy: 479, 475
+  size: 46, 28
+  orig: 46, 28
+  offset: 0, 0
+  index: -1
+xlm41
+  rotate: false
+  xy: 1959, 1211
+  size: 81, 196
+  orig: 81, 196
+  offset: 0, 0
+  index: -1
+xlm42
+  rotate: true
+  xy: 1790, 314
+  size: 132, 149
+  orig: 132, 149
+  offset: 0, 0
+  index: -1
+xlm43
+  rotate: false
+  xy: 72, 30
+  size: 158, 28
+  orig: 158, 28
+  offset: 0, 0
+  index: -1
+xlm44
+  rotate: false
+  xy: 715, 1253
+  size: 65, 44
+  orig: 65, 44
+  offset: 0, 0
+  index: -1
+xlm45
+  rotate: false
+  xy: 1239, 162
+  size: 73, 49
+  orig: 73, 49
+  offset: 0, 0
+  index: -1
+xlm46
+  rotate: true
+  xy: 1126, 212
+  size: 59, 110
+  orig: 59, 110
+  offset: 0, 0
+  index: -1
+xlm47
+  rotate: true
+  xy: 1488, 722
+  size: 242, 267
+  orig: 242, 267
+  offset: 0, 0
+  index: -1
+xlm48
+  rotate: false
+  xy: 1628, 189
+  size: 134, 126
+  orig: 134, 126
+  offset: 0, 0
+  index: -1
+xlm49
+  rotate: true
+  xy: 1316, 138
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+xlm5
+  rotate: true
+  xy: 232, 19
+  size: 39, 127
+  orig: 39, 127
+  offset: 0, 0
+  index: -1
+xlm50
+  rotate: false
+  xy: 2006, 258
+  size: 40, 32
+  orig: 40, 32
+  offset: 0, 0
+  index: -1
+xlm51
+  rotate: true
+  xy: 1778, 512
+  size: 208, 163
+  orig: 208, 163
+  offset: 0, 0
+  index: -1
+xlm52
+  rotate: true
+  xy: 1286, 27
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+xlm53
+  rotate: true
+  xy: 470, 28
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+xlm54
+  rotate: false
+  xy: 1530, 191
+  size: 39, 34
+  orig: 39, 34
+  offset: 0, 0
+  index: -1
+xlm55
+  rotate: true
+  xy: 1937, 254
+  size: 36, 67
+  orig: 36, 67
+  offset: 0, 0
+  index: -1
+xlm56
+  rotate: false
+  xy: 1571, 193
+  size: 39, 32
+  orig: 39, 32
+  offset: 0, 0
+  index: -1
+xlm57
+  rotate: true
+  xy: 1764, 168
+  size: 28, 59
+  orig: 28, 59
+  offset: 0, 0
+  index: -1
+xlm58
+  rotate: false
+  xy: 1195, 28
+  size: 33, 107
+  orig: 33, 107
+  offset: 0, 0
+  index: -1
+xlm59
+  rotate: false
+  xy: 1488, 970
+  size: 98, 58
+  orig: 98, 58
+  offset: 0, 0
+  index: -1
+xlm6
+  rotate: false
+  xy: 1023, 8
+  size: 70, 124
+  orig: 70, 124
+  offset: 0, 0
+  index: -1
+xlm60
+  rotate: false
+  xy: 2023, 1814
+  size: 17, 81
+  orig: 17, 81
+  offset: 0, 0
+  index: -1
+xlm61
+  rotate: false
+  xy: 2023, 1897
+  size: 22, 93
+  orig: 22, 93
+  offset: 0, 0
+  index: -1
+xlm62
+  rotate: false
+  xy: 751, 292
+  size: 311, 241
+  orig: 311, 241
+  offset: 0, 0
+  index: -1
+xlm63
+  rotate: false
+  xy: 1181, 700
+  size: 305, 322
+  orig: 305, 322
+  offset: 0, 0
+  index: -1
+xlm64
+  rotate: false
+  xy: 2, 2
+  size: 68, 56
+  orig: 68, 56
+  offset: 0, 0
+  index: -1
+xlm65
+  rotate: true
+  xy: 1941, 292
+  size: 39, 97
+  orig: 39, 97
+  offset: 0, 0
+  index: -1
+xlm66
+  rotate: false
+  xy: 1314, 176
+  size: 35, 95
+  orig: 35, 95
+  offset: 0, 0
+  index: -1
+xlm68
+  rotate: true
+  xy: 751, 134
+  size: 74, 315
+  orig: 74, 315
+  offset: 0, 0
+  index: -1
+xlm69
+  rotate: true
+  xy: 1144, 137
+  size: 73, 93
+  orig: 73, 93
+  offset: 0, 0
+  index: -1
+xlm7
+  rotate: false
+  xy: 1959, 1145
+  size: 76, 64
+  orig: 76, 64
+  offset: 0, 0
+  index: -1
+xlm70
+  rotate: true
+  xy: 1584, 1711
+  size: 335, 437
+  orig: 335, 437
+  offset: 0, 0
+  index: -1
+xlm71
+  rotate: true
+  xy: 1238, 213
+  size: 58, 74
+  orig: 58, 74
+  offset: 0, 0
+  index: -1
+xlm72
+  rotate: true
+  xy: 479, 523
+  size: 774, 234
+  orig: 774, 234
+  offset: 0, 0
+  index: -1
+xlm73
+  rotate: true
+  xy: 509, 175
+  size: 346, 240
+  orig: 346, 240
+  offset: 0, 0
+  index: -1
+xlm74
+  rotate: false
+  xy: 715, 755
+  size: 464, 267
+  orig: 464, 267
+  offset: 0, 0
+  index: -1
+xlm75
+  rotate: false
+  xy: 715, 1024
+  size: 741, 205
+  orig: 741, 205
+  offset: 0, 0
+  index: -1
+xlm76
+  rotate: false
+  xy: 1178, 513
+  size: 325, 185
+  orig: 325, 185
+  offset: 0, 0
+  index: -1
+xlm77
+  rotate: true
+  xy: 1484, 227
+  size: 122, 142
+  orig: 122, 142
+  offset: 0, 0
+  index: -1
+xlm78
+  rotate: false
+  xy: 1155, 345
+  size: 158, 166
+  orig: 158, 166
+  offset: 0, 0
+  index: -1
+xlm79
+  rotate: false
+  xy: 878, 8
+  size: 143, 124
+  orig: 143, 124
+  offset: 0, 0
+  index: -1
+xlm8
+  rotate: false
+  xy: 1064, 292
+  size: 100, 49
+  orig: 100, 49
+  offset: 0, 0
+  index: -1
+xlm80
+  rotate: false
+  xy: 1593, 1414
+  size: 366, 295
+  orig: 366, 295
+  offset: 0, 0
+  index: -1
+xlm89
+  rotate: true
+  xy: 1230, 27
+  size: 46, 54
+  orig: 46, 54
+  offset: 0, 0
+  index: -1
+xlm9
+  rotate: true
+  xy: 470, 5
+  size: 21, 36
+  orig: 21, 36
+  offset: 0, 0
+  index: -1
+xlm90
+  rotate: false
+  xy: 2, 1299
+  size: 784, 747
+  orig: 784, 747
+  offset: 0, 0
+  index: -1
+xlm91
+  rotate: true
+  xy: 788, 1231
+  size: 391, 803
+  orig: 391, 803
+  offset: 0, 0
+  index: -1
+xlm92
+  rotate: true
+  xy: 1325, 274
+  size: 91, 157
+  orig: 91, 157
+  offset: 0, 0
+  index: -1
+xlm93
+  rotate: false
+  xy: 1505, 443
+  size: 271, 277
+  orig: 271, 277
+  offset: 0, 0
+  index: -1
+xlm94
+  rotate: false
+  xy: 2, 471
+  size: 475, 826
+  orig: 475, 826
+  offset: 0, 0
+  index: -1
+xlm95
+  rotate: false
+  xy: 1230, 75
+  size: 55, 54
+  orig: 55, 54
+  offset: 0, 0
+  index: -1
+xlm96
+  rotate: false
+  xy: 2023, 1992
+  size: 23, 54
+  orig: 23, 54
+  offset: 0, 0
+  index: -1
+xlm97
+  rotate: true
+  xy: 1350, 145
+  size: 28, 36
+  orig: 28, 36
+  offset: 0, 0
+  index: -1
+xlm98
+  rotate: false
+  xy: 1095, 7
+  size: 69, 125
+  orig: 69, 125
+  offset: 0, 0
+  index: -1
+xlm99
+  rotate: true
+  xy: 128, 3
+  size: 25, 101
+  orig: 25, 101
+  offset: 0, 0
+  index: -1
+xlmbja
+  rotate: true
+  xy: 715, 535
+  size: 218, 461
+  orig: 218, 461
+  offset: 0, 0
+  index: -1
+xlmbjb
+  rotate: false
+  xy: 1757, 845
+  size: 199, 119
+  orig: 199, 119
+  offset: 0, 0
+  index: -1
+xlmbjc
+  rotate: false
+  xy: 788, 1624
+  size: 794, 422
+  orig: 794, 422
+  offset: 0, 0
+  index: -1

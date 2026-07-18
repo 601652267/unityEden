@@ -1,0 +1,62 @@
+
+CardShowSpine_11202028_3_q.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xlmcg1a
+  rotate: false
+  xy: 2, 2
+  size: 1049, 325
+  orig: 1049, 325
+  offset: 0, 0
+  index: -1
+xlmcg1b
+  rotate: false
+  xy: 537, 609
+  size: 814, 398
+  orig: 814, 398
+  offset: 0, 0
+  index: -1
+xlmcg1c
+  rotate: false
+  xy: 537, 459
+  size: 501, 148
+  orig: 501, 148
+  offset: 0, 0
+  index: -1
+xlmcgxue1
+  rotate: true
+  xy: 1359, 829
+  size: 1172, 630
+  orig: 1172, 630
+  offset: 0, 0
+  index: -1
+xlmcgxue2
+  rotate: false
+  xy: 1353, 424
+  size: 473, 403
+  orig: 473, 403
+  offset: 0, 0
+  index: -1
+xlmcgxue3
+  rotate: false
+  xy: 2, 1009
+  size: 1355, 992
+  orig: 1355, 992
+  offset: 0, 0
+  index: -1
+xlmcgxue4
+  rotate: false
+  xy: 1053, 17
+  size: 320, 405
+  orig: 320, 405
+  offset: 0, 0
+  index: -1
+xlmcgxue5
+  rotate: true
+  xy: 2, 329
+  size: 678, 533
+  orig: 678, 533
+  offset: 0, 0
+  index: -1

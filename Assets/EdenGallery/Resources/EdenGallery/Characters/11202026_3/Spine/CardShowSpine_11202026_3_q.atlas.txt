@@ -1,0 +1,20 @@
+
+CardShowSpine_11202026_3_q.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shuye1
+  rotate: false
+  xy: 2, 225
+  size: 2034, 803
+  orig: 2034, 803
+  offset: 0, 0
+  index: -1
+shuye2
+  rotate: false
+  xy: 2, 2
+  size: 619, 221
+  orig: 619, 221
+  offset: 0, 0
+  index: -1

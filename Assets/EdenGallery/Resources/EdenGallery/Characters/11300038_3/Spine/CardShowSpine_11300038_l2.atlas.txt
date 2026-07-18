@@ -1,0 +1,20 @@
+
+CardShowSpine_11300038_l2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+akuya_10
+  rotate: false
+  xy: 2, 297
+  size: 946, 652
+  orig: 946, 652
+  offset: 0, 0
+  index: -1
+akuya_11
+  rotate: false
+  xy: 2, 2
+  size: 413, 293
+  orig: 413, 293
+  offset: 0, 0
+  index: -1
