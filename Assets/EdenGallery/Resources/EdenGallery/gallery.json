@@ -8287,7 +8287,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 19
+          "backgroundSortingOrder": 19,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300018/FX_MainBack_11300018_Effect"
         }
       ]
     },

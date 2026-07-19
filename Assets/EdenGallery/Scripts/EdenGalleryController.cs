@@ -712,6 +712,8 @@ namespace EdenGallery
                 yield break;
             }
 
+            LoadOriginalStageEffect(stage, stageRoot.transform);
+
             yield return null;
             yield return null;
 
@@ -723,6 +725,42 @@ namespace EdenGallery
             if (StageChanged != null)
                 StageChanged(character, stage);
             loadRoutine = null;
+        }
+
+        private void LoadOriginalStageEffect(
+            EdenGalleryStage stage,
+            Transform parent)
+        {
+            if (stage == null || string.IsNullOrEmpty(stage.originalEffectPrefabPath))
+                return;
+
+            GameObject prefab = Resources.Load<GameObject>(
+                stage.originalEffectPrefabPath);
+            if (prefab == null)
+            {
+                Debug.LogWarning(
+                    "EdenGallery original effect prefab is missing: " +
+                    stage.originalEffectPrefabPath,
+                    this);
+                return;
+            }
+
+            GameObject instance = Instantiate(prefab);
+            instance.name = "OriginalEffect_" + stage.folder;
+            instance.transform.SetParent(parent, false);
+            ParticleSystem[] particleSystems =
+                instance.GetComponentsInChildren<ParticleSystem>(true);
+            for (int particleIndex = 0;
+                 particleIndex < particleSystems.Length;
+                 particleIndex++)
+            {
+                ParticleSystem particleSystem = particleSystems[particleIndex];
+                if (particleSystem == null)
+                    continue;
+                particleSystem.gameObject.SetActive(true);
+                if (!particleSystem.isPlaying)
+                    particleSystem.Play(true);
+            }
         }
 
         private SpriteRenderer CreateSpriteRenderer(
@@ -2284,7 +2322,10 @@ namespace EdenGallery
             }
 
             Rect stripPanel = new Rect(7f, height - bottomHeight + 7f, width - 14f, bottomHeight - 14f);
-            DrawRoundedRect(stripPanel, new Color(0.025f, 0.045f, 0.075f, 0.92f));
+            DrawCrispRoundedRect(
+                stripPanel,
+                new Color(0.025f, 0.045f, 0.075f, 0.92f),
+                10f);
 
             float panelPadding = 9f;
             float toggleRailWidth = GetToggleRailWidth(width);
@@ -2333,16 +2374,22 @@ namespace EdenGallery
                 bool selected = manifestCharacterIndex == characterIndex;
                 bool favorite = IsFavoriteCharacter(manifestCharacterIndex);
                 Rect cardRect = new Rect(cardX, 1f, cardWidth, viewportHeight - 2f);
-                DrawSubtleRoundedRect(cardRect, selected
-                    ? EdenGalleryUISettings.ThemeColor
-                    : new Color(0.25f, 0.30f, 0.39f, 0.72f));
+                DrawCrispRoundedRect(
+                    cardRect,
+                    selected
+                        ? EdenGalleryUISettings.ThemeColor
+                        : new Color(0.25f, 0.30f, 0.39f, 0.72f),
+                    5f);
                 float border = selected ? 3f : 1f;
                 Rect cardInner = new Rect(
                     cardRect.x + border,
                     cardRect.y + border,
                     cardRect.width - border * 2f,
                     cardRect.height - border * 2f);
-                DrawSubtleRoundedRect(cardInner, new Color(0.045f, 0.065f, 0.10f, 0.97f));
+                DrawCrispRoundedRect(
+                    cardInner,
+                    new Color(0.045f, 0.065f, 0.10f, 0.97f),
+                    4f);
 
                 float nameHeight = Mathf.Clamp(viewportHeight * 0.23f, 32f, 40f);
                 Rect nameBackground = new Rect(
@@ -2350,13 +2397,16 @@ namespace EdenGallery
                     cardInner.yMax - nameHeight,
                     cardInner.width,
                     nameHeight);
-                DrawSubtleRoundedRect(nameBackground, selected
-                    ? new Color(
-                        EdenGalleryUISettings.ThemeColor.r * 0.42f,
-                        EdenGalleryUISettings.ThemeColor.g * 0.42f,
-                        EdenGalleryUISettings.ThemeColor.b * 0.42f,
-                        0.97f)
-                    : new Color(0.025f, 0.035f, 0.055f, 0.96f));
+                DrawCrispRoundedRect(
+                    nameBackground,
+                    selected
+                        ? new Color(
+                            EdenGalleryUISettings.ThemeColor.r * 0.42f,
+                            EdenGalleryUISettings.ThemeColor.g * 0.42f,
+                            EdenGalleryUISettings.ThemeColor.b * 0.42f,
+                            0.97f)
+                        : new Color(0.025f, 0.035f, 0.055f, 0.96f),
+                    3f);
 
                 Texture2D portrait = GetPortraitTexture(manifestCharacterIndex);
                 if (portrait != null)

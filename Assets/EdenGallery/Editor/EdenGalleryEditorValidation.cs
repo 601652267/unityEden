@@ -98,6 +98,7 @@ namespace EdenGallery.Editor
                                 throw new InvalidOperationException("Missing background: " + stage.backgroundPath);
                             imageCount += 1;
                         }
+                        ValidateOriginalEffect(stage);
 
                         EdenGalleryLayer[] layers = stage.layers ?? new EdenGalleryLayer[0];
                         for (int layerIndex = 0; layerIndex < layers.Length; layerIndex++)
@@ -155,6 +156,21 @@ namespace EdenGallery.Editor
                 " images=" + imageCount +
                 " voiceEntries=" + voiceEntries.Count +
                 " voiceLines=" + voiceLineCount);
+        }
+
+        private static void ValidateOriginalEffect(EdenGalleryStage stage)
+        {
+            if (stage == null || string.IsNullOrEmpty(stage.originalEffectPrefabPath))
+                return;
+            GameObject effectPrefab = Resources.Load<GameObject>(
+                stage.originalEffectPrefabPath);
+            if (effectPrefab == null ||
+                effectPrefab.GetComponentsInChildren<ParticleSystem>(true).Length == 0)
+            {
+                throw new InvalidOperationException(
+                    "Original effect prefab is missing or empty: " +
+                    stage.originalEffectPrefabPath);
+            }
         }
     }
 }

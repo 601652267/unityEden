@@ -40,6 +40,7 @@ namespace EdenGallery
         public float backgroundRotationZ;
         public bool useCustomBackgroundSortingOrder;
         public int backgroundSortingOrder;
+        public string originalEffectPrefabPath;
         public EdenGalleryLayer[] layers;
     }
 
