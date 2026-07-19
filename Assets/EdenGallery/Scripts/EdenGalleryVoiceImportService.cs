@@ -303,6 +303,10 @@ namespace EdenGallery
             if (string.IsNullOrEmpty(audioFileOrVoicePath) || IsBusy)
                 return false;
 
+            string fileName = Path.GetFileName(audioFileOrVoicePath);
+            if (TryResolveCommonAudioPath(fileName, out audioPath))
+                return true;
+
             Dictionary<string, string> index;
             lock (stateLock)
                 index = installedAudioIndex;
@@ -316,11 +320,37 @@ namespace EdenGallery
                 }
             }
 
-            string fileName = Path.GetFileName(audioFileOrVoicePath);
             if (!string.IsNullOrEmpty(fileName) && index.TryGetValue(fileName, out audioPath))
                 return true;
             string stem = Path.GetFileNameWithoutExtension(fileName);
             return !string.IsNullOrEmpty(stem) && index.TryGetValue(stem, out audioPath);
+        }
+
+        private bool TryResolveCommonAudioPath(string fileName, out string audioPath)
+        {
+            audioPath = null;
+            if (string.IsNullOrEmpty(fileName))
+                return false;
+            string[] relativeDirectories =
+            {
+                string.Empty,
+                "voice",
+                Path.Combine("gallery-assets", "voice"),
+                Path.Combine("gallery_player", "gallery-assets", "voice"),
+                Path.Combine("assets", "gallery_player", "gallery-assets", "voice")
+            };
+            for (int i = 0; i < relativeDirectories.Length; i++)
+            {
+                string candidate = string.IsNullOrEmpty(relativeDirectories[i])
+                    ? Path.Combine(installDirectory, fileName)
+                    : Path.Combine(installDirectory, relativeDirectories[i], fileName);
+                if (File.Exists(candidate) && IsSupportedAudioFile(candidate))
+                {
+                    audioPath = candidate;
+                    return true;
+                }
+            }
+            return false;
         }
 
         private Dictionary<string, string> BuildInstalledAudioIndex()

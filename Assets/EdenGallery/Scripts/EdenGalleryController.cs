@@ -91,8 +91,6 @@ namespace EdenGallery
         private AudioClip activeVoiceClip;
         private EdenGalleryVoiceLine activeVoiceLine;
         private int voicePlaybackSerial;
-        private string voiceFeedbackMessage = string.Empty;
-        private float voiceFeedbackUntil;
         private bool trackingSceneVoiceTap;
         private Vector2 sceneVoiceTapStart;
         private bool copyingVoiceArchive;
@@ -1498,16 +1496,14 @@ namespace EdenGallery
                 entry.lines == null || entry.lines.Length == 0)
             {
                 StopVoicePlayback(true);
-                ShowVoiceFeedback("当前立绘没有可播放的日常或好感度语音。");
                 return;
             }
 
             if (voiceImportService == null)
                 voiceImportService = new EdenGalleryVoiceImportService();
-            if (voiceImportService.IsBusy)
+            if (!voiceImportService.HasInstalledVoicePack || voiceImportService.IsBusy)
             {
                 StopVoicePlayback(true);
-                ShowVoiceFeedback("语音资源正在导入，请稍候再试。");
                 return;
             }
 
@@ -1524,10 +1520,7 @@ namespace EdenGallery
 
             StopVoicePlayback(true);
             if (!foundAudio)
-            {
-                ShowVoiceFeedback("没有找到这条语音，请先在设置中导入完整语音包。");
                 return;
-            }
 
             nextVoiceLineByFolder[stage.folder] = (nextIndex + 1) % entry.lines.Length;
             SetupVoicePlayback();
@@ -1549,7 +1542,7 @@ namespace EdenGallery
             }
             catch (Exception exception)
             {
-                ShowVoiceFeedback("语音文件路径无效：" + exception.Message);
+                Debug.LogWarning("EdenGallery voice path is invalid: " + exception.Message, this);
                 voicePlaybackRoutine = null;
                 yield break;
             }
@@ -1562,7 +1555,7 @@ namespace EdenGallery
                     yield break;
                 if (request.isNetworkError || request.isHttpError)
                 {
-                    ShowVoiceFeedback("语音文件读取失败：" + request.error);
+                    Debug.LogWarning("EdenGallery voice load failed: " + request.error, this);
                     voicePlaybackRoutine = null;
                     yield break;
                 }
@@ -1570,14 +1563,13 @@ namespace EdenGallery
                 AudioClip clip = DownloadHandlerAudioClip.GetContent(request);
                 if (clip == null)
                 {
-                    ShowVoiceFeedback("语音文件无法解码。");
+                    Debug.LogWarning("EdenGallery voice clip could not be decoded: " + audioPath, this);
                     voicePlaybackRoutine = null;
                     yield break;
                 }
 
                 activeVoiceClip = clip;
                 activeVoiceLine = line;
-                voiceFeedbackMessage = string.Empty;
                 voiceAudioSource.clip = clip;
                 voiceAudioSource.Play();
                 while (playbackId == voicePlaybackSerial && voiceAudioSource.isPlaying)
@@ -1628,18 +1620,7 @@ namespace EdenGallery
                 activeVoiceClip = null;
             }
             if (clearSubtitle)
-            {
                 activeVoiceLine = null;
-                voiceFeedbackMessage = string.Empty;
-                voiceFeedbackUntil = 0f;
-            }
-        }
-
-        private void ShowVoiceFeedback(string message)
-        {
-            activeVoiceLine = null;
-            voiceFeedbackMessage = message ?? string.Empty;
-            voiceFeedbackUntil = Time.unscaledTime + 3.2f;
         }
 
         private void EnsureStyles()
@@ -1846,6 +1827,60 @@ namespace EdenGallery
             GUI.color = previous;
         }
 
+        private void DrawCrispRoundedRect(Rect rect, Color color, float radius)
+        {
+            if (rect.width <= 0f || rect.height <= 0f)
+                return;
+            radius = Mathf.Clamp(
+                radius,
+                0f,
+                Mathf.Min(rect.width, rect.height) * 0.5f);
+            if (radius < 0.75f)
+            {
+                DrawSolidRect(rect, color);
+                return;
+            }
+
+            Color previous = GUI.color;
+            GUI.color = color;
+            GUI.DrawTexture(
+                new Rect(rect.x, rect.y + radius, rect.width, rect.height - radius * 2f),
+                Texture2D.whiteTexture,
+                ScaleMode.StretchToFill,
+                true);
+            GUI.DrawTexture(
+                new Rect(rect.x + radius, rect.y, rect.width - radius * 2f, radius),
+                Texture2D.whiteTexture,
+                ScaleMode.StretchToFill,
+                true);
+            GUI.DrawTexture(
+                new Rect(rect.x + radius, rect.yMax - radius, rect.width - radius * 2f, radius),
+                Texture2D.whiteTexture,
+                ScaleMode.StretchToFill,
+                true);
+            GUI.DrawTextureWithTexCoords(
+                new Rect(rect.x, rect.y, radius, radius),
+                circleMaskTexture,
+                new Rect(0f, 0.5f, 0.5f, 0.5f),
+                true);
+            GUI.DrawTextureWithTexCoords(
+                new Rect(rect.xMax - radius, rect.y, radius, radius),
+                circleMaskTexture,
+                new Rect(0.5f, 0.5f, 0.5f, 0.5f),
+                true);
+            GUI.DrawTextureWithTexCoords(
+                new Rect(rect.x, rect.yMax - radius, radius, radius),
+                circleMaskTexture,
+                new Rect(0f, 0f, 0.5f, 0.5f),
+                true);
+            GUI.DrawTextureWithTexCoords(
+                new Rect(rect.xMax - radius, rect.yMax - radius, radius, radius),
+                circleMaskTexture,
+                new Rect(0.5f, 0f, 0.5f, 0.5f),
+                true);
+            GUI.color = previous;
+        }
+
         private void DrawCircle(Rect rect, Color color)
         {
             Color previous = GUI.color;
@@ -1916,16 +1951,11 @@ namespace EdenGallery
                 bubbleX = activeVoiceLine.bubbleX;
                 bubbleY = activeVoiceLine.bubbleY;
             }
-            else if (!string.IsNullOrEmpty(voiceFeedbackMessage) &&
-                     Time.unscaledTime <= voiceFeedbackUntil)
-            {
-                subtitle = voiceFeedbackMessage;
-            }
 
             if (string.IsNullOrEmpty(subtitle))
                 return;
 
-            float boxWidth = Mathf.Clamp(width * 0.39f, 340f, 650f);
+            float boxWidth = Mathf.Clamp(width * 0.34f, 320f, 560f);
             float contentHeight = voiceSubtitleStyle.CalcHeight(
                 new GUIContent(subtitle),
                 boxWidth);
@@ -1938,22 +1968,18 @@ namespace EdenGallery
                 ? height - bottomHeight - boxHeight - 18f
                 : height - boxHeight - 22f;
             Rect boxRect = new Rect(
-                Mathf.Clamp(anchorX, 18f, Mathf.Max(18f, width - boxWidth - 18f)),
+                Mathf.Clamp(anchorX, 24f, Mathf.Max(24f, width - boxWidth - 24f)),
                 Mathf.Clamp(anchorY - boxHeight * 0.5f, 18f, Mathf.Max(18f, maxY)),
                 boxWidth,
                 boxHeight);
 
-            DrawSubtleRoundedRect(
-                new Rect(boxRect.x + 4f, boxRect.y + 5f, boxRect.width, boxRect.height),
-                new Color(0f, 0f, 0f, 0.28f));
-            DrawSubtleRoundedRect(
-                new Rect(boxRect.x - 2f, boxRect.y - 2f, boxRect.width + 4f, boxRect.height + 4f),
-                new Color(
-                    EdenGalleryUISettings.ThemeColor.r,
-                    EdenGalleryUISettings.ThemeColor.g,
-                    EdenGalleryUISettings.ThemeColor.b,
-                    0.78f));
-            DrawSubtleRoundedRect(boxRect, new Color(1f, 1f, 1f, 0.94f));
+            Color borderColor = new Color(0.025f, 0.025f, 0.03f, 0.98f);
+            Color fillColor = new Color(0.98f, 0.98f, 0.95f, 0.94f);
+            DrawCrispRoundedRect(boxRect, borderColor, 4f);
+            DrawCrispRoundedRect(
+                new Rect(boxRect.x + 2f, boxRect.y + 2f, boxRect.width - 4f, boxRect.height - 4f),
+                fillColor,
+                2f);
             GUI.Label(boxRect, subtitle, voiceSubtitleStyle);
         }
 
@@ -1985,7 +2011,10 @@ namespace EdenGallery
                 new Color(0.028f, 0.052f, 0.083f, 1f));
             float backSize = Mathf.Clamp(headerHeight - 22f, 48f, 66f);
             Rect backRect = new Rect(18f, (headerHeight - backSize) * 0.5f, backSize, backSize);
-            DrawSubtleRoundedRect(backRect, new Color(0.08f, 0.12f, 0.18f, 1f));
+            DrawCrispRoundedRect(
+                backRect,
+                new Color(0.08f, 0.12f, 0.18f, 1f),
+                5f);
             GUI.Label(backRect, "‹", toggleButtonStyle);
             GUI.Label(
                 new Rect(backRect.xMax + 16f, 0f, width - backRect.xMax * 2f - 32f, headerHeight),
@@ -2001,7 +2030,10 @@ namespace EdenGallery
                 headerHeight + Mathf.Max(18f, (height - headerHeight - panelHeight) * 0.5f),
                 panelWidth,
                 panelHeight);
-            DrawSubtleRoundedRect(panelRect, new Color(0.035f, 0.060f, 0.095f, 0.98f));
+            DrawCrispRoundedRect(
+                panelRect,
+                new Color(0.035f, 0.060f, 0.095f, 0.98f),
+                8f);
 
             float padding = Mathf.Clamp(panelWidth * 0.055f, 30f, 48f);
             float contentX = panelRect.x + padding;
@@ -2055,11 +2087,12 @@ namespace EdenGallery
 
             Rect importButtonRect = new Rect(contentX, rowY, 210f, 56f);
             bool importBusy = IsVoiceImportBusy();
-            DrawSubtleRoundedRect(
+            DrawCrispRoundedRect(
                 importButtonRect,
                 importBusy
                     ? new Color(0.22f, 0.25f, 0.32f, 1f)
-                    : EdenGalleryUISettings.ThemeColor);
+                    : EdenGalleryUISettings.ThemeColor,
+                5f);
             GUI.Label(
                 importButtonRect,
                 importBusy ? "正在导入…" : "导入语音",
@@ -2080,16 +2113,18 @@ namespace EdenGallery
             if (importProgress >= 0f)
             {
                 Rect progressBackground = new Rect(contentX, rowY, contentWidth, 12f);
-                DrawSubtleRoundedRect(
+                DrawCrispRoundedRect(
                     progressBackground,
-                    new Color(0.10f, 0.14f, 0.20f, 1f));
-                DrawSubtleRoundedRect(
+                    new Color(0.10f, 0.14f, 0.20f, 1f),
+                    6f);
+                DrawCrispRoundedRect(
                     new Rect(
                         progressBackground.x,
                         progressBackground.y,
                         progressBackground.width * Mathf.Clamp01(importProgress),
                         progressBackground.height),
-                    EdenGalleryUISettings.ThemeColor);
+                    EdenGalleryUISettings.ThemeColor,
+                    6f);
                 rowY += 20f;
             }
             GUI.Label(
@@ -2104,11 +2139,12 @@ namespace EdenGallery
             EdenGalleryNameLanguage language)
         {
             bool selected = EdenGalleryUISettings.NameLanguage == language;
-            DrawSubtleRoundedRect(
+            DrawCrispRoundedRect(
                 rect,
                 selected
                     ? EdenGalleryUISettings.ThemeColor
-                    : new Color(0.08f, 0.12f, 0.18f, 1f));
+                    : new Color(0.08f, 0.12f, 0.18f, 1f),
+                5f);
             GUI.Label(rect, label, settingsButtonStyle);
             if (GUI.Button(rect, GUIContent.none, GUIStyle.none))
                 SetNameLanguage(language);
@@ -2187,7 +2223,10 @@ namespace EdenGallery
             float namePlateWidth = Mathf.Clamp(width * 0.205f, 220f, 320f);
             float namePlateHeight = Mathf.Clamp(height * 0.13f, 88f, 112f);
             Rect namePlate = new Rect(22f, 20f, namePlateWidth, namePlateHeight);
-            DrawSubtleRoundedRect(namePlate, new Color(0.025f, 0.055f, 0.09f, 0.90f));
+            DrawCrispRoundedRect(
+                namePlate,
+                new Color(0.025f, 0.055f, 0.09f, 0.94f),
+                6f);
             if (character != null)
             {
                 float textPadding = 18f;
