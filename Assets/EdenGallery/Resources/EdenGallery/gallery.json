@@ -65,7 +65,8 @@
           ],
           "originalPrefabComposition": true,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11100001/FX_MainBack_11100001_Effect"
         }
       ],
       "nameCn": "夏农"
@@ -130,7 +131,8 @@
           ],
           "originalPrefabComposition": true,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11100002/FX_MainBack_11100002_Effect"
         }
       ],
       "nameCn": "奥利维亚"
@@ -195,7 +197,8 @@
           ],
           "originalPrefabComposition": true,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11100003/FX_MainBack_11100003_Effect"
         },
         {
           "folder": "11100003_4",
@@ -285,7 +288,8 @@
           ],
           "originalPrefabComposition": true,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11100004/FX_MainBack_11100004_Effect"
         }
       ],
       "nameCn": "莉莉"
@@ -350,7 +354,8 @@
           ],
           "originalPrefabComposition": true,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11100005/FX_MainBack_11100005_Effect"
         }
       ],
       "nameCn": "弗兰切斯卡"

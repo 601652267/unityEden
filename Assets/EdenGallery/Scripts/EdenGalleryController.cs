@@ -1680,6 +1680,7 @@ namespace EdenGallery
             characterNameStyle.fontSize = 17;
             characterNameStyle.fontStyle = FontStyle.Bold;
             characterNameStyle.alignment = TextAnchor.MiddleCenter;
+            characterNameStyle.wordWrap = true;
             characterNameStyle.clipping = TextClipping.Clip;
             characterNameStyle.normal.textColor = Color.white;
 
@@ -1740,7 +1741,7 @@ namespace EdenGallery
 
         private static float GetBottomBarHeight(float screenHeight)
         {
-            return Mathf.Clamp(screenHeight * 0.235f, 142f, 190f);
+            return Mathf.Clamp(screenHeight * 0.282f, 170f, 228f);
         }
 
         private static float GetToggleRailWidth(float screenWidth)
@@ -2334,7 +2335,7 @@ namespace EdenGallery
                 stripPanel.width - toggleRailWidth - panelPadding * 3f,
                 100f);
             float viewportHeight = stripPanel.height - panelPadding * 2f;
-            float cardWidth = Mathf.Clamp(viewportHeight * 0.78f, 108f, 142f);
+            float cardWidth = Mathf.Clamp(viewportHeight * 0.78f, 130f, 170f);
             float gap = Mathf.Clamp(cardWidth * 0.085f, 9f, 12f);
             float contentWidth = Mathf.Max(
                 viewportWidth,
@@ -2391,7 +2392,7 @@ namespace EdenGallery
                     new Color(0.045f, 0.065f, 0.10f, 0.97f),
                     4f);
 
-                float nameHeight = Mathf.Clamp(viewportHeight * 0.23f, 32f, 40f);
+                float nameHeight = Mathf.Clamp(viewportHeight * 0.23f, 38f, 48f);
                 Rect nameBackground = new Rect(
                     cardInner.x,
                     cardInner.yMax - nameHeight,
@@ -2427,9 +2428,9 @@ namespace EdenGallery
                     favoriteSize);
                 Rect nameLabelRect = new Rect(
                     nameBackground.x + 4f,
-                    nameBackground.y,
+                    nameBackground.y + 2f,
                     Mathf.Max(20f, favoriteRect.x - nameBackground.x - 6f),
-                    nameBackground.height);
+                    nameBackground.height - 4f);
                 GUI.Label(
                     nameLabelRect,
                     EdenGalleryUISettings.GetDisplayName(item),
