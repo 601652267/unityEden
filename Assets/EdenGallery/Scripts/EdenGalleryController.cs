@@ -46,6 +46,8 @@ namespace EdenGallery
         private const string FavoriteCharactersKey = "EdenGallery.FavoriteCharacterIds";
 
         private readonly List<UnityObject> ownedObjects = new List<UnityObject>();
+        private readonly List<UnityObject> visibleStageOwnedObjects =
+            new List<UnityObject>();
         private readonly List<SpriteRenderer> fullscreenSprites = new List<SpriteRenderer>();
         private readonly List<Transform> roleSpineLayers = new List<Transform>();
         private readonly HashSet<string> favoriteCharacterIds =
@@ -59,6 +61,7 @@ namespace EdenGallery
         private EdenGalleryVoiceCatalog voiceCatalog;
         private Camera galleryCamera;
         private GameObject stageRoot;
+        private GameObject visibleStageRoot;
         private Transform spineRoot;
         private SpriteRenderer backgroundRenderer;
         private GameObject gradientBackgroundObject;
@@ -615,18 +618,25 @@ namespace EdenGallery
         private void BeginLoadStage()
         {
             if (loadRoutine != null)
+            {
                 StopCoroutine(loadRoutine);
+                loadRoutine = null;
+                DiscardPendingStage();
+            }
             loadRoutine = StartCoroutine(LoadCurrentStage());
         }
 
         private IEnumerator LoadCurrentStage()
         {
-            ClearStage();
+            PreparePendingStage();
             errorMessage = string.Empty;
             EdenGalleryCharacter character = CurrentCharacter;
             EdenGalleryStage stage = CurrentStage;
             if (character == null || stage == null)
+            {
+                loadRoutine = null;
                 yield break;
+            }
 
             loadingMessage = "正在加载 " + character.cardId + " / " + stage.label;
             stageRoot = new GameObject("Stage_" + stage.folder);
@@ -703,21 +713,27 @@ namespace EdenGallery
                             roleSpineLayers.Add(animation.transform);
                     }
                 }
+
+                LoadOriginalStageEffect(stage, stageRoot.transform);
             }
             catch (Exception exception)
             {
                 Debug.LogException(exception, this);
                 errorMessage = "立绘加载失败：" + exception.Message;
                 loadingMessage = string.Empty;
+                DiscardPendingStage();
+                loadRoutine = null;
                 yield break;
             }
 
-            LoadOriginalStageEffect(stage, stageRoot.transform);
+            Renderer[] pendingRenderers = stageRoot.GetComponentsInChildren<Renderer>(true);
+            bool[] pendingRendererStates = HideRenderers(pendingRenderers);
 
             yield return null;
             yield return null;
 
             FitStage();
+            PromotePendingStage(pendingRenderers, pendingRendererStates);
             loadingMessage = string.Empty;
             PlayerPrefs.SetInt(CharacterIndexKey, characterIndex);
             PlayerPrefs.SetInt(StageIndexKey, stageIndex);
@@ -725,6 +741,85 @@ namespace EdenGallery
             if (StageChanged != null)
                 StageChanged(character, stage);
             loadRoutine = null;
+        }
+
+        private static bool[] HideRenderers(Renderer[] renderers)
+        {
+            bool[] states = new bool[renderers == null ? 0 : renderers.Length];
+            for (int i = 0; i < states.Length; i++)
+            {
+                Renderer renderer = renderers[i];
+                if (renderer == null)
+                    continue;
+                states[i] = renderer.enabled;
+                renderer.enabled = false;
+            }
+            return states;
+        }
+
+        private static void RestoreRenderers(Renderer[] renderers, bool[] states)
+        {
+            if (renderers == null || states == null)
+                return;
+            int count = Mathf.Min(renderers.Length, states.Length);
+            for (int i = 0; i < count; i++)
+            {
+                if (renderers[i] != null)
+                    renderers[i].enabled = states[i];
+            }
+        }
+
+        private void PreparePendingStage()
+        {
+            DiscardPendingStage();
+            hasFittedBounds = false;
+            stageRoot = null;
+            backgroundRenderer = null;
+            spineRoot = null;
+            fullscreenSprites.Clear();
+            roleSpineLayers.Clear();
+        }
+
+        private void PromotePendingStage(Renderer[] renderers, bool[] states)
+        {
+            GameObject previousRoot = visibleStageRoot;
+            if (previousRoot != null && previousRoot != stageRoot)
+                previousRoot.SetActive(false);
+
+            RestoreRenderers(renderers, states);
+            visibleStageRoot = stageRoot;
+
+            if (previousRoot != null && previousRoot != visibleStageRoot)
+                Destroy(previousRoot);
+            DestroyOwnedObjects(visibleStageOwnedObjects);
+            visibleStageOwnedObjects.Clear();
+            visibleStageOwnedObjects.AddRange(ownedObjects);
+            ownedObjects.Clear();
+        }
+
+        private void DiscardPendingStage()
+        {
+            if (stageRoot != null && stageRoot != visibleStageRoot)
+            {
+                stageRoot.SetActive(false);
+                Destroy(stageRoot);
+            }
+            DestroyOwnedObjects(ownedObjects);
+            ownedObjects.Clear();
+            stageRoot = visibleStageRoot;
+            backgroundRenderer = null;
+            spineRoot = null;
+            fullscreenSprites.Clear();
+            roleSpineLayers.Clear();
+        }
+
+        private void DestroyOwnedObjects(List<UnityObject> objects)
+        {
+            for (int i = 0; i < objects.Count; i++)
+            {
+                if (objects[i] != null)
+                    Destroy(objects[i]);
+            }
         }
 
         private void LoadOriginalStageEffect(
@@ -1297,19 +1392,25 @@ namespace EdenGallery
             fullscreenSprites.Clear();
             roleSpineLayers.Clear();
 
-            if (stageRoot != null)
+            GameObject pendingRoot = stageRoot;
+            GameObject currentVisibleRoot = visibleStageRoot;
+            if (pendingRoot != null)
             {
-                stageRoot.SetActive(false);
-                Destroy(stageRoot);
-                stageRoot = null;
+                pendingRoot.SetActive(false);
+                Destroy(pendingRoot);
             }
+            if (currentVisibleRoot != null && currentVisibleRoot != pendingRoot)
+            {
+                currentVisibleRoot.SetActive(false);
+                Destroy(currentVisibleRoot);
+            }
+            stageRoot = null;
+            visibleStageRoot = null;
 
-            for (int i = 0; i < ownedObjects.Count; i++)
-            {
-                if (ownedObjects[i] != null)
-                    Destroy(ownedObjects[i]);
-            }
+            DestroyOwnedObjects(ownedObjects);
             ownedObjects.Clear();
+            DestroyOwnedObjects(visibleStageOwnedObjects);
+            visibleStageOwnedObjects.Clear();
         }
 
         private void HandleCharacterStripDrag()
