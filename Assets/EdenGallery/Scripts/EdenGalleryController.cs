@@ -54,7 +54,7 @@ namespace EdenGallery
             new HashSet<string>(StringComparer.Ordinal);
         private readonly Dictionary<string, EdenGalleryVoiceCatalogEntry> voiceEntriesByFolder =
             new Dictionary<string, EdenGalleryVoiceCatalogEntry>(StringComparer.Ordinal);
-        private readonly Dictionary<string, int> nextVoiceLineByFolder =
+        private readonly Dictionary<string, int> lastVoiceLineByFolder =
             new Dictionary<string, int>(StringComparer.Ordinal);
 
         private EdenGalleryManifest manifest;
@@ -1646,22 +1646,53 @@ namespace EdenGallery
                 return;
             }
 
-            int nextIndex;
-            if (!nextVoiceLineByFolder.TryGetValue(stage.folder, out nextIndex))
-                nextIndex = 0;
-            nextIndex = Mathf.Abs(nextIndex) % entry.lines.Length;
-            EdenGalleryVoiceLine line = entry.lines[nextIndex];
+            var playableLineIndices = new List<int>();
+            var playableAudioPaths = new List<string>();
+            for (int lineIndex = 0; lineIndex < entry.lines.Length; lineIndex++)
+            {
+                EdenGalleryVoiceLine candidate = entry.lines[lineIndex];
+                if (candidate == null)
+                    continue;
 
-            string audioPath;
-            bool foundAudio = voiceImportService.TryResolveAudioFile(line.audioFile, out audioPath);
-            if (!foundAudio)
-                foundAudio = voiceImportService.TryResolveAudioFile(line.voicePath, out audioPath);
+                string candidateAudioPath;
+                bool foundCandidate = voiceImportService.TryResolveAudioFile(
+                    candidate.audioFile,
+                    out candidateAudioPath);
+                if (!foundCandidate)
+                {
+                    foundCandidate = voiceImportService.TryResolveAudioFile(
+                        candidate.voicePath,
+                        out candidateAudioPath);
+                }
+                if (!foundCandidate)
+                    continue;
+
+                playableLineIndices.Add(lineIndex);
+                playableAudioPaths.Add(candidateAudioPath);
+            }
 
             StopVoicePlayback(true);
-            if (!foundAudio)
+            if (playableLineIndices.Count == 0)
                 return;
 
-            nextVoiceLineByFolder[stage.folder] = (nextIndex + 1) % entry.lines.Length;
+            int selectedCandidateIndex = UnityEngine.Random.Range(
+                0,
+                playableLineIndices.Count);
+            int lastLineIndex;
+            if (playableLineIndices.Count > 1 &&
+                lastVoiceLineByFolder.TryGetValue(stage.folder, out lastLineIndex) &&
+                playableLineIndices[selectedCandidateIndex] == lastLineIndex)
+            {
+                selectedCandidateIndex =
+                    (selectedCandidateIndex + UnityEngine.Random.Range(
+                        1,
+                        playableLineIndices.Count)) % playableLineIndices.Count;
+            }
+
+            int selectedLineIndex = playableLineIndices[selectedCandidateIndex];
+            EdenGalleryVoiceLine line = entry.lines[selectedLineIndex];
+            string audioPath = playableAudioPaths[selectedCandidateIndex];
+            lastVoiceLineByFolder[stage.folder] = selectedLineIndex;
             SetupVoicePlayback();
             int playbackId = ++voicePlaybackSerial;
             voicePlaybackRoutine = StartCoroutine(
