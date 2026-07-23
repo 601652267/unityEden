@@ -3773,7 +3773,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": -100,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202001/FX_MainBack_11202001_Effect"
         }
       ]
     },
@@ -3861,7 +3862,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": -100,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202002/FX_MainBack_11202002_Effect"
         }
       ]
     },
@@ -3907,7 +3909,8 @@
               "useCustomSortingOrder": true,
               "sortingOrder": 88
             }
-          ]
+          ],
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202003/FX_MainBack_11202003_Effect"
         },
         {
           "folder": "11202003_2",
@@ -4026,7 +4029,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": -100,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202004/FX_MainBack_11202004_Effect"
         }
       ]
     },
@@ -4114,7 +4118,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": -100,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202005/FX_MainBack_11202005_Effect"
         }
       ]
     },
@@ -4202,7 +4207,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202006/FX_MainBack_11202006_Effect"
         }
       ]
     },
@@ -4342,7 +4348,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202007/FX_MainBack_11202007_Effect"
         }
       ]
     },
@@ -4484,7 +4491,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 5
+          "backgroundSortingOrder": 5,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202008/FX_MainBack_11202008_Effect"
         }
       ]
     },
@@ -4572,7 +4580,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 0
+          "backgroundSortingOrder": 0,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202009/FX_MainBack_11202009_Effect"
         }
       ]
     },
@@ -4712,7 +4721,8 @@
           "backgroundRotationY": 0,
           "backgroundRotationZ": 0,
           "useCustomBackgroundSortingOrder": true,
-          "backgroundSortingOrder": 1
+          "backgroundSortingOrder": 1,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202010/FX_MainBack_11202010_Effect"
         }
       ]
     },
@@ -4759,6 +4769,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202013/FX_MainBack_11202013_Effect",
           "backgroundPath": "EdenGallery/Characters/11202013_3/Images/CardShowSpine_11202013_3_bg__9c9139e1",
           "layers": [
             {
@@ -4991,6 +5002,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202015/FX_MainBack_11202015_Effect",
           "backgroundPath": "",
           "layers": [
             {
@@ -5268,6 +5280,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202017/FX_MainBack_11202017_Effect",
           "backgroundPath": "EdenGallery/Characters/11202017_3/Images/CardShowSpine_11202017_bg",
           "layers": [
             {
@@ -5440,6 +5453,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202018/FX_MainBack_11202018_Effect",
           "backgroundPath": "EdenGallery/Characters/11202018_3/Images/CardShowSpine_11202018_3_BG2",
           "layers": [
             {
@@ -5672,6 +5686,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11202021/FX_MainBack_11202021_Effect",
           "backgroundPath": "EdenGallery/Characters/11202021_3/Images/CardShowSpine_11202021_3_bg",
           "layers": [
             {
