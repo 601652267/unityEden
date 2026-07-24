@@ -6354,6 +6354,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300001/FX_MainBack_11300001_Effect",
           "backgroundPath": "EdenGallery/Characters/11300001_3/Images/CardShowSpine_11300001_3_bg",
           "layers": [
             {
@@ -6470,6 +6471,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300002/FX_MainBack_11300002_Effect",
           "backgroundPath": "EdenGallery/Characters/11300002_3/Images/CardShowSpine_11300002_3_bg",
           "layers": [
             {
@@ -6584,6 +6586,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300003/FX_MainBack_11300003_Effect",
           "backgroundPath": "EdenGallery/Characters/11300003_3/Images/CardShowSpine_11300003_bg",
           "layers": [
             {
@@ -6729,6 +6732,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300004/FX_MainBack_11300004_Effect",
           "backgroundPath": "EdenGallery/Characters/11300004_3/Images/CardShowSpine_11300004_3_bg",
           "layers": [
             {
@@ -6874,6 +6878,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300005/FX_MainBack_11300005_Effect",
           "backgroundPath": "EdenGallery/Characters/11300005_3/Images/CardShowSpine_11300005_3_bg1",
           "layers": [
             {
@@ -6988,6 +6993,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300006/FX_MainBack_11300006_Effect",
           "backgroundPath": "EdenGallery/Characters/11300006_3/Images/CardShowSpine_11300006_3_bg",
           "layers": [
             {
@@ -7076,6 +7082,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300007/FX_MainBack_11300007_Effect",
           "backgroundPath": "EdenGallery/Characters/11300007_3/Images/CardShowSpine_11300007_3_bg",
           "layers": [
             {
@@ -7221,6 +7228,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300008/FX_MainBack_11300008_Effect",
           "backgroundPath": "EdenGallery/Characters/11300008_3/Images/CardShowSpine_11300008_bg",
           "layers": [
             {
@@ -7309,6 +7317,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300009/FX_MainBack_11300009_Effect",
           "backgroundPath": "EdenGallery/Characters/11300009_3/Images/CardShowSpine_11300009_bg",
           "layers": [
             {
@@ -7425,6 +7434,7 @@
           "sceneSized": true,
           "originalPrefabComposition": true,
           "autoFrameComposition": false,
+          "originalEffectPrefabPath": "EdenGallery/Effects/11300010/FX_MainBack_11300010_Effect",
           "backgroundPath": "EdenGallery/Characters/11300010_3/Images/CardShowSpine_11300010_3_bg",
           "layers": [
             {
