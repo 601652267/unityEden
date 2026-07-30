@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-05-15T08:47:55.055Z",
+  "sourceManifest": "assets/file/character_info_manifest.json",
+  "folder": "12010002",
+  "cardId": 12010002,
+  "variantSuffix": null,
+  "name": null,
+  "nameCn": null,
+  "assetRoot": "assets/file/12010002",
+  "assetCounts": {
+    "battle_metadata": 4,
+    "battle_spine": 4,
+    "battle_texture": 2,
+    "portrait": 2
+  },
+  "assets": [
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/12010002/battle_metadata/CardSpine_12010002_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardSpine_12010002_Atlas.json",
+      "bytes": 388,
+      "sha1": "cc68ca8cadb8ab3d2963265bdcaa575b1982471e",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/12010002/battle_metadata/CardSpine_12010002_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardSpine_12010002_Atlas.json",
+      "bytes": 388,
+      "sha1": "cc68ca8cadb8ab3d2963265bdcaa575b1982471e",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/12010002/battle_metadata/CardSpine_12010002_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardSpine_12010002_SkeletonData.json",
+      "bytes": 603,
+      "sha1": "4ffb42782b626015b720c6c7d7dbe89dd73dbc8a",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/12010002/battle_metadata/CardSpine_12010002_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardSpine_12010002_SkeletonData.json",
+      "bytes": 603,
+      "sha1": "4ffb42782b626015b720c6c7d7dbe89dd73dbc8a",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/12010002/battle_spine/CardSpine_12010002.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardSpine_12010002.atlas.prefab",
+      "bytes": 4457,
+      "sha1": "7276d34a20296af28c146d52625a148a50e80883",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/12010002/battle_spine/CardSpine_12010002.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardSpine_12010002.atlas.prefab",
+      "bytes": 4457,
+      "sha1": "7276d34a20296af28c146d52625a148a50e80883",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/12010002/battle_spine/CardSpine_12010002.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardSpine_12010002.skel.prefab",
+      "bytes": 216854,
+      "sha1": "faae8f16208dd723ff11fa482e68832576c6404a",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/12010002/battle_spine/CardSpine_12010002.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardSpine_12010002.skel.prefab",
+      "bytes": 216854,
+      "sha1": "faae8f16208dd723ff11fa482e68832576c6404a",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_texture",
+      "file": "assets/file/12010002/battle_texture/CardSpine_12010002.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/CardSpine_12010002.png",
+      "bytes": 376621,
+      "sha1": "301159f9ae54f5f0f29e58e184af7903d3c7d654",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_texture",
+      "file": "assets/file/12010002/battle_texture/CardSpine_12010002.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/CardSpine_12010002.png",
+      "bytes": 376621,
+      "sha1": "301159f9ae54f5f0f29e58e184af7903d3c7d654",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/12010002/portrait/img_12010002.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/img_12010002.png",
+      "bytes": 476068,
+      "sha1": "5dbef03ed439a425b30a6e284eb4ce83509e7884",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/12010002/portrait/img_12010002.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/img_12010002.png",
+      "bytes": 476068,
+      "sha1": "5dbef03ed439a425b30a6e284eb4ce83509e7884",
+      "skippedAsDuplicate": true
+    }
+  ],
+  "selectedFashionIds": [],
+  "role": {
+    "id": 12010002,
+    "fashionIds": [],
+    "stories": [],
+    "voiceLines": [],
+    "voiceUnlocks": []
+  },
+  "fashions": []
+}

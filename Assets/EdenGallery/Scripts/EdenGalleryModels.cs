@@ -93,11 +93,39 @@ namespace EdenGallery
     [Serializable]
     public sealed class EdenGalleryVoiceLine
     {
+        public string name;
+        public string nameCn;
         public string voicePath;
         public string audioFile;
         public string text;
         public string textCn;
+        public int sort;
         public float bubbleX;
         public float bubbleY;
+    }
+
+    [Serializable]
+    public sealed class EdenGalleryCharacterDetailsCatalog
+    {
+        public int version;
+        public string generatedAt;
+        public EdenGalleryCharacterDetails[] characters;
+    }
+
+    [Serializable]
+    public sealed class EdenGalleryCharacterDetails
+    {
+        public string cardId;
+        public string cvName;
+        public string cvNameCn;
+        public int birthdayMonth;
+        public int birthdayDay;
+        public string introduction;
+        public string introductionCn;
+        public string profile;
+        public string profileCn;
+        public string biography;
+        public string biographyCn;
+        public EdenGalleryVoiceLine[] voices;
     }
 }

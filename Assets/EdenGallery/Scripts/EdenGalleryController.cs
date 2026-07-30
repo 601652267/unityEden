@@ -4,12 +4,19 @@ using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityObject = UnityEngine.Object;
 
 namespace EdenGallery
 {
     public sealed class EdenGalleryController : MonoBehaviour
     {
+        private enum CharacterDetailsSection
+        {
+            Information,
+            Voices
+        }
+
         public static EdenGalleryController Instance { get; private set; }
 
         public int CharacterIndex { get { return characterIndex; } }
@@ -40,6 +47,7 @@ namespace EdenGallery
 
         private const string ManifestResourcePath = "EdenGallery/gallery";
         private const string VoiceCatalogResourcePath = "EdenGallery/voice_catalog";
+        private const string CharacterDetailsResourcePath = "EdenGallery/character_details";
         private const string CharacterIndexKey = "EdenGallery.CharacterIndex";
         private const string StageIndexKey = "EdenGallery.StageIndex";
         private const string NameLanguageKey = "EdenGallery.NameLanguage";
@@ -56,9 +64,12 @@ namespace EdenGallery
             new Dictionary<string, EdenGalleryVoiceCatalogEntry>(StringComparer.Ordinal);
         private readonly Dictionary<string, int> lastVoiceLineByFolder =
             new Dictionary<string, int>(StringComparer.Ordinal);
+        private readonly Dictionary<string, EdenGalleryCharacterDetails> characterDetailsByCardId =
+            new Dictionary<string, EdenGalleryCharacterDetails>(StringComparer.Ordinal);
 
         private EdenGalleryManifest manifest;
         private EdenGalleryVoiceCatalog voiceCatalog;
+        private EdenGalleryCharacterDetailsCatalog characterDetailsCatalog;
         private Camera galleryCamera;
         private GameObject stageRoot;
         private GameObject visibleStageRoot;
@@ -88,6 +99,14 @@ namespace EdenGallery
         private Texture2D settingsIconTexture;
         private bool uiVisible = true;
         private bool settingsVisible;
+        private bool characterDetailsVisible;
+        private bool characterDetailsSceneMode;
+        private CharacterDetailsSection characterDetailsSection =
+            CharacterDetailsSection.Information;
+        private Vector2 characterDetailsInfoScroll;
+        private Vector2 characterDetailsVoiceScroll;
+        private EdenGalleryVoiceLine selectedDetailsVoiceLine;
+        private string characterDetailsVoiceStatus = string.Empty;
         private EdenGalleryVoiceImportService voiceImportService;
         private AudioSource voiceAudioSource;
         private Coroutine voicePlaybackRoutine;
@@ -122,15 +141,30 @@ namespace EdenGallery
         private GUIStyle settingsBodyStyle;
         private GUIStyle settingsButtonStyle;
         private GUIStyle voiceSubtitleStyle;
+        private GUIStyle detailsHeaderStyle;
+        private GUIStyle detailsTabStyle;
+        private GUIStyle detailsLabelStyle;
+        private GUIStyle detailsValueStyle;
+        private GUIStyle detailsBodyStyle;
+        private GUIStyle detailsVoiceNameStyle;
+        private GUIStyle detailsVoiceSubtitleStyle;
 
         private void Awake()
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
-                return;
+                if (Instance.gameObject.scene == gameObject.scene)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+                Instance = null;
             }
             Instance = this;
+            characterDetailsSceneMode =
+                SceneManager.GetActiveScene().name ==
+                EdenGallerySceneNavigation.CharacterDetailsSceneName;
+            characterDetailsVisible = characterDetailsSceneMode;
 
             TextAsset manifestAsset = Resources.Load<TextAsset>(ManifestResourcePath);
             if (manifestAsset == null)
@@ -153,6 +187,7 @@ namespace EdenGallery
                         : EdenGalleryNameLanguage.Chinese;
                 voiceImportService = new EdenGalleryVoiceImportService();
                 LoadVoiceCatalog();
+                LoadCharacterDetailsCatalog();
                 SetupVoicePlayback();
             }
             catch (Exception exception)
@@ -177,6 +212,40 @@ namespace EdenGallery
                 return;
             int savedCharacter = Mathf.Clamp(PlayerPrefs.GetInt(CharacterIndexKey, 0), 0, manifest.characters.Length - 1);
             int savedStage = Mathf.Max(PlayerPrefs.GetInt(StageIndexKey, 0), 0);
+
+            if (EdenGallerySceneNavigation.HasCharacterRequest)
+            {
+                int requestedCharacter =
+                    EdenGallerySceneNavigation.CharacterIndex;
+                if (requestedCharacter < 0 ||
+                    requestedCharacter >= manifest.characters.Length)
+                {
+                    requestedCharacter = FindCharacterIndex(
+                        EdenGallerySceneNavigation.CardId);
+                }
+                if (requestedCharacter >= 0 &&
+                    requestedCharacter < manifest.characters.Length)
+                {
+                    savedCharacter = requestedCharacter;
+                }
+                savedStage = Mathf.Max(
+                    EdenGallerySceneNavigation.GalleryStageIndex,
+                    0);
+            }
+
+            if (characterDetailsSceneMode)
+            {
+                characterDetailsSection =
+                    CharacterDetailsSection.Information;
+                characterDetailsInfoScroll = Vector2.zero;
+                characterDetailsVoiceScroll = Vector2.zero;
+                characterDetailsVoiceStatus = string.Empty;
+                selectedDetailsVoiceLine = null;
+                LoadCharacter(savedCharacter, 0);
+                return;
+            }
+
+            EdenGallerySceneNavigation.Clear();
             LoadCharacter(savedCharacter, savedStage);
         }
 
@@ -188,16 +257,33 @@ namespace EdenGallery
                 RefreshGradientBackgroundTexture();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-                PreviousCharacter();
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-                NextCharacter();
-            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-                LoadStage(0);
-            if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-                LoadStage(1);
-            if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-                LoadStage(2);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (characterDetailsVisible)
+                {
+                    SetCharacterDetailsVisible(false);
+                    return;
+                }
+                if (settingsVisible)
+                {
+                    SetSettingsVisible(false);
+                    return;
+                }
+            }
+
+            if (!settingsVisible && !characterDetailsVisible)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    PreviousCharacter();
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                    NextCharacter();
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+                    LoadStage(0);
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+                    LoadStage(1);
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+                    LoadStage(2);
+            }
 
             HandleCharacterStripDrag();
             HandleSwipe();
@@ -262,19 +348,35 @@ namespace EdenGallery
             BeginLoadStage();
         }
 
-        public bool LoadCharacter(string cardId, int requestedStageIndex)
+        private int FindCharacterIndex(string cardId)
         {
-            if (manifest == null || manifest.characters == null || string.IsNullOrEmpty(cardId))
-                return false;
+            if (manifest == null || manifest.characters == null ||
+                string.IsNullOrEmpty(cardId))
+            {
+                return -1;
+            }
             for (int i = 0; i < manifest.characters.Length; i++)
             {
-                if (string.Equals(manifest.characters[i].cardId, cardId, StringComparison.Ordinal))
+                EdenGalleryCharacter character = manifest.characters[i];
+                if (character != null &&
+                    string.Equals(
+                        character.cardId,
+                        cardId,
+                        StringComparison.Ordinal))
                 {
-                    LoadCharacter(i, requestedStageIndex);
-                    return true;
+                    return i;
                 }
             }
-            return false;
+            return -1;
+        }
+
+        public bool LoadCharacter(string cardId, int requestedStageIndex)
+        {
+            int foundIndex = FindCharacterIndex(cardId);
+            if (foundIndex < 0)
+                return false;
+            LoadCharacter(foundIndex, requestedStageIndex);
+            return true;
         }
 
         public void LoadStage(int newStageIndex)
@@ -463,9 +565,37 @@ namespace EdenGallery
 
         public void SetSettingsVisible(bool visible)
         {
+            if (visible && characterDetailsVisible)
+                SetCharacterDetailsVisible(false);
             settingsVisible = visible;
             trackingCharacterStripDrag = false;
             trackingSwipe = false;
+        }
+
+        public void SetCharacterDetailsVisible(bool visible)
+        {
+            if (visible)
+            {
+                if (characterDetailsSceneMode)
+                    return;
+                EdenGalleryCharacter character = CurrentCharacter;
+                EdenGallerySceneNavigation.OpenCharacterDetails(
+                    characterIndex,
+                    stageIndex,
+                    character == null ? string.Empty : character.cardId);
+                StopVoicePlayback(true);
+                SceneManager.LoadScene(
+                    EdenGallerySceneNavigation.CharacterDetailsSceneName,
+                    LoadSceneMode.Single);
+                return;
+            }
+
+            if (!characterDetailsSceneMode)
+                return;
+            StopVoicePlayback(true);
+            SceneManager.LoadScene(
+                EdenGallerySceneNavigation.GallerySceneName,
+                LoadSceneMode.Single);
         }
 
         public void OnAndroidVoiceArchiveSelected(string payload)
@@ -735,9 +865,12 @@ namespace EdenGallery
             FitStage();
             PromotePendingStage(pendingRenderers, pendingRendererStates);
             loadingMessage = string.Empty;
-            PlayerPrefs.SetInt(CharacterIndexKey, characterIndex);
-            PlayerPrefs.SetInt(StageIndexKey, stageIndex);
-            PlayerPrefs.Save();
+            if (!characterDetailsSceneMode)
+            {
+                PlayerPrefs.SetInt(CharacterIndexKey, characterIndex);
+                PlayerPrefs.SetInt(StageIndexKey, stageIndex);
+                PlayerPrefs.Save();
+            }
             if (StageChanged != null)
                 StageChanged(character, stage);
             loadRoutine = null;
@@ -843,6 +976,7 @@ namespace EdenGallery
             GameObject instance = Instantiate(prefab);
             instance.name = "OriginalEffect_" + stage.folder;
             instance.transform.SetParent(parent, false);
+            ConfigureRuntimeStageEffect(stage, instance);
             ParticleSystem[] particleSystems =
                 instance.GetComponentsInChildren<ParticleSystem>(true);
             for (int particleIndex = 0;
@@ -855,6 +989,76 @@ namespace EdenGallery
                 particleSystem.gameObject.SetActive(true);
                 if (!particleSystem.isPlaying)
                     particleSystem.Play(true);
+            }
+        }
+
+        private static void ConfigureRuntimeStageEffect(
+            EdenGalleryStage stage,
+            GameObject instance)
+        {
+            if (stage == null || instance == null)
+                return;
+
+            if (string.Equals(
+                stage.folder,
+                "11300037_3",
+                StringComparison.Ordinal))
+            {
+                Renderer[] tsubakiRenderers =
+                    instance.GetComponentsInChildren<Renderer>(true);
+                for (int i = 0; i < tsubakiRenderers.Length; i++)
+                {
+                    Renderer renderer = tsubakiRenderers[i];
+                    if (renderer == null)
+                        continue;
+
+                    string objectName = renderer.gameObject.name;
+                    bool waterColumn = objectName.StartsWith(
+                        "mesh_jinyu3",
+                        StringComparison.OrdinalIgnoreCase);
+                    bool breathingGlow =
+                        string.Equals(
+                            objectName,
+                            "glow (19)",
+                            StringComparison.OrdinalIgnoreCase) ||
+                        string.Equals(
+                            objectName,
+                            "glow (20)",
+                            StringComparison.OrdinalIgnoreCase);
+                    if (waterColumn || breathingGlow)
+                        renderer.enabled = false;
+                }
+                return;
+            }
+
+            if (!string.Equals(
+                stage.folder,
+                "11300034_3",
+                StringComparison.Ordinal))
+                return;
+
+            MeshRenderer[] renderers =
+                instance.GetComponentsInChildren<MeshRenderer>(true);
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                MeshRenderer renderer = renderers[i];
+                Material material = renderer == null
+                    ? null
+                    : renderer.sharedMaterial;
+                if (material == null ||
+                    material.name.IndexOf(
+                        "sfx_yzyws_yun",
+                        StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                float speed = material.name.IndexOf(
+                    "_yun_2",
+                    StringComparison.OrdinalIgnoreCase) >= 0
+                    ? -0.0065f
+                    : 0.0095f;
+                EdenGalleryTextureScroller scroller =
+                    renderer.gameObject.AddComponent<EdenGalleryTextureScroller>();
+                scroller.Initialize(renderer, new Vector2(speed, 0f));
             }
         }
 
@@ -1096,7 +1300,10 @@ namespace EdenGallery
         private void FitCamera(Bounds targetBounds)
         {
             SetupCamera();
-            float aspect = Screen.height > 0 ? (float)Screen.width / Screen.height : 1.7777778f;
+            bool detailsPortrait =
+                characterDetailsVisible &&
+                stageIndex == 0;
+            float aspect = GetActiveCameraAspect();
             float halfWidth = Mathf.Max(targetBounds.extents.x, 0.5f);
             float halfHeight = Mathf.Max(targetBounds.extents.y, 0.5f);
             EdenGalleryStage stage = CurrentStage;
@@ -1115,11 +1322,27 @@ namespace EdenGallery
             }
             else
             {
-                galleryCamera.orthographicSize = Mathf.Max(
-                    halfHeight,
-                    halfWidth / Mathf.Max(aspect, 0.01f)) * 1.12f;
+                galleryCamera.orthographicSize = detailsPortrait
+                    ? halfHeight * 1.08f
+                    : Mathf.Max(
+                        halfHeight,
+                        halfWidth / Mathf.Max(aspect, 0.01f)) * 1.12f;
             }
-            Vector3 targetCenter = ResolveCameraCenter(targetBounds, stage);
+            Vector3 targetCenter = detailsPortrait
+                ? targetBounds.center
+                : ResolveCameraCenter(targetBounds, stage);
+            if (detailsPortrait && Screen.width > 0 && Screen.height > 0)
+            {
+                Rect portraitTarget = GetCharacterDetailsPortraitLayoutRect(
+                    Screen.width,
+                    Screen.height);
+                float visibleWidth =
+                    galleryCamera.orthographicSize * 2f * aspect;
+                float desiredScreenX = Mathf.Clamp01(
+                    portraitTarget.center.x / Screen.width);
+                targetCenter.x +=
+                    (0.5f - desiredScreenX) * visibleWidth;
+            }
             galleryCamera.transform.position = new Vector3(targetCenter.x, targetCenter.y, -10f);
             if (frameComposition)
                 FitFrameSprites(aspect, targetCenter);
@@ -1143,6 +1366,25 @@ namespace EdenGallery
                     " screen=" + Screen.width + "x" + Screen.height +
                     " cameraSize=" + galleryCamera.orthographicSize.ToString("0.###"));
             }
+        }
+
+        private float GetActiveCameraAspect()
+        {
+            if (galleryCamera != null)
+            {
+                if (galleryCamera.targetTexture != null &&
+                    galleryCamera.targetTexture.height > 0)
+                {
+                    return (float)galleryCamera.targetTexture.width /
+                           galleryCamera.targetTexture.height;
+                }
+                Rect pixelRect = galleryCamera.pixelRect;
+                if (pixelRect.width > 1f && pixelRect.height > 1f)
+                    return pixelRect.width / pixelRect.height;
+            }
+            return Screen.height > 0
+                ? (float)Screen.width / Screen.height
+                : 1.7777778f;
         }
 
         private Vector3 ResolveCameraCenter(Bounds targetBounds, EdenGalleryStage stage)
@@ -1374,6 +1616,50 @@ namespace EdenGallery
             }
         }
 
+        private void LoadCharacterDetailsCatalog()
+        {
+            characterDetailsByCardId.Clear();
+            TextAsset catalogAsset = Resources.Load<TextAsset>(
+                CharacterDetailsResourcePath);
+            if (catalogAsset == null)
+            {
+                Debug.LogWarning(
+                    "EdenGallery character details are missing at Resources/" +
+                    CharacterDetailsResourcePath + ".json",
+                    this);
+                return;
+            }
+
+            try
+            {
+                characterDetailsCatalog =
+                    JsonUtility.FromJson<EdenGalleryCharacterDetailsCatalog>(
+                        catalogAsset.text);
+                EdenGalleryCharacterDetails[] details =
+                    characterDetailsCatalog == null
+                        ? null
+                        : characterDetailsCatalog.characters;
+                if (details == null)
+                    return;
+                for (int i = 0; i < details.Length; i++)
+                {
+                    EdenGalleryCharacterDetails item = details[i];
+                    if (item == null || string.IsNullOrEmpty(item.cardId))
+                        continue;
+                    characterDetailsByCardId[item.cardId] = item;
+                }
+            }
+            catch (Exception exception)
+            {
+                characterDetailsCatalog = null;
+                characterDetailsByCardId.Clear();
+                Debug.LogWarning(
+                    "EdenGallery character details parse failed: " +
+                    exception.Message,
+                    this);
+            }
+        }
+
         private void SetupVoicePlayback()
         {
             if (voiceAudioSource != null)
@@ -1415,7 +1701,7 @@ namespace EdenGallery
 
         private void HandleCharacterStripDrag()
         {
-            if (!uiVisible || settingsVisible ||
+            if (!uiVisible || settingsVisible || characterDetailsVisible ||
                 manifest == null || manifest.characters == null)
                 return;
 
@@ -1480,7 +1766,8 @@ namespace EdenGallery
 
         private void HandleSwipe()
         {
-            if (settingsVisible || trackingCharacterStripDrag)
+            if (settingsVisible || characterDetailsVisible ||
+                trackingCharacterStripDrag)
             {
                 trackingSwipe = false;
                 return;
@@ -1513,7 +1800,8 @@ namespace EdenGallery
 
         private void HandleSceneVoiceTap()
         {
-            if (settingsVisible || manifest == null || manifest.characters == null)
+            if (settingsVisible || characterDetailsVisible ||
+                manifest == null || manifest.characters == null)
             {
                 trackingSceneVoiceTap = false;
                 return;
@@ -1574,7 +1862,7 @@ namespace EdenGallery
 
         private bool IsSceneVoiceTapPosition(Vector2 screenPosition)
         {
-            if (settingsVisible)
+            if (settingsVisible || characterDetailsVisible)
                 return false;
 
             float guiX = screenPosition.x;
@@ -1630,9 +1918,24 @@ namespace EdenGallery
         {
             EdenGalleryStage stage = CurrentStage;
             EdenGalleryVoiceCatalogEntry entry;
-            if (stage == null || string.IsNullOrEmpty(stage.folder) ||
-                !voiceEntriesByFolder.TryGetValue(stage.folder, out entry) ||
-                entry.lines == null || entry.lines.Length == 0)
+            if (stage == null || string.IsNullOrEmpty(stage.folder))
+            {
+                StopVoicePlayback(true);
+                return;
+            }
+
+            if (!voiceEntriesByFolder.TryGetValue(stage.folder, out entry))
+            {
+                EdenGalleryCharacter character = CurrentCharacter;
+                if (character == null || string.IsNullOrEmpty(character.cardId) ||
+                    !voiceEntriesByFolder.TryGetValue(character.cardId, out entry))
+                {
+                    StopVoicePlayback(true);
+                    return;
+                }
+            }
+
+            if (entry.lines == null || entry.lines.Length == 0)
             {
                 StopVoicePlayback(true);
                 return;
@@ -1699,6 +2002,52 @@ namespace EdenGallery
                 LoadAndPlayVoice(playbackId, line, audioPath));
         }
 
+        private void PlayCharacterDetailsVoice(EdenGalleryVoiceLine line)
+        {
+            StopVoicePlayback(true);
+            selectedDetailsVoiceLine = null;
+            characterDetailsVoiceStatus = string.Empty;
+            if (line == null)
+                return;
+
+            if (voiceImportService == null)
+                voiceImportService = new EdenGalleryVoiceImportService();
+            if (!voiceImportService.HasInstalledVoicePack ||
+                voiceImportService.IsBusy)
+            {
+                characterDetailsVoiceStatus = voiceImportService.IsBusy
+                    ? "语音资源正在处理中，请稍候。"
+                    : "尚未导入语音包，请先在设置页面导入。";
+                return;
+            }
+
+            string audioPath;
+            bool found = voiceImportService.TryResolveAudioFile(
+                line.audioFile,
+                out audioPath);
+            if (!found)
+            {
+                found = voiceImportService.TryResolveAudioFile(
+                    line.voicePath,
+                    out audioPath);
+            }
+            if (!found)
+            {
+                characterDetailsVoiceStatus =
+                    "语音包中没有找到该文件：" +
+                    (!string.IsNullOrEmpty(line.audioFile)
+                        ? line.audioFile
+                        : line.voicePath);
+                return;
+            }
+
+            selectedDetailsVoiceLine = line;
+            SetupVoicePlayback();
+            int playbackId = ++voicePlaybackSerial;
+            voicePlaybackRoutine = StartCoroutine(
+                LoadAndPlayVoice(playbackId, line, audioPath));
+        }
+
         private IEnumerator LoadAndPlayVoice(
             int playbackId,
             EdenGalleryVoiceLine line,
@@ -1713,6 +2062,8 @@ namespace EdenGallery
             catch (Exception exception)
             {
                 Debug.LogWarning("EdenGallery voice path is invalid: " + exception.Message, this);
+                if (characterDetailsVisible && selectedDetailsVoiceLine == line)
+                    characterDetailsVoiceStatus = "语音文件路径无效。";
                 voicePlaybackRoutine = null;
                 yield break;
             }
@@ -1726,6 +2077,8 @@ namespace EdenGallery
                 if (request.isNetworkError || request.isHttpError)
                 {
                     Debug.LogWarning("EdenGallery voice load failed: " + request.error, this);
+                    if (characterDetailsVisible && selectedDetailsVoiceLine == line)
+                        characterDetailsVoiceStatus = "语音文件加载失败。";
                     voicePlaybackRoutine = null;
                     yield break;
                 }
@@ -1734,10 +2087,13 @@ namespace EdenGallery
                 if (clip == null)
                 {
                     Debug.LogWarning("EdenGallery voice clip could not be decoded: " + audioPath, this);
+                    if (characterDetailsVisible && selectedDetailsVoiceLine == line)
+                        characterDetailsVoiceStatus = "当前语音格式无法播放。";
                     voicePlaybackRoutine = null;
                     yield break;
                 }
 
+                characterDetailsVoiceStatus = string.Empty;
                 activeVoiceClip = clip;
                 activeVoiceLine = line;
                 voiceAudioSource.clip = clip;
@@ -1864,6 +2220,42 @@ namespace EdenGallery
             voiceSubtitleStyle.clipping = TextClipping.Clip;
             voiceSubtitleStyle.padding = new RectOffset(16, 16, 11, 11);
             voiceSubtitleStyle.normal.textColor = new Color(0.07f, 0.075f, 0.085f, 1f);
+
+            detailsHeaderStyle = new GUIStyle(settingsTitleStyle);
+            detailsHeaderStyle.alignment = TextAnchor.MiddleLeft;
+            detailsHeaderStyle.fontSize = 28;
+
+            detailsTabStyle = new GUIStyle(circleButtonStyle);
+            detailsTabStyle.fontSize = 18;
+            detailsTabStyle.wordWrap = false;
+            detailsTabStyle.clipping = TextClipping.Clip;
+
+            detailsLabelStyle = new GUIStyle(settingsBodyStyle);
+            detailsLabelStyle.fontSize = 16;
+            detailsLabelStyle.fontStyle = FontStyle.Bold;
+            detailsLabelStyle.normal.textColor =
+                new Color(0.61f, 0.69f, 0.82f, 1f);
+
+            detailsValueStyle = new GUIStyle(settingsBodyStyle);
+            detailsValueStyle.fontSize = 19;
+            detailsValueStyle.normal.textColor = Color.white;
+
+            detailsBodyStyle = new GUIStyle(settingsBodyStyle);
+            detailsBodyStyle.fontSize = 17;
+            detailsBodyStyle.alignment = TextAnchor.UpperLeft;
+            detailsBodyStyle.padding = new RectOffset(0, 0, 0, 0);
+            detailsBodyStyle.normal.textColor =
+                new Color(0.88f, 0.92f, 0.97f, 1f);
+
+            detailsVoiceNameStyle = new GUIStyle(detailsValueStyle);
+            detailsVoiceNameStyle.fontSize = 17;
+            detailsVoiceNameStyle.alignment = TextAnchor.MiddleLeft;
+            detailsVoiceNameStyle.clipping = TextClipping.Clip;
+
+            detailsVoiceSubtitleStyle = new GUIStyle(voiceSubtitleStyle);
+            detailsVoiceSubtitleStyle.fontSize = 16;
+            detailsVoiceSubtitleStyle.padding =
+                new RectOffset(14, 14, 10, 10);
 
             roundedMaskTexture = CreateRoundedMaskTexture(48, 11);
             subtleRoundedMaskTexture = CreateRoundedMaskTexture(48, 3);
@@ -2334,6 +2726,564 @@ namespace EdenGallery
             return portraitTextures[index];
         }
 
+        private EdenGalleryCharacterDetails GetCurrentCharacterDetails()
+        {
+            EdenGalleryCharacter character = CurrentCharacter;
+            EdenGalleryCharacterDetails details;
+            return character != null &&
+                   !string.IsNullOrEmpty(character.cardId) &&
+                   characterDetailsByCardId.TryGetValue(character.cardId, out details)
+                ? details
+                : null;
+        }
+
+        private static string GetDetailsLocalizedText(
+            string japanese,
+            string chinese)
+        {
+            bool useJapanese =
+                EdenGalleryUISettings.NameLanguage ==
+                EdenGalleryNameLanguage.Japanese;
+            string primary = useJapanese ? japanese : chinese;
+            if (!string.IsNullOrEmpty(primary))
+                return primary;
+            string fallback = useJapanese ? chinese : japanese;
+            return string.IsNullOrEmpty(fallback) ? "暂无资料" : fallback;
+        }
+
+        private static string FormatCharacterProfile(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return "暂无资料";
+            return value.Replace(",", "\n");
+        }
+
+        private float DrawDetailsTextCard(
+            float x,
+            float y,
+            float width,
+            string title,
+            string value)
+        {
+            string displayValue = string.IsNullOrEmpty(value)
+                ? "暂无资料"
+                : value;
+            float bodyWidth = Mathf.Max(40f, width - 32f);
+            float bodyHeight = detailsBodyStyle.CalcHeight(
+                new GUIContent(displayValue),
+                bodyWidth);
+            float height = Mathf.Max(82f, 46f + bodyHeight);
+            Rect cardRect = new Rect(x, y, width, height);
+            DrawCrispRoundedRect(
+                cardRect,
+                new Color(0.048f, 0.078f, 0.12f, 0.96f),
+                6f);
+            GUI.Label(
+                new Rect(x + 16f, y + 10f, bodyWidth, 24f),
+                title,
+                detailsLabelStyle);
+            GUI.Label(
+                new Rect(x + 16f, y + 38f, bodyWidth, bodyHeight),
+                displayValue,
+                detailsBodyStyle);
+            return height;
+        }
+
+        private void DrawCharacterDetailsInformation(
+            Rect panelRect,
+            EdenGalleryCharacter character,
+            EdenGalleryCharacterDetails details)
+        {
+            float padding = Mathf.Clamp(panelRect.width * 0.045f, 20f, 34f);
+            float contentWidth = panelRect.width - padding * 2f - 12f;
+            float viewY = panelRect.y + 62f;
+            Rect viewport = new Rect(
+                panelRect.x + padding,
+                viewY,
+                panelRect.width - padding * 2f,
+                panelRect.yMax - viewY - 18f);
+
+            string cv = details == null
+                ? string.Empty
+                : (!string.IsNullOrEmpty(details.cvName)
+                    ? details.cvName
+                    : details.cvNameCn);
+            string birthday = details != null &&
+                details.birthdayMonth > 0 && details.birthdayDay > 0
+                ? details.birthdayMonth + "月" + details.birthdayDay + "日"
+                : "暂无资料";
+            string introduction = details == null
+                ? "暂无资料"
+                : GetDetailsLocalizedText(
+                    details.introduction,
+                    details.introductionCn);
+            string profile = details == null
+                ? "暂无资料"
+                : FormatCharacterProfile(GetDetailsLocalizedText(
+                    details.profile,
+                    details.profileCn));
+            string biography = details == null
+                ? string.Empty
+                : GetDetailsLocalizedText(
+                    details.biography,
+                    details.biographyCn);
+            bool showBiography =
+                !string.IsNullOrEmpty(biography) &&
+                biography != "暂无资料" &&
+                !string.Equals(
+                    biography,
+                    introduction,
+                    StringComparison.Ordinal);
+
+            float cardGap = 12f;
+            float nameCardHeight = 92f;
+            float cvHeight = Mathf.Max(
+                82f,
+                46f + detailsBodyStyle.CalcHeight(
+                    new GUIContent(cv),
+                    contentWidth - 32f));
+            float birthdayHeight = 82f;
+            float introHeight = Mathf.Max(
+                82f,
+                46f + detailsBodyStyle.CalcHeight(
+                    new GUIContent(introduction),
+                    contentWidth - 32f));
+            float profileHeight = Mathf.Max(
+                82f,
+                46f + detailsBodyStyle.CalcHeight(
+                    new GUIContent(profile),
+                    contentWidth - 32f));
+            float biographyHeight = showBiography
+                ? Mathf.Max(
+                    82f,
+                    46f + detailsBodyStyle.CalcHeight(
+                        new GUIContent(biography),
+                        contentWidth - 32f))
+                : 0f;
+            float contentHeight =
+                nameCardHeight + cvHeight + birthdayHeight + introHeight +
+                profileHeight + (showBiography ? biographyHeight + cardGap : 0f) +
+                cardGap * 5f + 8f;
+
+            GUI.Label(
+                new Rect(
+                    panelRect.x + padding,
+                    panelRect.y + 15f,
+                    panelRect.width - padding * 2f,
+                    38f),
+                "人物信息",
+                settingsSectionStyle);
+
+            characterDetailsInfoScroll.x = 0f;
+            characterDetailsInfoScroll = GUI.BeginScrollView(
+                viewport,
+                characterDetailsInfoScroll,
+                new Rect(0f, 0f, contentWidth, contentHeight),
+                false,
+                true,
+                GUIStyle.none,
+                GUI.skin.verticalScrollbar);
+            characterDetailsInfoScroll.x = 0f;
+            float y = 0f;
+            DrawCrispRoundedRect(
+                new Rect(0f, y, contentWidth, nameCardHeight),
+                new Color(0.048f, 0.078f, 0.12f, 0.96f),
+                6f);
+            GUI.Label(
+                new Rect(16f, y + 8f, contentWidth - 32f, 48f),
+                character == null
+                    ? "未知角色"
+                    : EdenGalleryUISettings.GetDisplayName(character),
+                detailsHeaderStyle);
+            GUI.Label(
+                new Rect(16f, y + 56f, contentWidth - 32f, 24f),
+                character == null ? string.Empty : character.cardId,
+                namePlateIdStyle);
+            y += nameCardHeight + cardGap;
+            y += DrawDetailsTextCard(0f, y, contentWidth, "CV", cv) + cardGap;
+            y += DrawDetailsTextCard(0f, y, contentWidth, "生日", birthday) + cardGap;
+            y += DrawDetailsTextCard(
+                0f,
+                y,
+                contentWidth,
+                "简介",
+                introduction) + cardGap;
+            y += DrawDetailsTextCard(
+                0f,
+                y,
+                contentWidth,
+                "人物档案",
+                profile) + cardGap;
+            if (showBiography)
+            {
+                DrawDetailsTextCard(
+                    0f,
+                    y,
+                    contentWidth,
+                    "人物故事",
+                    biography);
+            }
+            GUI.EndScrollView();
+        }
+
+        private string GetVoiceLineTitle(EdenGalleryVoiceLine line, int index)
+        {
+            if (line == null)
+                return "语音 " + (index + 1);
+            string title = GetDetailsLocalizedText(line.name, line.nameCn);
+            return string.IsNullOrEmpty(title) || title == "暂无资料"
+                ? "语音 " + (index + 1)
+                : title;
+        }
+
+        private string GetVoiceLineSubtitle(EdenGalleryVoiceLine line)
+        {
+            if (line == null)
+                return string.Empty;
+            string subtitle = GetDetailsLocalizedText(line.text, line.textCn);
+            return subtitle == "暂无资料" ? "该语音暂无字幕。" : subtitle;
+        }
+
+        private void DrawCharacterDetailsVoices(
+            Rect panelRect,
+            EdenGalleryCharacterDetails details)
+        {
+            EdenGalleryVoiceLine[] voices =
+                details == null || details.voices == null
+                    ? new EdenGalleryVoiceLine[0]
+                    : details.voices;
+            float padding = Mathf.Clamp(panelRect.width * 0.04f, 18f, 30f);
+            GUI.Label(
+                new Rect(
+                    panelRect.x + padding,
+                    panelRect.y + 13f,
+                    panelRect.width * 0.55f,
+                    38f),
+                "人物语音",
+                settingsSectionStyle);
+            GUI.Label(
+                new Rect(
+                    panelRect.x + panelRect.width * 0.55f,
+                    panelRect.y + 16f,
+                    panelRect.width * 0.45f - padding,
+                    32f),
+                voices.Length + " 条",
+                statusStyle);
+
+            float statusHeight = string.IsNullOrEmpty(characterDetailsVoiceStatus)
+                ? 0f
+                : 38f;
+            if (statusHeight > 0f)
+            {
+                GUI.Label(
+                    new Rect(
+                        panelRect.x + padding,
+                        panelRect.y + 52f,
+                        panelRect.width - padding * 2f,
+                        32f),
+                    characterDetailsVoiceStatus,
+                    settingsBodyStyle);
+            }
+
+            float viewportY = panelRect.y + 58f + statusHeight;
+            Rect viewport = new Rect(
+                panelRect.x + padding,
+                viewportY,
+                panelRect.width - padding * 2f,
+                panelRect.yMax - viewportY - 16f);
+            float contentWidth = viewport.width - 16f;
+            float rowHeight = 58f;
+            float rowGap = 9f;
+            float contentHeight = 4f;
+            for (int i = 0; i < voices.Length; i++)
+            {
+                contentHeight += rowHeight + rowGap;
+                if (selectedDetailsVoiceLine == voices[i])
+                {
+                    string subtitle = GetVoiceLineSubtitle(voices[i]);
+                    float subtitleHeight = Mathf.Max(
+                        54f,
+                        detailsVoiceSubtitleStyle.CalcHeight(
+                            new GUIContent(subtitle),
+                            contentWidth - 6f));
+                    contentHeight += subtitleHeight + rowGap;
+                }
+            }
+            contentHeight = Mathf.Max(contentHeight, viewport.height);
+
+            characterDetailsVoiceScroll = GUI.BeginScrollView(
+                viewport,
+                characterDetailsVoiceScroll,
+                new Rect(0f, 0f, contentWidth, contentHeight),
+                false,
+                true);
+            float y = 2f;
+            for (int i = 0; i < voices.Length; i++)
+            {
+                EdenGalleryVoiceLine line = voices[i];
+                bool selected = selectedDetailsVoiceLine == line;
+                Rect rowRect = new Rect(0f, y, contentWidth, rowHeight);
+                DrawCrispRoundedRect(
+                    rowRect,
+                    selected
+                        ? EdenGalleryUISettings.ThemeColor
+                        : new Color(0.055f, 0.085f, 0.13f, 0.98f),
+                    5f);
+                float border = selected ? 2f : 1f;
+                Rect innerRect = new Rect(
+                    rowRect.x + border,
+                    rowRect.y + border,
+                    rowRect.width - border * 2f,
+                    rowRect.height - border * 2f);
+                DrawCrispRoundedRect(
+                    innerRect,
+                    new Color(0.035f, 0.055f, 0.088f, 1f),
+                    4f);
+                GUI.Label(
+                    new Rect(
+                        rowRect.x + 16f,
+                        rowRect.y,
+                        rowRect.width - 78f,
+                        rowRect.height),
+                    GetVoiceLineTitle(line, i),
+                    detailsVoiceNameStyle);
+                Rect playRect = new Rect(
+                    rowRect.xMax - 52f,
+                    rowRect.y + 8f,
+                    42f,
+                    42f);
+                DrawCircle(
+                    playRect,
+                    selected
+                        ? EdenGalleryUISettings.ThemeColor
+                        : new Color(0.12f, 0.17f, 0.25f, 1f));
+                bool playing =
+                    selected && activeVoiceLine == line &&
+                    voiceAudioSource != null && voiceAudioSource.isPlaying;
+                GUI.Label(
+                    playRect,
+                    playing ? "■" : "▶",
+                    favoriteButtonStyle);
+                if (GUI.Button(rowRect, GUIContent.none, GUIStyle.none))
+                    PlayCharacterDetailsVoice(line);
+
+                y += rowHeight + rowGap;
+                if (selected)
+                {
+                    string subtitle = GetVoiceLineSubtitle(line);
+                    float subtitleHeight = Mathf.Max(
+                        54f,
+                        detailsVoiceSubtitleStyle.CalcHeight(
+                            new GUIContent(subtitle),
+                            contentWidth - 6f));
+                    Rect subtitleRect = new Rect(
+                        0f,
+                        y,
+                        contentWidth,
+                        subtitleHeight);
+                    DrawCrispRoundedRect(
+                        subtitleRect,
+                        new Color(0.025f, 0.025f, 0.03f, 1f),
+                        4f);
+                    DrawCrispRoundedRect(
+                        new Rect(
+                            subtitleRect.x + 2f,
+                            subtitleRect.y + 2f,
+                            subtitleRect.width - 4f,
+                            subtitleRect.height - 4f),
+                        new Color(0.98f, 0.98f, 0.95f, 0.96f),
+                        2f);
+                    GUI.Label(
+                        subtitleRect,
+                        subtitle,
+                        detailsVoiceSubtitleStyle);
+                    y += subtitleHeight + rowGap;
+                }
+            }
+            if (voices.Length == 0)
+            {
+                GUI.Label(
+                    new Rect(0f, 30f, contentWidth, 48f),
+                    "当前角色暂无可用语音资料。",
+                    statusStyle);
+            }
+            GUI.EndScrollView();
+        }
+
+        private void DrawCharacterDetailsTab(
+            Rect rect,
+            string label,
+            CharacterDetailsSection section)
+        {
+            bool selected = characterDetailsSection == section;
+            DrawCrispRoundedRect(
+                rect,
+                selected
+                    ? EdenGalleryUISettings.ThemeColor
+                    : new Color(0.045f, 0.075f, 0.115f, 0.98f),
+                6f);
+            GUI.Label(rect, label, detailsTabStyle);
+            if (GUI.Button(rect, GUIContent.none, GUIStyle.none))
+            {
+                if (characterDetailsSection == CharacterDetailsSection.Voices &&
+                    section == CharacterDetailsSection.Information)
+                {
+                    StopVoicePlayback(true);
+                    selectedDetailsVoiceLine = null;
+                    characterDetailsVoiceStatus = string.Empty;
+                }
+                characterDetailsSection = section;
+                if (section == CharacterDetailsSection.Information)
+                    characterDetailsInfoScroll = Vector2.zero;
+                else
+                    characterDetailsVoiceScroll = Vector2.zero;
+            }
+        }
+
+        private static Rect GetCharacterDetailsPortraitLayoutRect(
+            float width,
+            float height)
+        {
+            float headerHeight = Mathf.Clamp(height * 0.105f, 66f, 88f);
+            float margin = Mathf.Clamp(width * 0.014f, 14f, 22f);
+            float gap = Mathf.Clamp(width * 0.012f, 12f, 18f);
+            float bodyY = headerHeight + margin;
+            float bodyHeight = height - bodyY - margin;
+            float navWidth = Mathf.Clamp(width * 0.11f, 132f, 172f);
+            float portraitWidth = Mathf.Clamp(
+                width * 0.31f,
+                280f,
+                Mathf.Max(
+                    280f,
+                    width - navWidth - gap * 3f - 450f -
+                    margin * 2f));
+            float navRight = margin + navWidth;
+            return new Rect(
+                navRight + gap,
+                bodyY,
+                portraitWidth,
+                bodyHeight);
+        }
+
+        private void DrawCharacterDetailsPage(float width, float height)
+        {
+            float headerHeight = Mathf.Clamp(height * 0.105f, 66f, 88f);
+            float margin = Mathf.Clamp(width * 0.014f, 14f, 22f);
+            float gap = Mathf.Clamp(width * 0.012f, 12f, 18f);
+            float bodyY = headerHeight + margin;
+            float bodyHeight = height - bodyY - margin;
+            float navWidth = Mathf.Clamp(width * 0.11f, 132f, 172f);
+            Rect navRect = new Rect(margin, bodyY, navWidth, bodyHeight);
+            Rect portraitRect =
+                GetCharacterDetailsPortraitLayoutRect(width, height);
+            Rect detailsRect = new Rect(
+                portraitRect.xMax + gap,
+                bodyY,
+                width - portraitRect.xMax - gap - margin,
+                bodyHeight);
+
+            float backSize = Mathf.Clamp(headerHeight - 20f, 48f, 64f);
+            Rect backRect = new Rect(
+                18f,
+                (headerHeight - backSize) * 0.5f,
+                backSize,
+                backSize);
+            DrawCrispRoundedRect(
+                backRect,
+                new Color(0.075f, 0.115f, 0.17f, 1f),
+                5f);
+            GUI.Label(backRect, "‹", toggleButtonStyle);
+            if (GUI.Button(backRect, GUIContent.none, GUIStyle.none))
+            {
+                SetCharacterDetailsVisible(false);
+                return;
+            }
+
+            EdenGalleryCharacter character = CurrentCharacter;
+            string pageTitle = character == null
+                ? "人物详情"
+                : EdenGalleryUISettings.GetDisplayName(character) + " · 人物详情";
+            GUI.Label(
+                new Rect(
+                    backRect.xMax + 16f,
+                    0f,
+                    width - backRect.xMax - 210f,
+                    headerHeight),
+                pageTitle,
+                detailsHeaderStyle);
+
+            float languageWidth = Mathf.Clamp(width * 0.105f, 112f, 148f);
+            Rect languageRect = new Rect(
+                width - languageWidth - 20f,
+                (headerHeight - 48f) * 0.5f,
+                languageWidth,
+                48f);
+            DrawCrispRoundedRect(
+                languageRect,
+                EdenGalleryUISettings.ThemeColor,
+                24f);
+            GUI.Label(
+                languageRect,
+                EdenGalleryUISettings.NameLanguage ==
+                    EdenGalleryNameLanguage.Chinese
+                    ? "中  /  日"
+                    : "日  /  中",
+                settingsButtonStyle);
+            if (GUI.Button(languageRect, GUIContent.none, GUIStyle.none))
+                ToggleNameLanguage();
+
+            float tabMargin = 10f;
+            float tabHeight = Mathf.Clamp(bodyHeight * 0.115f, 62f, 78f);
+            Rect infoTabRect = new Rect(
+                navRect.x + tabMargin,
+                navRect.y + tabMargin,
+                navRect.width - tabMargin * 2f,
+                tabHeight);
+            Rect voiceTabRect = new Rect(
+                infoTabRect.x,
+                infoTabRect.yMax + 10f,
+                infoTabRect.width,
+                tabHeight);
+            Rect battleTabRect = new Rect(
+                voiceTabRect.x,
+                voiceTabRect.yMax + 10f,
+                voiceTabRect.width,
+                tabHeight);
+            DrawCharacterDetailsTab(
+                infoTabRect,
+                "人物资料",
+                CharacterDetailsSection.Information);
+            DrawCharacterDetailsTab(
+                voiceTabRect,
+                "人物语音",
+                CharacterDetailsSection.Voices);
+            DrawCrispRoundedRect(
+                battleTabRect,
+                new Color(0.075f, 0.115f, 0.17f, 1f),
+                5f);
+            GUI.Label(
+                battleTabRect,
+                "人物战斗",
+                detailsTabStyle);
+            if (GUI.Button(
+                    battleTabRect,
+                    GUIContent.none,
+                    GUIStyle.none))
+            {
+                StopVoicePlayback(true);
+                SceneManager.LoadScene(
+                    EdenGallerySceneNavigation.CharacterBattleSceneName,
+                    LoadSceneMode.Single);
+                return;
+            }
+
+            EdenGalleryCharacterDetails details = GetCurrentCharacterDetails();
+            if (characterDetailsSection == CharacterDetailsSection.Information)
+                DrawCharacterDetailsInformation(detailsRect, character, details);
+            else
+                DrawCharacterDetailsVoices(detailsRect, details);
+        }
+
         private void EnsureSelectedCharacterVisible(float viewportWidth, float cardWidth, float gap)
         {
             if (scrollTargetCharacterIndex < 0)
@@ -2361,6 +3311,12 @@ namespace EdenGallery
             if (manifest == null || manifest.characters == null || manifest.characters.Length == 0)
             {
                 GUI.Label(new Rect(20f, 20f, width - 40f, 50f), errorMessage, titleStyle);
+                return;
+            }
+
+            if (characterDetailsVisible)
+            {
+                DrawCharacterDetailsPage(width, height);
                 return;
             }
 
@@ -2413,10 +3369,20 @@ namespace EdenGallery
                     new Rect(
                         namePlate.x + textPadding,
                         namePlate.y + namePlate.height * 0.57f,
-                        namePlate.width - textPadding * 2f,
+                        namePlate.width - textPadding * 2f - 54f,
                         namePlate.height * 0.32f),
                     character.cardId,
                     namePlateIdStyle);
+                GUI.Label(
+                    new Rect(
+                        namePlate.xMax - 66f,
+                        namePlate.y + namePlate.height * 0.57f,
+                        52f,
+                        namePlate.height * 0.32f),
+                    "详情 ›",
+                    detailsLabelStyle);
+                if (GUI.Button(namePlate, GUIContent.none, GUIStyle.none))
+                    SetCharacterDetailsVisible(true);
             }
 
             if (character != null && character.stages != null)
@@ -2467,7 +3433,7 @@ namespace EdenGallery
                 stripPanel.width - toggleRailWidth - panelPadding * 3f,
                 100f);
             float viewportHeight = stripPanel.height - panelPadding * 2f;
-            float cardWidth = Mathf.Clamp(viewportHeight * 0.78f, 130f, 170f);
+            float cardWidth = Mathf.Clamp(viewportHeight * 0.86f, 142f, 186f);
             float gap = Mathf.Clamp(cardWidth * 0.085f, 9f, 12f);
             float contentWidth = Mathf.Max(
                 viewportWidth,

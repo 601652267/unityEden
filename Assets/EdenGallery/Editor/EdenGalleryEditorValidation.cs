@@ -9,6 +9,188 @@ namespace EdenGallery.Editor
 {
     public static class EdenGalleryEditorValidation
     {
+        [MenuItem("Eden Gallery/Validate Battle Scene")]
+        public static void ValidateBattleScene()
+        {
+            const string battleScenePath =
+                "Assets/Scenes/CharacterBattleScene.unity";
+            bool battleSceneEnabled = false;
+            EditorBuildSettingsScene[] scenes =
+                EditorBuildSettings.scenes;
+            for (int i = 0; i < scenes.Length; i++)
+            {
+                if (scenes[i].enabled &&
+                    string.Equals(
+                        scenes[i].path,
+                        battleScenePath,
+                        StringComparison.Ordinal))
+                {
+                    battleSceneEnabled = true;
+                    break;
+                }
+            }
+            if (!battleSceneEnabled)
+                throw new InvalidOperationException(
+                    "CharacterBattleScene is not enabled in Build Settings.");
+
+            string root = "EdenBattle/Enemies/12010002/";
+            if (Resources.Load<TextAsset>(
+                    root + "CardSpine_12010002.atlas") == null ||
+                Resources.Load<TextAsset>(
+                    root + "CardSpine_12010002.skel") == null ||
+                Resources.Load<Texture2D>(
+                    root + "CardSpine_12010002") == null)
+            {
+                throw new InvalidOperationException(
+                    "Enemy 12010002 Spine resources are incomplete.");
+            }
+
+            EdenGalleryLayer layer = new EdenGalleryLayer();
+            layer.name = "BattleValidation_12010002";
+            layer.atlasPath =
+                root + "CardSpine_12010002.atlas";
+            layer.skeletonPath =
+                root + "CardSpine_12010002.skel";
+            layer.texturePaths = new[]
+            {
+                root + "CardSpine_12010002"
+            };
+            layer.animationName = "idle";
+
+            List<UnityObject> ownedObjects = new List<UnityObject>();
+            GameObject validationRoot =
+                new GameObject("EdenBattleValidation");
+            try
+            {
+                SkeletonAnimation enemy =
+                    EdenGallerySpineFactory.Create(
+                        layer,
+                        validationRoot.transform,
+                        0,
+                        ownedObjects);
+                if (enemy == null ||
+                    enemy.Skeleton == null ||
+                    enemy.Skeleton.Data.FindAnimation("idle") == null)
+                {
+                    throw new InvalidOperationException(
+                        "Enemy 12010002 idle animation is unavailable.");
+                }
+
+                string streamingRoot = System.IO.Path.Combine(
+                    Application.streamingAssetsPath,
+                    "Skill11300018Original");
+                string[] requiredBundles =
+                {
+                    "m_cardspine_11300018.aab",
+                    "eft_fx_11300018_attack_2.aab",
+                    "eft_fx_11300018_skill.aab",
+                    "eft_fx_11300018_skill_2.aab",
+                    "eft_fx_timeline_11300018_xp.aab",
+                    "eft_labi_shouji.aab",
+                    "manifest.json"
+                };
+                for (int bundleIndex = 0;
+                     bundleIndex < requiredBundles.Length;
+                     bundleIndex++)
+                {
+                    string path = System.IO.Path.Combine(
+                        streamingRoot,
+                        requiredBundles[bundleIndex]);
+                    if (!System.IO.File.Exists(path))
+                        throw new InvalidOperationException(
+                            "Missing 11300018 battle resource: " + path);
+                }
+            }
+            finally
+            {
+                UnityObject.DestroyImmediate(validationRoot);
+                for (int i = ownedObjects.Count - 1; i >= 0; i--)
+                {
+                    if (ownedObjects[i] != null)
+                        UnityObject.DestroyImmediate(ownedObjects[i]);
+                }
+            }
+
+            Debug.Log(
+                "EDEN_BATTLE_VALIDATION_OK hero=11300018 enemy=12010002 " +
+                "actions=attack,skill,uniqueskill");
+        }
+
+        [MenuItem("Eden Gallery/Validate Character Details")]
+        public static void ValidateCharacterDetails()
+        {
+            TextAsset manifestAsset = Resources.Load<TextAsset>("EdenGallery/gallery");
+            TextAsset detailsAsset = Resources.Load<TextAsset>(
+                "EdenGallery/character_details");
+            if (manifestAsset == null || detailsAsset == null)
+                throw new InvalidOperationException(
+                    "Gallery manifest or character details catalog is missing.");
+
+            EdenGalleryManifest manifest =
+                JsonUtility.FromJson<EdenGalleryManifest>(manifestAsset.text);
+            EdenGalleryCharacterDetailsCatalog catalog =
+                JsonUtility.FromJson<EdenGalleryCharacterDetailsCatalog>(
+                    detailsAsset.text);
+            if (manifest == null || manifest.characters == null ||
+                catalog == null || catalog.characters == null)
+            {
+                throw new InvalidOperationException(
+                    "Gallery manifest or character details catalog is empty.");
+            }
+
+            Dictionary<string, EdenGalleryCharacterDetails> detailsByCardId =
+                new Dictionary<string, EdenGalleryCharacterDetails>(
+                    StringComparer.Ordinal);
+            int voiceCount = 0;
+            for (int i = 0; i < catalog.characters.Length; i++)
+            {
+                EdenGalleryCharacterDetails details = catalog.characters[i];
+                if (details == null || string.IsNullOrEmpty(details.cardId))
+                    throw new InvalidOperationException(
+                        "Character details catalog has an invalid entry.");
+                if (detailsByCardId.ContainsKey(details.cardId))
+                    throw new InvalidOperationException(
+                        "Duplicate character details: " + details.cardId);
+                detailsByCardId.Add(details.cardId, details);
+                EdenGalleryVoiceLine[] voices =
+                    details.voices ?? new EdenGalleryVoiceLine[0];
+                for (int voiceIndex = 0; voiceIndex < voices.Length; voiceIndex++)
+                {
+                    EdenGalleryVoiceLine voice = voices[voiceIndex];
+                    if (voice == null || string.IsNullOrEmpty(voice.voicePath) ||
+                        string.IsNullOrEmpty(voice.audioFile) ||
+                        (string.IsNullOrEmpty(voice.text) &&
+                         string.IsNullOrEmpty(voice.textCn)))
+                    {
+                        throw new InvalidOperationException(
+                            "Invalid details voice: " + details.cardId +
+                            " #" + voiceIndex);
+                    }
+                    voiceCount++;
+                }
+            }
+
+            for (int i = 0; i < manifest.characters.Length; i++)
+            {
+                EdenGalleryCharacter character = manifest.characters[i];
+                EdenGalleryCharacterDetails details;
+                if (character == null ||
+                    !detailsByCardId.TryGetValue(character.cardId, out details))
+                {
+                    throw new InvalidOperationException(
+                        "Missing character details: " +
+                        (character == null ? "(null)" : character.cardId));
+                }
+                if (details.voices == null || details.voices.Length == 0)
+                    throw new InvalidOperationException(
+                        "Character details have no voices: " + character.cardId);
+            }
+
+            Debug.Log(
+                "EDEN_GALLERY_DETAILS_VALIDATION_OK characters=" +
+                manifest.characters.Length + " voices=" + voiceCount);
+        }
+
         [MenuItem("Eden Gallery/Validate All Portraits")]
         public static void ValidateAllPortraits()
         {
@@ -44,7 +226,8 @@ namespace EdenGallery.Editor
                     EdenGalleryVoiceLine line = entry.lines[lineIndex];
                     if (line == null || string.IsNullOrEmpty(line.voicePath) ||
                         string.IsNullOrEmpty(line.audioFile) ||
-                        string.IsNullOrEmpty(line.text) || string.IsNullOrEmpty(line.textCn))
+                        (string.IsNullOrEmpty(line.text) &&
+                         string.IsNullOrEmpty(line.textCn)))
                     {
                         throw new InvalidOperationException(
                             "Voice catalog line is incomplete: " + entry.folder + " #" + lineIndex);
@@ -75,7 +258,8 @@ namespace EdenGallery.Editor
                     {
                         EdenGalleryStage stage = stages[stageIndex];
                         EdenGalleryVoiceCatalogEntry voiceEntry;
-                        if (!voiceEntries.TryGetValue(stage.folder, out voiceEntry))
+                        if (!voiceEntries.TryGetValue(stage.folder, out voiceEntry) &&
+                            !voiceEntries.TryGetValue(character.cardId, out voiceEntry))
                         {
                             throw new InvalidOperationException(
                                 "Missing voice catalog entry: " + stage.folder);

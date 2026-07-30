@@ -33,6 +33,9 @@
 *.aab
 *.xapk
 
+# Runtime AssetBundles intentionally stored inside the Unity project.
+!Assets/StreamingAssets/**/*.aab
+
 # Crash reports and operating-system files
 sysinfo.txt
 crashlytics-build.properties

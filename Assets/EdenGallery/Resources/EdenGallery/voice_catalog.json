@@ -20425,6 +20425,162 @@
           "bubbleY": 255
         }
       ]
+    },
+    {
+      "folder": "11300056",
+      "cardId": "11300056",
+      "lines": [
+        {
+          "voicePath": "Miku_Main_1",
+          "audioFile": "MIKU_Main_1.wav",
+          "text": "",
+          "textCn": "这个世界的人也都很热爱唱歌呢！",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Main_2",
+          "audioFile": "MIKU_Main_2.wav",
+          "text": "",
+          "textCn": "刚才艾琳她们教了我这个世界的歌哦！",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Main_3",
+          "audioFile": "MIKU_Main_3.wav",
+          "text": "",
+          "textCn": "PRIDE懂得处理各种工作好厉害哦。我最擅长的就是唱歌……不知道能不能帮上忙？",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Main_4",
+          "audioFile": "MIKU_Main_4.wav",
+          "text": "",
+          "textCn": "我也在团长身边休息一下好啦……可以稍微唱会歌吗？",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Interaction_1",
+          "audioFile": "MIKU_Interaction_1.wav",
+          "text": "",
+          "textCn": "我正在努力了解关于这个世界和PRIDE的事情。",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Interaction_2",
+          "audioFile": "MIKU_Interaction_2.wav",
+          "text": "",
+          "textCn": "丽莎教过我可以用腹部发声的方式来唱歌。啊～啊～啊～♪嗯，感觉确实不错♪",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Interaction_3",
+          "audioFile": "MIKU_Interaction_3.wav",
+          "text": "",
+          "textCn": "我已经渐渐习惯这个世界了，应该可以帮上更多的忙啦。有什么困难随时告诉我哦！",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Interaction_4",
+          "audioFile": "MIKU_Interaction_4.wav",
+          "text": "",
+          "textCn": "PRIDE的大家既温柔，又出色，相处起来也很愉快……和大家在一起就感觉很幸福呢。",
+          "bubbleX": 738,
+          "bubbleY": 238
+        },
+        {
+          "voicePath": "Miku_Interaction_5",
+          "audioFile": "MIKU_Interaction_5.wav",
+          "text": "",
+          "textCn": "无论什么时候，团长都在默默关照着我，我也想更加努力！",
+          "bubbleX": 738,
+          "bubbleY": 238
+        }
+      ]
+    },
+    {
+      "folder": "11300057",
+      "cardId": "11300057",
+      "lines": [
+        {
+          "voicePath": "Luka_Main_1",
+          "audioFile": "LUKA_Main_1.wav",
+          "text": "",
+          "textCn": "休息时间很重要哦。毕竟一直绷紧神经努力是很辛苦的。你可不要勉强自己。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Main_2",
+          "audioFile": "LUKA_Main_2.wav",
+          "text": "",
+          "textCn": "不用担心未来。她一定在这个世界过得很开心。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Main_3",
+          "audioFile": "LUKA_Main_3.wav",
+          "text": "",
+          "textCn": "如果时间允许的话，我可以唱唱歌吗？",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Main_4",
+          "audioFile": "LUKA_Main_4.wav",
+          "text": "",
+          "textCn": "为了更加了解这具身体，我想尽可能多尝试各种各样的体验。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Interaction_1",
+          "audioFile": "LUKA_Interaction_1.wav",
+          "text": "",
+          "textCn": "虽然这个世界很不可思议……但我有保护自己的办法，不用太过惊慌哦。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Interaction_2",
+          "audioFile": "LUKA_Interaction_2.wav",
+          "text": "",
+          "textCn": "你在关心我吗？谢谢你。我会努力进步，尽快让你不再为我担心。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Interaction_3",
+          "audioFile": "LUKA_Interaction_3.wav",
+          "text": "",
+          "textCn": "我听说你也来自异世界。这么说……我们是一样的呢。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Interaction_4",
+          "audioFile": "LUKA_Interaction_4.wav",
+          "text": "",
+          "textCn": "我已经很习惯PRIDE的活动了。虽然以后还会发生些什么……但是我觉得只要有大家在就绝对没问题呢。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        },
+        {
+          "voicePath": "Luka_Interaction_5",
+          "audioFile": "LUKA_Interaction_5.wav",
+          "text": "",
+          "textCn": "我很庆幸来到这个世界后，最先遇到的是这个PRIDE和团长你。今后也请多多关照。",
+          "bubbleX": 384,
+          "bubbleY": 219
+        }
+      ]
     }
   ]
 }

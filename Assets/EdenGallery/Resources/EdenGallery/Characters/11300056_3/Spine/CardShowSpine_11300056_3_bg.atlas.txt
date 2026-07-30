@@ -1,0 +1,244 @@
+
+CardShowSpine_11300056_3_bg.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+miku_01_0
+  rotate: true
+  xy: 1717, 961
+  size: 224, 315
+  orig: 224, 315
+  offset: 0, 0
+  index: -1
+miku_01_1
+  rotate: false
+  xy: 1546, 684
+  size: 93, 84
+  orig: 93, 84
+  offset: 0, 0
+  index: -1
+miku_01_2
+  rotate: false
+  xy: 1792, 724
+  size: 35, 36
+  orig: 35, 36
+  offset: 0, 0
+  index: -1
+miku_01_3
+  rotate: true
+  xy: 1742, 718
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+miku_01_4
+  rotate: false
+  xy: 1237, 53
+  size: 104, 67
+  orig: 104, 67
+  offset: 0, 0
+  index: -1
+miku_01_5
+  rotate: false
+  xy: 1373, 479
+  size: 57, 68
+  orig: 57, 68
+  offset: 0, 0
+  index: -1
+miku_01_6
+  rotate: false
+  xy: 1243, 637
+  size: 126, 189
+  orig: 126, 189
+  offset: 0, 0
+  index: -1
+miku_01_7
+  rotate: true
+  xy: 1237, 2
+  size: 49, 78
+  orig: 49, 78
+  offset: 0, 0
+  index: -1
+miku_01_8
+  rotate: true
+  xy: 1237, 248
+  size: 197, 118
+  orig: 197, 118
+  offset: 0, 0
+  index: -1
+miku_01_9
+  rotate: false
+  xy: 1694, 714
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+miku_bg_10
+  rotate: false
+  xy: 1718, 1644
+  size: 325, 402
+  orig: 325, 402
+  offset: 0, 0
+  index: -1
+miku_bg_11
+  rotate: true
+  xy: 1546, 645
+  size: 37, 73
+  orig: 37, 73
+  offset: 0, 0
+  index: -1
+miku_bg_12
+  rotate: false
+  xy: 1237, 447
+  size: 134, 188
+  orig: 134, 188
+  offset: 0, 0
+  index: -1
+miku_bg_13
+  rotate: false
+  xy: 1641, 709
+  size: 51, 51
+  orig: 51, 51
+  offset: 0, 0
+  index: -1
+miku_bg_14
+  rotate: true
+  xy: 1653, 762
+  size: 197, 224
+  orig: 197, 224
+  offset: 0, 0
+  index: -1
+miku_bg_15
+  rotate: false
+  xy: 1371, 640
+  size: 81, 128
+  orig: 81, 128
+  offset: 0, 0
+  index: -1
+miku_bg_16
+  rotate: false
+  xy: 1237, 122
+  size: 108, 124
+  orig: 108, 124
+  offset: 0, 0
+  index: -1
+miku_bg_18
+  rotate: false
+  xy: 1454, 652
+  size: 90, 116
+  orig: 90, 116
+  offset: 0, 0
+  index: -1
+miku_bg_19
+  rotate: true
+  xy: 1378, 770
+  size: 214, 273
+  orig: 214, 273
+  offset: 0, 0
+  index: -1
+miku_bg_20
+  rotate: true
+  xy: 215, 47
+  size: 151, 187
+  orig: 151, 187
+  offset: 0, 0
+  index: -1
+miku_bg_22
+  rotate: false
+  xy: 1378, 986
+  size: 337, 206
+  orig: 337, 206
+  offset: 0, 0
+  index: -1
+miku_bg_24
+  rotate: true
+  xy: 1276, 1452
+  size: 61, 73
+  orig: 61, 73
+  offset: 0, 0
+  index: -1
+miku_bg_26
+  rotate: true
+  xy: 2, 25
+  size: 173, 211
+  orig: 173, 211
+  offset: 0, 0
+  index: -1
+miku_bg_27
+  rotate: false
+  xy: 1879, 720
+  size: 142, 239
+  orig: 142, 239
+  offset: 0, 0
+  index: -1
+miku_bg_28
+  rotate: false
+  xy: 1373, 549
+  size: 76, 89
+  orig: 76, 89
+  offset: 0, 0
+  index: -1
+miku_bg_29
+  rotate: false
+  xy: 2, 1442
+  size: 1272, 604
+  orig: 1272, 604
+  offset: 0, 0
+  index: -1
+miku_bg_3
+  rotate: true
+  xy: 1721, 1187
+  size: 455, 308
+  orig: 455, 308
+  offset: 0, 0
+  index: -1
+miku_bg_30
+  rotate: false
+  xy: 1276, 1642
+  size: 440, 404
+  orig: 440, 404
+  offset: 0, 0
+  index: -1
+miku_bg_32
+  rotate: true
+  xy: 1243, 828
+  size: 612, 133
+  orig: 612, 133
+  offset: 0, 0
+  index: -1
+miku_bg_33
+  rotate: true
+  xy: 1378, 1194
+  size: 446, 341
+  orig: 446, 341
+  offset: 0, 0
+  index: -1
+miku_bg_4
+  rotate: false
+  xy: 438, 48
+  size: 797, 597
+  orig: 797, 597
+  offset: 0, 0
+  index: -1
+miku_bg_5
+  rotate: false
+  xy: 2, 200
+  size: 434, 1240
+  orig: 434, 1240
+  offset: 0, 0
+  index: -1
+miku_bg_6
+  rotate: false
+  xy: 438, 647
+  size: 803, 793
+  orig: 803, 793
+  offset: 0, 0
+  index: -1
+miku_bg_8
+  rotate: false
+  xy: 1276, 1515
+  size: 93, 125
+  orig: 93, 125
+  offset: 0, 0
+  index: -1
