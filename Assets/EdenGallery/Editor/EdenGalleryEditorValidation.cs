@@ -44,6 +44,14 @@ namespace EdenGallery.Editor
                 throw new InvalidOperationException(
                     "Enemy 12010002 Spine resources are incomplete.");
             }
+            if (Resources.Load<Shader>(
+                    "SkillRestoreShaders/BattleSceneUnlit") == null ||
+                Resources.Load<Shader>(
+                    "Skill11300018/VideoUnlit") == null)
+            {
+                throw new InvalidOperationException(
+                    "11300018 video fallback shaders are unavailable.");
+            }
 
             EdenGalleryLayer layer = new EdenGalleryLayer();
             layer.name = "BattleValidation_12010002";
@@ -70,10 +78,12 @@ namespace EdenGallery.Editor
                         ownedObjects);
                 if (enemy == null ||
                     enemy.Skeleton == null ||
-                    enemy.Skeleton.Data.FindAnimation("idle") == null)
+                    enemy.Skeleton.Data.FindAnimation("idle") == null ||
+                    enemy.Skeleton.Data.FindAnimation("hit_1") == null ||
+                    enemy.Skeleton.Data.FindAnimation("hit_2") == null)
                 {
                     throw new InvalidOperationException(
-                        "Enemy 12010002 idle animation is unavailable.");
+                        "Enemy 12010002 idle/hit_1/hit_2 animation is unavailable.");
                 }
 
                 string streamingRoot = System.IO.Path.Combine(
@@ -82,7 +92,10 @@ namespace EdenGallery.Editor
                 string[] requiredBundles =
                 {
                     "m_cardspine_11300018.aab",
+                    "eft_fx_11300018_attack.aab",
                     "eft_fx_11300018_attack_2.aab",
+                    "eft_fx_11300018_attack_air.aab",
+                    "eft_fx_11300018_attack_air_hit.aab",
                     "eft_fx_11300018_skill.aab",
                     "eft_fx_11300018_skill_2.aab",
                     "eft_fx_timeline_11300018_xp.aab",
@@ -100,6 +113,15 @@ namespace EdenGallery.Editor
                         throw new InvalidOperationException(
                             "Missing 11300018 battle resource: " + path);
                 }
+
+                string videoPath = System.IO.Path.Combine(
+                    Application.streamingAssetsPath,
+                    "Skill11300018/FX_timeline_11300018_xp.m4v");
+                if (!System.IO.File.Exists(videoPath))
+                    throw new InvalidOperationException(
+                        "Missing 11300018 ultimate video: " + videoPath);
+
+                Validate11300018ApkLogic();
             }
             finally
             {
@@ -113,7 +135,112 @@ namespace EdenGallery.Editor
 
             Debug.Log(
                 "EDEN_BATTLE_VALIDATION_OK hero=11300018 enemy=12010002 " +
-                "actions=attack,skill,uniqueskill");
+                "mode=apk-only " +
+                "actions=attack,skill,uniqueskill apkHits=9");
+        }
+
+        private static void Validate11300018ApkLogic()
+        {
+            if (!string.Equals(
+                    Skill11300018ApkBattleLogic.TimelineName,
+                    "Fx_timeline_11300018_xp",
+                    StringComparison.Ordinal) ||
+                Skill11300018ApkBattleLogic.UltimateHits.Length !=
+                    Skill11300018ApkBattleLogic.UltimateTotalHitCount ||
+                Mathf.Abs(
+                    Skill11300018ApkBattleLogic.UltimateSwordRevealTime -
+                    6.700f) > 0.0001f ||
+                Skill11300018ApkBattleLogic.UltimateSwordRevealTime <=
+                    Skill11300018ApkBattleLogic.UltimateDefendersVisibleTime ||
+                Skill11300018ApkBattleLogic.UltimateSwordRevealTime >=
+                    Skill11300018ApkBattleLogic.UltimateHits[0].timeSeconds)
+            {
+                throw new InvalidOperationException(
+                    "11300018 recovered Timeline or hit count is invalid.");
+            }
+
+            float previousTime = 0f;
+            float[] expectedTimes =
+            {
+                6.865f,
+                7.232f,
+                7.599f,
+                8.665f,
+                8.815f,
+                8.965f,
+                9.115f,
+                9.265f,
+                9.415f
+            };
+            for (int i = 0;
+                 i < Skill11300018ApkBattleLogic.UltimateHits.Length;
+                 i++)
+            {
+                Skill11300018UltimateHit hit =
+                    Skill11300018ApkBattleLogic.UltimateHits[i];
+                string expectedState =
+                    i % 2 == 0 ? "hit_2" : "hit_1";
+                bool expectedFinal =
+                    i ==
+                    Skill11300018ApkBattleLogic.UltimateHits.Length - 1;
+                if (hit.timeSeconds <= previousTime ||
+                    Mathf.Abs(
+                        hit.timeSeconds -
+                        expectedTimes[i]) > 0.0001f ||
+                    !string.Equals(
+                        hit.defenderState,
+                        expectedState,
+                        StringComparison.Ordinal) ||
+                    hit.isFinal != expectedFinal)
+                {
+                    throw new InvalidOperationException(
+                        "Invalid 11300018 APK ultimate cue #" + (i + 1));
+                }
+                previousTime = hit.timeSeconds;
+            }
+
+            string[] expectedNormal =
+            {
+                "eft_fx_11300018_attack_2.aab"
+            };
+            string[] expectedBurst =
+            {
+                "eft_fx_11300018_attack.aab",
+                "eft_fx_11300018_skill.aab",
+                "eft_fx_11300018_skill_2.aab"
+            };
+            if (!SequenceEquals(
+                    Skill11300018ApkBattleLogic.NormalEffectBundles,
+                    expectedNormal) ||
+                !SequenceEquals(
+                    Skill11300018ApkBattleLogic.BurstEffectBundles,
+                    expectedBurst))
+            {
+                throw new InvalidOperationException(
+                    "11300018 APK attack/burst resource mapping changed.");
+            }
+        }
+
+        private static bool SequenceEquals(
+            string[] left,
+            string[] right)
+        {
+            if (left == null || right == null ||
+                left.Length != right.Length)
+            {
+                return false;
+            }
+            for (int i = 0; i < left.Length; i++)
+            {
+                if (!string.Equals(
+                        left[i],
+                        right[i],
+                        StringComparison.Ordinal))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         [MenuItem("Eden Gallery/Validate Character Details")]

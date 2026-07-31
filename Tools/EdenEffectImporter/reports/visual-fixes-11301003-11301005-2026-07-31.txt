@@ -1,0 +1,27 @@
+Eden effect visual fixes for 11301003 and 11301005
+
+11301003
+- Shader: EdenGallery/Particles/Additive
+- PrefabRenderHolder material: sfx_inspace_hexin
+- Main texture: flare_red_mask01
+- Dead strength: 0.01
+- Export: particles=8 renderers=8 materials=3 meshes=0
+
+11301005
+- Source shader dependency: common.aab
+- Shader: EdenGallery/Particles/MaskAdditive
+- Main texture: sfx_tx_light_xiao_mainback
+- Mask texture: beam_mask004
+- Mesh_mainback_xiao: UV0 duplicated to UV1 for the mask UV channel
+- Runtime mask scroll: _MaskTex X=0.35 per second
+- Animator inspection: 5-second clip has no curve bindings or sampled state changes
+- Dead strength: 0.01
+- Export: particles=4 renderers=5 materials=5 meshes=1
+
+Validation
+- 11300041 OK particles=8 badComponents=0 badMaterials=0 badMeshes=0
+- 11301003 OK particles=8 badComponents=0 badMaterials=0 badMeshes=0
+- 11301004 OK particles=3 badComponents=0 badMaterials=0 badMeshes=0
+- 11301005 OK particles=4 badComponents=0 badMaterials=0 badMeshes=0
+- 11301006 OK particles=6 badComponents=0 badMaterials=0 badMeshes=0
+- Unity marker: EDEN_EFFECT_VISUAL_FIX_OK

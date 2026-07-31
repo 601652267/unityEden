@@ -1,0 +1,83 @@
+Eden effect trial import 11300041, 11301003 through 11301006
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par depth=16 sourceOrder=0 order=16
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/Mesh_11300041_loft depth=16 sourceOrder=0 order=16
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/shandian depth=16 sourceOrder=2 order=18
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/shandian (1) depth=16 sourceOrder=2 order=18
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/shandian (2) depth=16 sourceOrder=2 order=18
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/shandian (3) depth=16 sourceOrder=2 order=18
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/Particle System (7) depth=1 sourceOrder=1 order=2
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/glow (21) depth=83 sourceOrder=1 order=84
+11300041 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11300041_grp/lead_par/glow (22) depth=83 sourceOrder=1 order=84
+  IMPORT_TEXTURE sfx_11300041_loft.png
+  IMPORT_TEXTURE sfx_11300041_loft_mask.png
+  MATERIAL sfx_11300041_loft shader=EdenGallery/Particles/MaskAdditive main=sfx_11300041_loft
+  IMPORT_TEXTURE sfx_tx_flash_002_sh.png
+  MATERIAL sfx_tx_flash_002_sh1 shader=EdenGallery/Particles/Additive main=sfx_tx_flash_002_sh
+  MATERIAL sfx_tx_flash_002_sh1_2 shader=EdenGallery/Particles/Additive main=sfx_tx_flash_002_sh
+  IMPORT_TEXTURE sfx_tx_flash_001_sh.png
+  MATERIAL sfx_tx_flash_001_sh shader=EdenGallery/Particles/Additive main=sfx_tx_flash_001_sh
+  MATERIAL sfx_tx_flash_001_sh_4 shader=EdenGallery/Particles/Additive main=sfx_tx_flash_001_sh
+  IMPORT_TEXTURE light_cp_121.png
+  MATERIAL light_cp_121 shader=EdenGallery/Particles/Additive main=light_cp_121
+  MATERIAL light_cp_121_6 shader=EdenGallery/Particles/Additive main=light_cp_121
+  MATERIAL FX_glow_004_sh shader=EdenGallery/Particles/Additive main=FX_glow_004_sh
+  MATERIAL FX_glow_004_sh_8 shader=EdenGallery/Particles/Additive main=FX_glow_004_sh
+  MATERIAL FX_glow_001_A_sh shader=EdenGallery/Particles/Additive main=FX_glow_001_sh
+  MATERIAL FX_glow_001_A_sh_10 shader=EdenGallery/Particles/Additive main=FX_glow_001_sh
+11300041 EXPORT particles=8 renderers=9 materials=11 meshes=5
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (11) depth=62 sourceOrder=0 order=62
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System depth=199 sourceOrder=0 order=199
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (1) depth=199 sourceOrder=0 order=199
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (2) depth=199 sourceOrder=0 order=199
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (3) depth=192 sourceOrder=0 order=192
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (4) depth=199 sourceOrder=0 order=199
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (5) depth=199 sourceOrder=0 order=199
+11301003 RESTORED_SOURCE_DEPTH object=Fx_MainBack_11301003_grp/Particle System (6) depth=199 sourceOrder=0 order=199
+  MATERIAL glow_016 shader=EdenGallery/Particles/Additive main=glow_016
+  MATERIAL glow_016_1 shader=EdenGallery/Particles/Additive main=glow_016
+  IMPORT_TEXTURE sfx_huihui_hexin.png
+  MATERIAL sfx_inspace_hexin shader=EdenGallery/Particles/Additive main=sfx_huihui_hexin
+11301003 EXPORT particles=8 renderers=8 materials=3 meshes=0
+11301004 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301004_grp/Particle System (12) depth=61 sourceOrder=0 order=61
+11301004 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301004_grp/Particle System depth=21 sourceOrder=0 order=21
+11301004 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301004_grp/Particle System (1) depth=84 sourceOrder=0 order=84
+  MATERIAL glow_016 shader=EdenGallery/Particles/Additive main=glow_016
+  MATERIAL glow_016_1 shader=EdenGallery/Particles/Additive main=glow_016
+  MATERIAL sfx_tx_371 shader=EdenGallery/Particles/Additive main=sfx_tx_371
+  MATERIAL sfx_tx_371_3 shader=EdenGallery/Particles/Additive main=sfx_tx_371
+  MATERIAL sfx_tx_097 shader=EdenGallery/Particles/Additive main=sfx_tx_097_1
+  MATERIAL sfx_tx_097_5 shader=EdenGallery/Particles/Additive main=sfx_tx_097_1
+11301004 EXPORT particles=3 renderers=3 materials=6 meshes=0
+11301005 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301005_grp/Mesh_mainback_xiao depth=185 sourceOrder=0 order=185
+11301005 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301005_grp/Particle System depth=349 sourceOrder=0 order=349
+11301005 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301005_grp/Particle System (1) depth=78 sourceOrder=0 order=78
+11301005 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301005_grp/Particle System (1)/Particle System (2) depth=78 sourceOrder=0 order=78
+11301005 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301005_grp/Particle System (2) depth=78 sourceOrder=0 order=78
+  IMPORT_TEXTURE sfx_tx_light_xiao_mainback.png
+  MATERIAL FX_tex_xiao_liuguang_mainback shader=EdenGallery/Particles/Additive main=sfx_tx_light_xiao_mainback
+  MATERIAL sfx_tx_ui_xiao_li shader=EdenGallery/Particles/Additive main=sfx_tx_ui_xiaolizi
+  MATERIAL sfx_tx_ui_xiao_li_2 shader=EdenGallery/Particles/Additive main=sfx_tx_ui_xiaolizi
+  IMPORT_TEXTURE sfx_tx_507.png
+  MATERIAL sfx_tx_507 shader=EdenGallery/Particles/Additive main=sfx_tx_507
+  MATERIAL sfx_tx_507_4 shader=EdenGallery/Particles/Additive main=sfx_tx_507
+11301005 EXPORT particles=4 renderers=5 materials=5 meshes=1
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/huaban1 depth=97 sourceOrder=0 order=97
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/huaban1/huaban1 (1) depth=97 sourceOrder=0 order=97
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/Particle System (12) depth=22 sourceOrder=0 order=22
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/Particle System depth=15 sourceOrder=0 order=15
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/Particle System (1) depth=31 sourceOrder=0 order=31
+11301006 RESTORED_SOURCE_DEPTH object=FX_MainBack_11301006_grp/Particle System (2) depth=31 sourceOrder=0 order=31
+  MATERIAL mei_caizhi shader=EdenGallery/Effects/SoulGamesAlphaBlend main=mei_caizhi
+  MATERIAL mei_caizhi_1 shader=EdenGallery/Effects/SoulGamesAlphaBlend main=mei_caizhi
+  MATERIAL glow_016 shader=EdenGallery/Particles/Additive main=glow_016
+  MATERIAL glow_016_3 shader=EdenGallery/Particles/Additive main=glow_016
+  MATERIAL sfx_tx_097 shader=EdenGallery/Particles/Additive main=sfx_tx_097_1
+  MATERIAL sfx_tx_097_5 shader=EdenGallery/Particles/Additive main=sfx_tx_097_1
+  MATERIAL sfx_story_snow shader=EdenGallery/Effects/SoulGamesAlphaBlend main=sfx_tx_snow
+  MATERIAL sfx_story_snow_7 shader=EdenGallery/Effects/SoulGamesAlphaBlend main=sfx_tx_snow
+11301006 EXPORT particles=6 renderers=6 materials=8 meshes=3
+11300041 OK particles=8 badComponents=0 badMaterials=0 badMeshes=0
+11301003 OK particles=8 badComponents=0 badMaterials=0 badMeshes=0
+11301004 OK particles=3 badComponents=0 badMaterials=0 badMeshes=0
+11301005 OK particles=4 badComponents=0 badMaterials=0 badMeshes=0
+11301006 OK particles=6 badComponents=0 badMaterials=0 badMeshes=0

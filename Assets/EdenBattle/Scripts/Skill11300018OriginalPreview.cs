@@ -21,18 +21,13 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
 
     public event Action<UltimatePresentationPhase>
         UltimatePresentationChanged;
+    public event Action<int, string, bool>
+        ApkUltimateHitTriggered;
 
     private const string BundleDirectoryName = "Skill11300018Original";
     private const int AttackEffectMinimumSortingOrder = 100;
     private const int VideoBackdropSortingOrder = 32000;
     private const int VideoSortingOrder = 32001;
-    private const float UltimateHideCharacterTime = 5.6994f;
-    private const float UltimateRestoreCharacterTime = 9.532f;
-    private const float UltimateCleanupTime = 9.97f;
-    private const float UltimateVideoStartTime = 1.30f;
-    // The original Timeline Control clip is [1.300000, 4.333333].
-    // It intentionally cuts the final ~0.80s from the 3.83s source video.
-    private const float UltimateVideoEndTime = 4.333333f;
 
     private readonly Dictionary<string, AssetBundle> bundles =
         new Dictionary<string, AssetBundle>(StringComparer.OrdinalIgnoreCase);
@@ -41,6 +36,8 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
     private readonly Dictionary<Renderer, bool> hiddenCharacterRenderers =
         new Dictionary<Renderer, bool>();
     private readonly Dictionary<Renderer, bool> hiddenTimelineRenderers =
+        new Dictionary<Renderer, bool>();
+    private readonly Dictionary<Renderer, bool> hiddenUltimateSwordRenderers =
         new Dictionary<Renderer, bool>();
 
     [Header("Wide stage layout")]
@@ -416,7 +413,7 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
     public void BeginUltimate()
     {
         if (!busy && character != null)
-            StartCoroutine(PlayUltimate());
+            StartCoroutine(PlayUltimateSequence());
     }
 
     private IEnumerator PlayNormalAttack()
@@ -428,24 +425,28 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         SetCharacterVisible(true);
         character.transform.localPosition = characterStart;
         PlaySpineAnimation("attack", false);
-        Log("Playing original three-stage normal attack");
+        Log("APK normal: attack_2");
 
         float sequenceStart = Time.time;
-        // attack draws target-relative blade arcs and must be aligned to the
-        // current defender. attack_2 already contains the original defender
-        // position in its prefab root, so it remains at the world origin.
-        SpawnEffectAlignedToTarget(
-            "eft_fx_11300018_attack.aab",
+        // attack_2 is authored at the original defender coordinate
+        // (18.5, -4), so its container stays at the world origin.
+        SpawnEffect(
+            Skill11300018ApkBattleLogic.NormalEffectBundles[0],
+            Vector3.zero,
             false);
-        SpawnEffect("eft_fx_11300018_attack_2.aab", Vector3.zero, false);
-        StartCoroutine(MoveCharacter(characterStart, attackApproach, 0.24f));
+        StartCoroutine(MoveCharacter(
+            characterStart,
+            attackApproach,
+            0.24f));
 
-        // The reference recording holds Labi at the enemy through the third
-        // slash, then sends her back while the last impact is fading.
-        yield return WaitForSequenceTime(sequenceStart, 1.40f);
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.NormalReturnTime);
         Vector3 returnFrom = character.transform.localPosition;
         yield return MoveCharacter(returnFrom, characterStart, 0.28f);
-        yield return WaitForSequenceTime(sequenceStart, 1.82f);
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.NormalCleanupTime);
         ClearEffects();
         PlaySpineAnimation("idle", true);
         showUi = true;
@@ -461,29 +462,42 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         SetCharacterVisible(true);
         character.transform.localPosition = characterStart;
         PlaySpineAnimation("skill", false);
-        Log("Playing original burst sequence");
+        Log("APK burst: attack + skill + skill_2");
 
         float sequenceStart = Time.time;
-        // These prefabs form one synchronized sequence. skill owns the
-        // circular slash and crossing beams; skill_2 owns the defender-side
-        // flashes and the final blue burst at about 1.90s.
+        // The blue target-relative attack effect belongs to the burst
+        // presentation in the recovered mapping, not to the APK normal mode.
         SpawnEffectAlignedToTarget(
-            "eft_fx_11300018_skill.aab",
+            Skill11300018ApkBattleLogic.BurstEffectBundles[0],
             false);
-        SpawnEffect("eft_fx_11300018_skill_2.aab", Vector3.zero, false);
-        StartCoroutine(MoveCharacter(characterStart, attackApproach, 0.26f));
+        SpawnEffectAlignedToTarget(
+            Skill11300018ApkBattleLogic.BurstEffectBundles[1],
+            false);
+        // skill_2 already owns the original absolute defender coordinate.
+        SpawnEffect(
+            Skill11300018ApkBattleLogic.BurstEffectBundles[2],
+            Vector3.zero,
+            false);
+        StartCoroutine(MoveCharacter(
+            characterStart,
+            attackApproach,
+            0.26f));
 
-        yield return WaitForSequenceTime(sequenceStart, 2.05f);
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.BurstReturnTime);
         Vector3 returnFrom = character.transform.localPosition;
         yield return MoveCharacter(returnFrom, characterStart, 0.30f);
-        yield return WaitForSequenceTime(sequenceStart, 2.42f);
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.BurstCleanupTime);
         ClearEffects();
         PlaySpineAnimation("idle", true);
         showUi = true;
         busy = false;
     }
 
-    private IEnumerator PlayUltimate()
+    private IEnumerator PlayUltimateSequence()
     {
         busy = true;
         if (autoHideUiDuringPlayback)
@@ -508,9 +522,11 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         SetCharacterVisible(true);
         character.transform.localPosition = ultimateCastPosition;
         PlaySpineAnimation("uniqueskill", false);
-        Log("Playing original cinematic + FX_timeline_11300018_xp");
+        Log("APK ultimate logic + " +
+            Skill11300018ApkBattleLogic.TimelineName);
 
         GameObject timeline = SpawnPreparedTimeline();
+        SetUltimateSwordVisualsVisible(false);
         float duration = 10.8f;
         if (timeline != null)
         {
@@ -530,7 +546,9 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         float sequenceStart = Time.time;
         if (playCinematic)
         {
-            yield return WaitForSequenceTime(sequenceStart, UltimateVideoStartTime);
+            yield return WaitForSequenceTime(
+                sequenceStart,
+                Skill11300018ApkBattleLogic.UltimateVideoStartTime);
             SetCharacterVisible(false);
             SetTimelineVisualsVisible(false);
             SetUltimatePresentationPhase(
@@ -539,7 +557,9 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
             videoPlayer.Play();
             SetVideoVisible(true);
 
-            yield return WaitForSequenceTime(sequenceStart, UltimateVideoEndTime);
+            yield return WaitForSequenceTime(
+                sequenceStart,
+                Skill11300018ApkBattleLogic.UltimateVideoEndTime);
             SetVideoVisible(false);
             if (videoPlayer.isPlaying)
                 videoPlayer.Pause();
@@ -549,24 +569,74 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
                 UltimatePresentationPhase.Preparation);
         }
 
-        yield return WaitForSequenceTime(sequenceStart, UltimateHideCharacterTime);
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.UltimateAttackerInvisibleTime);
         SetCharacterVisible(false);
+
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.UltimateDefendersVisibleTime);
         SetUltimatePresentationPhase(
             UltimatePresentationPhase.Defender);
-        yield return WaitForSequenceTime(sequenceStart, UltimateRestoreCharacterTime);
-        yield return WaitForSequenceTime(sequenceStart, UltimateCleanupTime);
-        if (videoPlayer != null)
-            videoPlayer.Stop();
-        SetVideoVisible(false);
-        SetTimelineVisualsVisible(true);
-        RecycleActiveTimeline();
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.UltimateSwordRevealTime);
+        SetUltimateSwordVisualsVisible(true);
+        for (int hitIndex = 0;
+             hitIndex <
+                Skill11300018ApkBattleLogic.UltimateHits.Length;
+             hitIndex++)
+        {
+            Skill11300018UltimateHit hit =
+                Skill11300018ApkBattleLogic.UltimateHits[hitIndex];
+            yield return WaitForSequenceTime(
+                sequenceStart,
+                hit.timeSeconds);
+            RegisterApkUltimateHit(hitIndex, hit);
+        }
+
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.UltimateReturnTime);
         character.transform.localPosition = characterStart;
         SetCharacterVisible(true);
         PlaySpineAnimation("idle", true);
         SetUltimatePresentationPhase(
             UltimatePresentationPhase.None);
+
+        yield return WaitForSequenceTime(
+            sequenceStart,
+            Skill11300018ApkBattleLogic.UltimateCleanupTime);
+        if (videoPlayer != null)
+            videoPlayer.Stop();
+        SetVideoVisible(false);
+        SetTimelineVisualsVisible(true);
+        RecycleActiveTimeline();
         showUi = true;
         busy = false;
+    }
+
+    private void RegisterApkUltimateHit(
+        int hitIndex,
+        Skill11300018UltimateHit hit)
+    {
+        int displayIndex = hitIndex + 1;
+        Log("APK ultimate hit " + displayIndex + "/" +
+            Skill11300018ApkBattleLogic.UltimateTotalHitCount +
+            " t=" + hit.timeSeconds.ToString("0.000") +
+            " state=" + hit.defenderState +
+            " final=" + hit.isFinal);
+
+        Action<int, string, bool> callback =
+            ApkUltimateHitTriggered;
+        if (callback != null)
+        {
+            callback(
+                displayIndex,
+                hit.defenderState,
+                hit.isFinal);
+        }
     }
 
     private GameObject SpawnEffect(string file, Vector3 position, bool timeline)
@@ -721,6 +791,7 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
             return;
 
         SetTimelineVisualsVisible(true);
+        SetUltimateSwordVisualsVisible(true);
         PlayableDirector[] directors =
             activeTimelineEffect.GetComponentsInChildren<PlayableDirector>(true);
         for (int i = 0; i < directors.Length; i++)
@@ -783,6 +854,18 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         if (backdropCollider != null)
             Destroy(backdropCollider);
         Shader colorShader = Shader.Find("Unlit/Color");
+        if (colorShader == null)
+        {
+            colorShader = Shader.Find(
+                "SkillRestore/Battle Scene Unlit");
+        }
+        if (colorShader == null)
+        {
+            AbortVideoSetup(
+                videoObject,
+                "Ultimate video disabled: no compatible backdrop shader.");
+            return;
+        }
         videoBackdropMaterial = new Material(colorShader);
         videoBackdropMaterial.color = Color.black;
         videoBackdropMaterial.renderQueue = 3997;
@@ -803,6 +886,18 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         Shader videoShader = Shader.Find("SkillRestore/11300018 Video Unlit");
         if (videoShader == null)
             videoShader = Shader.Find("Unlit/Texture");
+        if (videoShader == null)
+        {
+            videoShader = Shader.Find(
+                "SkillRestore/Battle Scene Unlit");
+        }
+        if (videoShader == null)
+        {
+            AbortVideoSetup(
+                videoObject,
+                "Ultimate video disabled: no compatible video shader.");
+            return;
+        }
         videoMaterial = new Material(videoShader);
         videoMaterial.name = "Skill11300018OriginalVideoMaterial";
         videoMaterial.mainTexture = videoTexture;
@@ -814,6 +909,35 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
         SetVideoVisible(false);
         videoPlayer.Prepare();
         Log("Preparing original 3.83s ultimate cinematic.");
+    }
+
+    private void AbortVideoSetup(
+        GameObject videoObject,
+        string reason)
+    {
+        Log(reason);
+        if (videoQuad != null)
+            Destroy(videoQuad);
+        if (videoBackdrop != null)
+            Destroy(videoBackdrop);
+        if (videoMaterial != null)
+            Destroy(videoMaterial);
+        if (videoBackdropMaterial != null)
+            Destroy(videoBackdropMaterial);
+        if (videoTexture != null)
+        {
+            videoTexture.Release();
+            Destroy(videoTexture);
+        }
+        if (videoObject != null)
+            Destroy(videoObject);
+
+        videoPlayer = null;
+        videoTexture = null;
+        videoQuad = null;
+        videoBackdrop = null;
+        videoMaterial = null;
+        videoBackdropMaterial = null;
     }
 
     private void PlaceCinematicSurface(
@@ -911,6 +1035,67 @@ public sealed class Skill11300018OriginalPreview : MonoBehaviour
                 pair.Key.enabled = pair.Value;
         }
         hiddenTimelineRenderers.Clear();
+    }
+
+    private void SetUltimateSwordVisualsVisible(bool visible)
+    {
+        if (visible)
+        {
+            foreach (KeyValuePair<Renderer, bool> pair
+                     in hiddenUltimateSwordRenderers)
+            {
+                if (pair.Key != null)
+                    pair.Key.enabled = pair.Value;
+            }
+            hiddenUltimateSwordRenderers.Clear();
+            return;
+        }
+
+        if (activeTimelineEffect == null ||
+            hiddenUltimateSwordRenderers.Count > 0)
+        {
+            return;
+        }
+
+        Renderer[] renderers =
+            activeTimelineEffect.GetComponentsInChildren<Renderer>(true);
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            Renderer renderer = renderers[i];
+            if (!IsEndBlastSwordRenderer(renderer))
+                continue;
+
+            hiddenUltimateSwordRenderers[renderer] = renderer.enabled;
+            renderer.enabled = false;
+        }
+        Log("Hidden end_blass sword preroll renderers=" +
+            hiddenUltimateSwordRenderers.Count);
+    }
+
+    private static bool IsEndBlastSwordRenderer(Renderer renderer)
+    {
+        if (renderer == null)
+            return false;
+
+        bool underSwordNode = false;
+        Transform current = renderer.transform;
+        while (current != null)
+        {
+            if (current.name.StartsWith(
+                    "sword",
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                underSwordNode = true;
+            }
+            if (current.name.Equals(
+                    "end_blass",
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                return underSwordNode;
+            }
+            current = current.parent;
+        }
+        return false;
     }
 
     private void SetUltimatePresentationPhase(

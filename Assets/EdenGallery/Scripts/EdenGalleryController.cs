@@ -1001,6 +1001,54 @@ namespace EdenGallery
 
             if (string.Equals(
                 stage.folder,
+                "11202003_3",
+                StringComparison.Ordinal))
+            {
+                MeshRenderer[] noelRenderers =
+                    instance.GetComponentsInChildren<MeshRenderer>(true);
+                for (int i = 0; i < noelRenderers.Length; i++)
+                {
+                    MeshRenderer renderer = noelRenderers[i];
+                    if (renderer == null ||
+                        !renderer.gameObject.name.StartsWith(
+                            "sfx_uv_fish_",
+                            StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    renderer.gameObject.SetActive(true);
+                    renderer.enabled = true;
+                    renderer.sortingOrder = 92;
+
+                    Material material = renderer.material;
+                    if (material != null &&
+                        material.HasProperty("_TintColor"))
+                    {
+                        Color tint = material.GetColor("_TintColor");
+                        tint.a = Mathf.Max(tint.a, 0.48f);
+                        material.SetColor("_TintColor", tint);
+                    }
+                    if (material != null &&
+                        material.HasProperty("_EdenOpacity"))
+                        material.SetFloat("_EdenOpacity", 1f);
+                    if (material != null && material.mainTexture != null)
+                        material.mainTexture.wrapMode = TextureWrapMode.Repeat;
+                }
+
+                Animation fishAnimation =
+                    instance.GetComponentInChildren<Animation>(true);
+                if (fishAnimation != null)
+                {
+                    fishAnimation.enabled = true;
+                    if (fishAnimation.clip != null)
+                        fishAnimation.Play(fishAnimation.clip.name);
+                    else
+                        fishAnimation.Play();
+                }
+                return;
+            }
+
+            if (string.Equals(
+                stage.folder,
                 "11300037_3",
                 StringComparison.Ordinal))
             {
@@ -1027,6 +1075,34 @@ namespace EdenGallery
                             StringComparison.OrdinalIgnoreCase);
                     if (waterColumn || breathingGlow)
                         renderer.enabled = false;
+                }
+                return;
+            }
+
+            if (string.Equals(
+                stage.folder,
+                "11301005_3",
+                StringComparison.Ordinal))
+            {
+                MeshRenderer[] xiaoRenderers =
+                    instance.GetComponentsInChildren<MeshRenderer>(true);
+                for (int i = 0; i < xiaoRenderers.Length; i++)
+                {
+                    MeshRenderer renderer = xiaoRenderers[i];
+                    if (renderer == null ||
+                        !string.Equals(
+                            renderer.gameObject.name,
+                            "Mesh_mainback_xiao",
+                            StringComparison.Ordinal))
+                        continue;
+
+                    EdenGalleryTextureScroller scroller =
+                        renderer.gameObject.AddComponent<
+                            EdenGalleryTextureScroller>();
+                    scroller.Initialize(
+                        renderer,
+                        "_MaskTex",
+                        new Vector2(0.35f, 0f));
                 }
                 return;
             }

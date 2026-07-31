@@ -1,0 +1,28 @@
+Eden non-particle portrait2 composition verification
+
+11202014
+- Particles: 0
+- Existing: CardShowSpine_11202014_3, CardShowSpine_11202014_3_q, bg_3
+- Added: bg_1 position=(-0.95,-4.73,-0.16) scale=1 order=16
+- Added: bg_2 position=(6.11,-0.02,-0.63) scale=1 order=63
+
+11202016
+- Particles: 0
+- BG1, BG2, CardShowSpine_11202016_3_1 and _3_2 already match source
+- No change
+
+11300032
+- Particles: 0
+- BG, CardShowSpine_11300032_3_1 and _3_2 already match source
+- No change
+
+11300036
+- Particles: 0
+- Existing: CardShowSpine_11300036_3_1, _3_2 and _3_3
+- Added: BG1 position=(0.11,-0.90,-0.01) scale=0.817500036 order=1
+- Source Sprite PPU=93.94495; gallery runtime PPU=100
+
+Checks
+- gallery.json parsed successfully
+- all three added PNGs imported as RGBA Sprite assets
+- no existing effect prefab was overwritten

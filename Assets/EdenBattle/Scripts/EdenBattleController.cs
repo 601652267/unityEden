@@ -84,6 +84,8 @@ namespace EdenGallery
             heroPreview.useUltimateVideo = true;
             heroPreview.UltimatePresentationChanged +=
                 HandleUltimatePresentationChanged;
+            heroPreview.ApkUltimateHitTriggered +=
+                HandleApkUltimateHit;
 
             CreateEnemy();
         }
@@ -410,9 +412,8 @@ namespace EdenGallery
                 return;
             statusText = "普通攻击";
             heroPreview.BeginNormalAttack();
-            // The original attack prefab contains three authored impacts.
             BeginEnemyReaction(
-                new[] { 0.25f, 0.66f, 1.20f },
+                Skill11300018ApkBattleLogic.NormalHitTimes,
                 0.48f);
         }
 
@@ -422,10 +423,8 @@ namespace EdenGallery
                 return;
             statusText = "爆气";
             heroPreview.BeginSkill();
-            // Match the visible circular slash, crossing beams and final
-            // defender-side burst from the recovered skill prefabs.
             BeginEnemyReaction(
-                new[] { 0.50f, 1.15f, 1.35f, 1.85f, 1.92f },
+                Skill11300018ApkBattleLogic.BurstHitTimes,
                 0.52f);
         }
 
@@ -435,20 +434,30 @@ namespace EdenGallery
                 return;
             statusText = "奥义";
             heroPreview.BeginUltimate();
-            BeginEnemyReaction(
+        }
+
+        private void HandleApkUltimateHit(
+            int hitIndex,
+            string defenderState,
+            bool isFinal)
+        {
+            if (heroPreview == null)
+                return;
+
+            statusText = "奥义 " + hitIndex + "/" +
+                Skill11300018ApkBattleLogic.UltimateTotalHitCount +
+                (isFinal ? "（最后一击）" : string.Empty);
+            PlayEnemyAnimation(
                 new[]
                 {
-                    6.865f,
-                    7.232f,
-                    7.599f,
-                    8.665f,
-                    8.815f,
-                    8.965f,
-                    9.115f,
-                    9.265f,
-                    9.415f
+                    defenderState,
+                    "hurt",
+                    "hit",
+                    "stun",
+                    "fall_down",
+                    "damage"
                 },
-                0.18f);
+                false);
         }
 
         private void HandleUltimatePresentationChanged(
@@ -790,15 +799,15 @@ namespace EdenGallery
                 titleStyle);
 
             Rect statusRect = new Rect(
-                width * 0.5f - 145f,
+                width * 0.5f - 230f,
                 14f,
-                290f,
+                460f,
                 36f);
             DrawPanel(statusRect, new Color(0.035f, 0.06f, 0.11f, 0.82f));
             string currentStatus = heroPreview != null &&
                 !heroPreview.IsReady
                 ? heroPreview.LoadingStatus
-                : statusText;
+                : "APK 原逻辑版 · " + statusText;
             GUI.Label(statusRect, currentStatus, smallLabelStyle);
 
             float sideWidth = Mathf.Min(330f, width * 0.25f);
@@ -916,6 +925,8 @@ namespace EdenGallery
             {
                 heroPreview.UltimatePresentationChanged -=
                     HandleUltimatePresentationChanged;
+                heroPreview.ApkUltimateHitTriggered -=
+                    HandleApkUltimateHit;
             }
             for (int i = 0; i < ownedObjects.Count; i++)
             {

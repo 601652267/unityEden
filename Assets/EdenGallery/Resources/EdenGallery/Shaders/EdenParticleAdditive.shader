@@ -4,6 +4,7 @@ Shader "EdenGallery/Particles/Additive"
     {
         _MainTex ("Particle Texture", 2D) = "white" {}
         _TintColor ("Tint Color", Color) = (0.5, 0.5, 0.5, 0.5)
+        _DeadStrength ("Color Dead Num", Range(0,1)) = 0.01
     }
     SubShader
     {
@@ -22,6 +23,7 @@ Shader "EdenGallery/Particles/Additive"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             fixed4 _TintColor;
+            fixed _DeadStrength;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -44,8 +46,13 @@ Shader "EdenGallery/Particles/Additive"
             }
             fixed4 frag(v2f input) : SV_Target
             {
-                fixed4 color = tex2D(_MainTex, input.uv) * input.color * _TintColor * 2.0;
-                return color;
+                fixed4 color =
+                    tex2D(_MainTex, input.uv) *
+                    input.color *
+                    _TintColor;
+                if (color.r + color.g + color.b < _DeadStrength)
+                    color.a = 0.0;
+                return color * 2.0;
             }
             ENDCG
         }

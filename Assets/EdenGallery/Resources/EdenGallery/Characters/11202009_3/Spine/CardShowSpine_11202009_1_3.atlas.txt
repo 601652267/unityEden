@@ -1,0 +1,13 @@
+
+CardShowSpine_11202009_1_3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+qianjing
+  rotate: false
+  xy: 2, 2
+  size: 2041, 1243
+  orig: 2041, 1243
+  offset: 0, 0
+  index: -1
