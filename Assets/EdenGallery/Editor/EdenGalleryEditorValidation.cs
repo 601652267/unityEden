@@ -9,6 +9,11 @@ namespace EdenGallery.Editor
 {
     public static class EdenGalleryEditorValidation
     {
+        private static readonly string[] MissingBattleHeroIds =
+        {
+            "11202003", "11300056", "11300057"
+        };
+
         [MenuItem("Eden Gallery/Validate Battle Scene")]
         public static void ValidateBattleScene()
         {
@@ -122,6 +127,8 @@ namespace EdenGallery.Editor
                         "Missing 11300018 ultimate video: " + videoPath);
 
                 Validate11300018ApkLogic();
+                Validate11301023RecoveredSkill();
+                Validate11301006RecoveredSkill();
             }
             finally
             {
@@ -134,9 +141,194 @@ namespace EdenGallery.Editor
             }
 
             Debug.Log(
-                "EDEN_BATTLE_VALIDATION_OK hero=11300018 enemy=12010002 " +
-                "mode=apk-only " +
-                "actions=attack,skill,uniqueskill apkHits=9");
+                "EDEN_BATTLE_VALIDATION_OK heroes=11300018,11301023,11301006 " +
+                "enemy=12010002 mode=apk-only " +
+                "actions=attack,skill,uniqueskill apkHits=9,8,16 " +
+                "voices11301023=10 voices11301006=9 " +
+                "repeatedHideRestore=ok");
+        }
+
+        [MenuItem("Eden Gallery/Validate All Battle Heroes")]
+        public static void ValidateBattleHeroes()
+        {
+            TextAsset manifestAsset =
+                Resources.Load<TextAsset>("EdenGallery/gallery");
+            if (manifestAsset == null)
+                throw new InvalidOperationException(
+                    "Gallery manifest is missing.");
+
+            EdenGalleryManifest manifest =
+                JsonUtility.FromJson<EdenGalleryManifest>(
+                    manifestAsset.text);
+            if (manifest == null || manifest.characters == null)
+                throw new InvalidOperationException(
+                    "Gallery character list is missing.");
+
+            int imported = 0;
+            int missing = 0;
+            int normalCount = 0;
+            int burstCount = 0;
+            int ultimateCount = 0;
+            for (int characterIndex = 0;
+                 characterIndex < manifest.characters.Length;
+                 characterIndex++)
+            {
+                EdenGalleryCharacter character =
+                    manifest.characters[characterIndex];
+                if (character == null ||
+                    string.IsNullOrEmpty(character.cardId))
+                {
+                    continue;
+                }
+
+                string id = character.cardId;
+                string root = "EdenBattle/Heroes/" + id + "/";
+                TextAsset atlas = Resources.Load<TextAsset>(
+                    root + "CardSpine_" + id + ".atlas");
+                TextAsset skeleton = Resources.Load<TextAsset>(
+                    root + "CardSpine_" + id + ".skel");
+                Texture2D texture = Resources.Load<Texture2D>(
+                    root + "CardSpine_" + id);
+                bool complete = atlas != null && skeleton != null &&
+                    texture != null;
+                if (!complete)
+                {
+                    if (!Contains(MissingBattleHeroIds, id))
+                        throw new InvalidOperationException(
+                            "Unexpected missing battle Spine: " + id);
+                    missing++;
+                    continue;
+                }
+
+                if (Contains(MissingBattleHeroIds, id))
+                    throw new InvalidOperationException(
+                        "Expected missing battle Spine was imported: " + id);
+
+                List<UnityObject> ownedObjects =
+                    new List<UnityObject>();
+                GameObject validationRoot =
+                    new GameObject("BattleHeroValidation_" + id);
+                try
+                {
+                    EdenGalleryLayer layer = new EdenGalleryLayer();
+                    layer.name = "CardSpine_" + id;
+                    layer.atlasPath =
+                        root + "CardSpine_" + id + ".atlas";
+                    layer.skeletonPath =
+                        root + "CardSpine_" + id + ".skel";
+                    layer.texturePaths = new[]
+                    {
+                        root + "CardSpine_" + id
+                    };
+                    layer.animationName = "idle";
+                    SkeletonAnimation animation =
+                        EdenGallerySpineFactory.Create(
+                            layer,
+                            validationRoot.transform,
+                            0,
+                            ownedObjects);
+                    if (animation == null || animation.Skeleton == null ||
+                        animation.Skeleton.Data == null)
+                    {
+                        throw new InvalidOperationException(
+                            "Battle Spine could not be instantiated: " + id);
+                    }
+
+                    Spine.SkeletonData data = animation.Skeleton.Data;
+                    if (HasAnyAnimation(data, new[]
+                        { "attack", "attack_1", "attack1", "atk" }))
+                    {
+                        normalCount++;
+                    }
+                    if (HasAnyAnimation(data, new[]
+                        { "skill", "skill_1", "skill1", "burst" }))
+                    {
+                        burstCount++;
+                    }
+                    if (HasAnyAnimation(data, new[]
+                        { "uniqueskill", "unique_skill", "ultimate", "xp" }))
+                    {
+                        ultimateCount++;
+                    }
+                    imported++;
+                }
+                catch (Exception exception)
+                {
+                    throw new InvalidOperationException(
+                        "Battle Spine validation failed for " + id +
+                        ": " + exception.Message,
+                        exception);
+                }
+                finally
+                {
+                    UnityObject.DestroyImmediate(validationRoot);
+                    for (int ownedIndex = ownedObjects.Count - 1;
+                         ownedIndex >= 0;
+                         ownedIndex--)
+                    {
+                        if (ownedObjects[ownedIndex] != null)
+                        {
+                            UnityObject.DestroyImmediate(
+                                ownedObjects[ownedIndex]);
+                        }
+                    }
+                }
+            }
+
+            if (imported != 133 || missing != 3)
+                throw new InvalidOperationException(
+                    "Unexpected battle hero totals imported=" + imported +
+                    " missing=" + missing);
+
+            Debug.Log(
+                "EDEN_BATTLE_HEROES_VALIDATION_OK imported=" + imported +
+                " missing=" + missing +
+                " normal=" + normalCount +
+                " burst=" + burstCount +
+                " ultimate=" + ultimateCount);
+        }
+
+        private static bool HasAnyAnimation(
+            Spine.SkeletonData data,
+            string[] names)
+        {
+            if (data == null || data.Animations == null || names == null)
+                return false;
+            for (int nameIndex = 0; nameIndex < names.Length; nameIndex++)
+            {
+                for (int animationIndex = 0;
+                     animationIndex < data.Animations.Count;
+                     animationIndex++)
+                {
+                    Spine.Animation animation =
+                        data.Animations.Items[animationIndex];
+                    if (animation != null && string.Equals(
+                            animation.Name,
+                            names[nameIndex],
+                            StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private static bool Contains(string[] values, string expected)
+        {
+            if (values == null)
+                return false;
+            for (int index = 0; index < values.Length; index++)
+            {
+                if (string.Equals(
+                        values[index],
+                        expected,
+                        StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private static void Validate11300018ApkLogic()
@@ -150,6 +342,19 @@ namespace EdenGallery.Editor
                 Mathf.Abs(
                     Skill11300018ApkBattleLogic.UltimateSwordRevealTime -
                     6.700f) > 0.0001f ||
+                Mathf.Abs(
+                    Skill11300018ApkBattleLogic.UltimateVideoStartTime -
+                    1.300000f) > 0.0001f ||
+                Mathf.Abs(
+                    Skill11300018ApkBattleLogic.UltimateVideoEndTime -
+                    4.333333f) > 0.0001f ||
+                Mathf.Abs(
+                    Skill11300018ApkBattleLogic
+                        .UltimateAttackerInvisibleTime -
+                    5.6994f) > 0.0001f ||
+                Skill11300018ApkBattleLogic.UltimateVideoEndTime >=
+                    Skill11300018ApkBattleLogic
+                        .UltimateAttackerInvisibleTime ||
                 Skill11300018ApkBattleLogic.UltimateSwordRevealTime <=
                     Skill11300018ApkBattleLogic.UltimateDefendersVisibleTime ||
                 Skill11300018ApkBattleLogic.UltimateSwordRevealTime >=
@@ -218,6 +423,369 @@ namespace EdenGallery.Editor
             {
                 throw new InvalidOperationException(
                     "11300018 APK attack/burst resource mapping changed.");
+            }
+        }
+
+        private static void Validate11301023RecoveredSkill()
+        {
+            EdenRecoveredSkillConfiguration config =
+                EdenRecoveredSkillConfiguration.ForCard("11301023");
+            if (!string.Equals(
+                    config.timelineName,
+                    "FX_timeline_11301023_xp",
+                    StringComparison.Ordinal) ||
+                config.ultimateHits == null ||
+                config.ultimateHits.Length != 8 ||
+                config.ultimateTotalHitCount != 8 ||
+                Mathf.Abs(config.ultimateVideoStartTime - 1.5f) > 0.0001f ||
+                Mathf.Abs(config.ultimateVideoEndTime - 6f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimateDefendersVisibleTime -
+                    7.19928f) > 0.0001f ||
+                Mathf.Abs(config.ultimateReturnTime - 9.999f) > 0.0001f)
+            {
+                throw new InvalidOperationException(
+                    "11301023 recovered Timeline configuration is invalid.");
+            }
+
+            float[] expectedHitTimes =
+            {
+                8.765f, 8.915f, 9.065f, 9.215f,
+                9.365f, 9.515f, 9.665f, 9.999f
+            };
+            for (int index = 0; index < config.ultimateHits.Length; index++)
+            {
+                EdenRecoveredSkillHit hit = config.ultimateHits[index];
+                string expectedState =
+                    index % 2 == 0 ? "hit_2" : "hit_1";
+                bool expectedFinal = index == expectedHitTimes.Length - 1;
+                if (Mathf.Abs(
+                        hit.timeSeconds -
+                        expectedHitTimes[index]) > 0.0001f ||
+                    !string.Equals(
+                        hit.defenderState,
+                        expectedState,
+                        StringComparison.Ordinal) ||
+                    hit.isFinal != expectedFinal)
+                {
+                    throw new InvalidOperationException(
+                        "Invalid 11301023 APK ultimate cue #" +
+                        (index + 1));
+                }
+            }
+
+            string[] requiredBundles =
+            {
+                config.CharacterBundleName,
+                "eft_fx_11301023_attack.aab",
+                "eft_fx_11301023_attack_2.aab",
+                "eft_fx_11301023_skill.aab",
+                "eft_fx_11301023_skill_2.aab",
+                config.TimelineBundleName,
+                "manifest.json"
+            };
+            string bundleRoot = System.IO.Path.Combine(
+                Application.streamingAssetsPath,
+                config.BundleDirectoryName);
+            for (int index = 0; index < requiredBundles.Length; index++)
+            {
+                string path = System.IO.Path.Combine(
+                    bundleRoot,
+                    requiredBundles[index]);
+                if (!System.IO.File.Exists(path))
+                {
+                    throw new InvalidOperationException(
+                        "Missing 11301023 battle resource: " + path);
+                }
+            }
+
+            string videoPath = System.IO.Path.Combine(
+                Application.streamingAssetsPath,
+                config.VideoDirectoryName +
+                "/" + config.videoFileName);
+            if (!System.IO.File.Exists(videoPath))
+            {
+                throw new InvalidOperationException(
+                    "Missing 11301023 ultimate video: " + videoPath);
+            }
+
+            int voiceCount = 0;
+            voiceCount += ValidateVoiceResources(
+                config.normalVoiceResources);
+            voiceCount += ValidateVoiceResources(
+                config.burstVoiceResources);
+            voiceCount += ValidateVoiceResources(
+                config.ultimateVoiceResources);
+            if (voiceCount != 10)
+            {
+                throw new InvalidOperationException(
+                    "11301023 battle voice count is invalid: " +
+                    voiceCount);
+            }
+
+            ValidateRepeatedHideRestoresCharacter();
+        }
+
+        private static int ValidateVoiceResources(string[] paths)
+        {
+            if (paths == null)
+                return 0;
+            for (int index = 0; index < paths.Length; index++)
+            {
+                AudioClip clip = Resources.Load<AudioClip>(paths[index]);
+                if (clip == null ||
+                    (clip.channels != 1 && clip.channels != 2) ||
+                    clip.frequency != 44100)
+                {
+                    throw new InvalidOperationException(
+                        "Invalid recovered battle voice: " + paths[index]);
+                }
+            }
+            return paths.Length;
+        }
+
+        private static void Validate11301006RecoveredSkill()
+        {
+            EdenRecoveredSkillConfiguration config =
+                EdenRecoveredSkillConfiguration.ForCard("11301006");
+            if (!EdenRecoveredSkillConfiguration.Supports("11301006") ||
+                !string.Equals(
+                    config.timelineName,
+                    "Fx_timeline_11301006_xp",
+                    StringComparison.Ordinal) ||
+                config.ultimateHits == null ||
+                config.ultimateHits.Length != 16 ||
+                config.ultimateTotalHitCount != 16 ||
+                config.normalHitTimes == null ||
+                config.normalHitTimes.Length != 3 ||
+                config.burstHitTimes == null ||
+                config.burstHitTimes.Length != 3 ||
+                config.normalMovesToTarget ||
+                config.burstMovesToTarget ||
+                !config.normalPrimaryEffectAtCaster ||
+                !config.burstPrimaryEffectAtCaster ||
+                Mathf.Abs(config.normalCleanupTime - 0.85f) > 0.0001f ||
+                Mathf.Abs(config.burstCleanupTime - 4.10f) > 0.0001f ||
+                Mathf.Abs(config.ultimateVideoStartTime - 1.5f) > 0.0001f ||
+                Mathf.Abs(config.ultimateVideoEndTime - 4.5f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimateAttackerInvisibleTime -
+                    1.499f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimateAttackerReappearTime -
+                    4.499f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimateAttackerSecondInvisibleTime -
+                    5.799f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimateDefendersVisibleTime -
+                    5.999f) > 0.0001f ||
+                Mathf.Abs(config.ultimateReturnTime - 8.665f) > 0.0001f ||
+                Mathf.Abs(config.ultimateIdleTime - 10f) > 0.0001f ||
+                Mathf.Abs(
+                    config.ultimatePresentationEndTime -
+                    10.665f) > 0.0001f ||
+                Mathf.Abs(
+                    config.timelineContainerYOffset + 4f) > 0.0001f)
+            {
+                throw new InvalidOperationException(
+                    "11301006 recovered Timeline configuration is invalid.");
+            }
+
+            float[] expectedNormalHitTimes =
+            {
+                0.33f, 0.46f, 0.59f
+            };
+            float[] expectedBurstHitTimes =
+            {
+                3.00f, 3.30f, 3.40f
+            };
+            for (int index = 0;
+                 index < expectedNormalHitTimes.Length;
+                 index++)
+            {
+                if (Mathf.Abs(
+                        config.normalHitTimes[index] -
+                        expectedNormalHitTimes[index]) > 0.0001f ||
+                    Mathf.Abs(
+                        config.burstHitTimes[index] -
+                        expectedBurstHitTimes[index]) > 0.0001f)
+                {
+                    throw new InvalidOperationException(
+                        "11301006 attack/burst hit timing is invalid.");
+                }
+            }
+
+            string[] expectedNormalEffects =
+            {
+                "eft_fx_11301006_attack.aab",
+                "eft_fx_11301006_attack_2.aab"
+            };
+            string[] expectedBurstEffects =
+            {
+                "eft_fx_11301006_skill.aab",
+                "eft_fx_11301006_skill_2.aab"
+            };
+            if (!SequenceEquals(
+                    config.normalEffectBundles,
+                    expectedNormalEffects) ||
+                !SequenceEquals(
+                    config.burstEffectBundles,
+                    expectedBurstEffects))
+            {
+                throw new InvalidOperationException(
+                    "11301006 attack/burst resource mapping is invalid.");
+            }
+
+            float[] expectedHitTimes =
+            {
+                7.432f, 7.599f, 7.765f, 7.932f,
+                8.065f, 8.199f, 8.365f, 8.565f,
+                8.732f, 8.965f, 9.165f, 9.332f,
+                9.499f, 9.665f, 9.832f, 9.999f
+            };
+            for (int index = 0; index < config.ultimateHits.Length; index++)
+            {
+                EdenRecoveredSkillHit hit = config.ultimateHits[index];
+                string expectedState =
+                    index % 2 == 0 ? "hit_1" : "hit_2";
+                bool expectedFinal = index == expectedHitTimes.Length - 1;
+                if (Mathf.Abs(
+                        hit.timeSeconds -
+                        expectedHitTimes[index]) > 0.0001f ||
+                    !string.Equals(
+                        hit.defenderState,
+                        expectedState,
+                        StringComparison.Ordinal) ||
+                    hit.isFinal != expectedFinal)
+                {
+                    throw new InvalidOperationException(
+                        "Invalid 11301006 APK ultimate cue #" +
+                        (index + 1));
+                }
+            }
+            if (!(config.ultimateHits[7].timeSeconds <
+                    config.ultimateReturnTime &&
+                config.ultimateReturnTime <
+                    config.ultimateHits[8].timeSeconds))
+            {
+                throw new InvalidOperationException(
+                    "11301006 must return between ultimate hits 8 and 9.");
+            }
+
+            string[] requiredBundles =
+            {
+                config.CharacterBundleName,
+                "eft_fx_11301006_attack.aab",
+                "eft_fx_11301006_attack_2.aab",
+                "eft_fx_11301006_attack_hit.aab",
+                "eft_fx_11301006_skill.aab",
+                "eft_fx_11301006_skill2.aab",
+                "eft_fx_11301006_skill_2.aab",
+                "eft_fx_11301006_skill_hit.aab",
+                config.TimelineBundleName,
+                "manifest.json"
+            };
+            string bundleRoot = System.IO.Path.Combine(
+                Application.streamingAssetsPath,
+                config.BundleDirectoryName);
+            for (int index = 0; index < requiredBundles.Length; index++)
+            {
+                string path = System.IO.Path.Combine(
+                    bundleRoot,
+                    requiredBundles[index]);
+                if (!System.IO.File.Exists(path))
+                {
+                    throw new InvalidOperationException(
+                        "Missing 11301006 battle resource: " + path);
+                }
+            }
+
+            string videoPath = System.IO.Path.Combine(
+                Application.streamingAssetsPath,
+                config.VideoDirectoryName +
+                "/" + config.videoFileName);
+            if (!System.IO.File.Exists(videoPath))
+            {
+                throw new InvalidOperationException(
+                    "Missing 11301006 ultimate video: " + videoPath);
+            }
+
+            int voiceCount = 0;
+            voiceCount += ValidateVoiceResources(
+                config.normalVoiceResources);
+            voiceCount += ValidateVoiceResources(
+                config.burstVoiceResources);
+            voiceCount += ValidateVoiceResources(
+                config.ultimateVoiceResources);
+            if (voiceCount != 9)
+            {
+                throw new InvalidOperationException(
+                    "11301006 battle voice count is invalid: " +
+                    voiceCount);
+            }
+            ValidateVoiceChannels(config.normalVoiceResources, 1);
+            ValidateVoiceChannels(config.burstVoiceResources, 1);
+            ValidateVoiceChannels(config.ultimateVoiceResources, 2);
+        }
+
+        private static void ValidateVoiceChannels(
+            string[] paths,
+            int expectedChannels)
+        {
+            for (int index = 0; index < paths.Length; index++)
+            {
+                AudioClip clip = Resources.Load<AudioClip>(paths[index]);
+                if (clip == null || clip.channels != expectedChannels)
+                {
+                    throw new InvalidOperationException(
+                        "Unexpected channel count for recovered voice: " +
+                        paths[index]);
+                }
+            }
+        }
+
+        private static void ValidateRepeatedHideRestoresCharacter()
+        {
+            GameObject host = new GameObject(
+                "RecoveredVisibilityValidation");
+            try
+            {
+                EdenRecoveredBattlePreview preview =
+                    host.AddComponent<EdenRecoveredBattlePreview>();
+                GameObject character = GameObject.CreatePrimitive(
+                    PrimitiveType.Quad);
+                character.transform.SetParent(host.transform, false);
+                Renderer renderer = character.GetComponent<Renderer>();
+                System.Reflection.FieldInfo characterField =
+                    typeof(EdenRecoveredBattlePreview).GetField(
+                        "character",
+                        System.Reflection.BindingFlags.Instance |
+                        System.Reflection.BindingFlags.NonPublic);
+                System.Reflection.MethodInfo visibilityMethod =
+                    typeof(EdenRecoveredBattlePreview).GetMethod(
+                        "SetCharacterVisible",
+                        System.Reflection.BindingFlags.Instance |
+                        System.Reflection.BindingFlags.NonPublic);
+                if (characterField == null || visibilityMethod == null)
+                {
+                    throw new InvalidOperationException(
+                        "Recovered visibility API is unavailable.");
+                }
+
+                characterField.SetValue(preview, character);
+                visibilityMethod.Invoke(preview, new object[] { false });
+                visibilityMethod.Invoke(preview, new object[] { false });
+                visibilityMethod.Invoke(preview, new object[] { true });
+                if (renderer == null || !renderer.enabled)
+                {
+                    throw new InvalidOperationException(
+                        "Repeated ultimate hide did not restore character.");
+                }
+            }
+            finally
+            {
+                UnityObject.DestroyImmediate(host);
             }
         }
 

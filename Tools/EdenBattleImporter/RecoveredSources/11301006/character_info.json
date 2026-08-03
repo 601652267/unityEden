@@ -1,0 +1,1383 @@
+{
+  "generatedAt": "2026-05-15T08:47:55.055Z",
+  "sourceManifest": "assets/file/character_info_manifest.json",
+  "folder": "11301006",
+  "cardId": 11301006,
+  "variantSuffix": null,
+  "name": "メイ",
+  "nameCn": "梅伊",
+  "assetRoot": "assets/file/11301006",
+  "assetCounts": {
+    "battle_metadata": 4,
+    "battle_spine": 4,
+    "battle_texture": 2,
+    "metadata": 6,
+    "portrait": 4,
+    "script": 3,
+    "spine": 4,
+    "texture": 4,
+    "video": 6
+  },
+  "assets": [
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/11301006/battle_metadata/CardSpine_11301006_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardSpine_11301006_Atlas.json",
+      "bytes": 391,
+      "sha1": "5e917fa96bec23a5b13d15bedbff27d194ba1f7d",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/11301006/battle_metadata/CardSpine_11301006_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardSpine_11301006_Atlas.json",
+      "bytes": 391,
+      "sha1": "5e917fa96bec23a5b13d15bedbff27d194ba1f7d",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/11301006/battle_metadata/CardSpine_11301006_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardSpine_11301006_SkeletonData.json",
+      "bytes": 604,
+      "sha1": "ae6e303a7bb586849fcf7102ac109d327a515b0b",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_metadata",
+      "file": "assets/file/11301006/battle_metadata/CardSpine_11301006_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardSpine_11301006_SkeletonData.json",
+      "bytes": 604,
+      "sha1": "ae6e303a7bb586849fcf7102ac109d327a515b0b",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/11301006/battle_spine/CardSpine_11301006.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardSpine_11301006.atlas.prefab",
+      "bytes": 11675,
+      "sha1": "00986b9593b8302f2d3a8baf797f709783246949",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/11301006/battle_spine/CardSpine_11301006.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardSpine_11301006.atlas.prefab",
+      "bytes": 11675,
+      "sha1": "00986b9593b8302f2d3a8baf797f709783246949",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/11301006/battle_spine/CardSpine_11301006.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardSpine_11301006.skel.prefab",
+      "bytes": 463158,
+      "sha1": "2474921cf70ddaea0bf7497016158fdaed74c675",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_spine",
+      "file": "assets/file/11301006/battle_spine/CardSpine_11301006.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardSpine_11301006.skel.prefab",
+      "bytes": 463158,
+      "sha1": "2474921cf70ddaea0bf7497016158fdaed74c675",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_texture",
+      "file": "assets/file/11301006/battle_texture/CardSpine_11301006.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/CardSpine_11301006.png",
+      "bytes": 566449,
+      "sha1": "f1653eaa1fce43aa99a2e558dc27f694c57f00ce",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "battle_texture",
+      "file": "assets/file/11301006/battle_texture/CardSpine_11301006.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/CardSpine_11301006.png",
+      "bytes": 566449,
+      "sha1": "f1653eaa1fce43aa99a2e558dc27f694c57f00ce",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/CardShowSpine_11301006_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardShowSpine_11301006_Atlas.json",
+      "bytes": 470,
+      "sha1": "9734fd90ed3eb135cd76f7fdb59ef064a82238be",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/CardShowSpine_11301006_Atlas.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardShowSpine_11301006_Atlas.json",
+      "bytes": 470,
+      "sha1": "9734fd90ed3eb135cd76f7fdb59ef064a82238be",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/CardShowSpine_11301006_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/CardShowSpine_11301006_SkeletonData.json",
+      "bytes": 608,
+      "sha1": "72b8f86d6c267ab85bd25ddbd15b5d4990abcf70",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/CardShowSpine_11301006_SkeletonData.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/CardShowSpine_11301006_SkeletonData.json",
+      "bytes": 608,
+      "sha1": "72b8f86d6c267ab85bd25ddbd15b5d4990abcf70",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/FX_timeline_11301006_XP.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/MonoBehaviour/FX_timeline_11301006_XP.json",
+      "bytes": 2610,
+      "sha1": "dba3551eca5675766039be18a5cda0c46e95809e",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "metadata",
+      "file": "assets/file/11301006/metadata/FX_timeline_11301006_XP.json",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/MonoBehaviour/FX_timeline_11301006_XP.json",
+      "bytes": 2610,
+      "sha1": "dba3551eca5675766039be18a5cda0c46e95809e",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/11301006/portrait/img_11301006_1.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/img_11301006_1.png",
+      "bytes": 1532139,
+      "sha1": "eb9ab651853b7e495680b97672fd1e26c9b18a46",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/11301006/portrait/img_11301006_1.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/img_11301006_1.png",
+      "bytes": 1532139,
+      "sha1": "eb9ab651853b7e495680b97672fd1e26c9b18a46",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/11301006/portrait/img_11301006_2.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/img_11301006_2.png",
+      "bytes": 1890566,
+      "sha1": "b6e3f7cdc6e4b586acb921fa880e0d1ee1c3c74f",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "portrait",
+      "file": "assets/file/11301006/portrait/img_11301006_2.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/img_11301006_2.png",
+      "bytes": 1890566,
+      "sha1": "b6e3f7cdc6e4b586acb921fa880e0d1ee1c3c74f",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "script",
+      "file": "assets/file/11301006/script/skillscript11301006.lua__1ac114a0.bytes",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/skillscript11301006.lua.bytes",
+      "bytes": 1717,
+      "sha1": "1ac114a036f878b181370503573b2be7b560bcb2",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "script",
+      "file": "assets/file/11301006/script/skillscript11301006.lua__1ac114a0.bytes",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/skillscript11301006.lua.bytes",
+      "bytes": 1717,
+      "sha1": "1ac114a036f878b181370503573b2be7b560bcb2",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "script",
+      "file": "assets/file/11301006/script/skillscript11301006.lua.bytes",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets/TextAsset/skillscript11301006.lua.bytes",
+      "bytes": 2278,
+      "sha1": "93512ef59fe469f3010222fa70e1625e5ba101f0",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "spine",
+      "file": "assets/file/11301006/spine/CardShowSpine_11301006.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardShowSpine_11301006.atlas.prefab",
+      "bytes": 5545,
+      "sha1": "b15ca14d61807941c20e9fc1a7b39163b74c07db",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "spine",
+      "file": "assets/file/11301006/spine/CardShowSpine_11301006.atlas.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardShowSpine_11301006.atlas.prefab",
+      "bytes": 5545,
+      "sha1": "b15ca14d61807941c20e9fc1a7b39163b74c07db",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "spine",
+      "file": "assets/file/11301006/spine/CardShowSpine_11301006.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/TextAsset/CardShowSpine_11301006.skel.prefab",
+      "bytes": 128338,
+      "sha1": "3db13461cb7cdfde76b42ad1f0bca9a3ae89ec32",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "spine",
+      "file": "assets/file/11301006/spine/CardShowSpine_11301006.skel.prefab",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/TextAsset/CardShowSpine_11301006.skel.prefab",
+      "bytes": 128338,
+      "sha1": "3db13461cb7cdfde76b42ad1f0bca9a3ae89ec32",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "texture",
+      "file": "assets/file/11301006/texture/CardShowSpine_11301006.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/CardShowSpine_11301006.png",
+      "bytes": 1328599,
+      "sha1": "22f6e6cbcde9fa0e88832fd2700f2d762d283c16",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "texture",
+      "file": "assets/file/11301006/texture/CardShowSpine_11301006.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/CardShowSpine_11301006.png",
+      "bytes": 1328599,
+      "sha1": "22f6e6cbcde9fa0e88832fd2700f2d762d283c16",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "texture",
+      "file": "assets/file/11301006/texture/CardShowSpine_113010062.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/Texture2D/CardShowSpine_113010062.png",
+      "bytes": 1121025,
+      "sha1": "b3c91a55a8c0d5c399bdf881d674563e68b2c2b1",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "texture",
+      "file": "assets/file/11301006/texture/CardShowSpine_113010062.png",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/Texture2D/CardShowSpine_113010062.png",
+      "bytes": 1121025,
+      "sha1": "b3c91a55a8c0d5c399bdf881d674563e68b2c2b1",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/av_11301006.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets2/VideoClip/av_11301006.m4v",
+      "bytes": 6141051,
+      "sha1": "f248469c7e28ed7057137d8faf3cf226eb30d562",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/av_11301006.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/VideoClip/av_11301006.m4v",
+      "bytes": 6141051,
+      "sha1": "f248469c7e28ed7057137d8faf3cf226eb30d562",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/FX_timeline_11301006_XP_flip.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets/VideoClip/FX_timeline_11301006_XP_flip.m4v",
+      "bytes": 1502041,
+      "sha1": "374640773130507b8cc67b4c0f9b65d2c90b8c76",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/FX_timeline_11301006_XP_flip.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/VideoClip/FX_timeline_11301006_XP_flip.m4v",
+      "bytes": 1502041,
+      "sha1": "374640773130507b8cc67b4c0f9b65d2c90b8c76",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/FX_timeline_11301006_XP.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets/edenAssets/VideoClip/FX_timeline_11301006_XP.m4v",
+      "bytes": 1507000,
+      "sha1": "9f9f21070cc1e353b9e0e7f2552b8fdcf121b157",
+      "skippedAsDuplicate": true
+    },
+    {
+      "type": "video",
+      "file": "assets/file/11301006/video/FX_timeline_11301006_XP.m4v",
+      "source": "/Users/zhuhaiming/Desktop/edenAssets/edenAssets2/VideoClip/FX_timeline_11301006_XP.m4v",
+      "bytes": 1507000,
+      "sha1": "9f9f21070cc1e353b9e0e7f2552b8fdcf121b157",
+      "skippedAsDuplicate": true
+    }
+  ],
+  "selectedFashionIds": [
+    14310601
+  ],
+  "role": {
+    "id": 11301006,
+    "nameTextId": 81013106,
+    "name": "メイ",
+    "nameCn": "梅伊",
+    "cvNameTextId": 81041050,
+    "cvName": "洲崎 綾",
+    "cvNameCn": "须崎彩",
+    "lotteryWordTextId": 81080050,
+    "lotteryWord": "平和な未来のために、一緒に努力させてください。",
+    "lotteryWordCn": "请让我们共同努力，共创和平的未来。",
+    "voicePath": "May_Game_1",
+    "lotteryShow": "av_11301006",
+    "lotteryPic": "GachaCharacter001:Mei",
+    "rarity": 3,
+    "fashionIds": [
+      14310600,
+      14310601,
+      14310602
+    ],
+    "profile": {
+      "remarkTextId": 91003106,
+      "remark": "動物遺伝子:ソマリ,レッドとしての能力:軽快な行動力,危険度:低い,アンレッドに対する友好度:友好,好きなもの・好きな場所:自分の国,嫌いなもの・嫌いな場所:国と国民が傷を負うようなあらゆる出来事",
+      "remarkCn": "动物基因：索马里，红的能力：快速行动，危险程度：低，与非红的友谊：友谊，最喜欢的事物/最喜欢的地方：自己的国家，不喜欢/不喜欢的地方：任何伤害国家和人民的事件",
+      "mapPath": "HandBook:Map_026",
+      "mapNameTextId": 85110001,
+      "mapName": "新編！異世界",
+      "mapNameCn": "新编！异世界",
+      "birthday": {
+        "month": 7,
+        "day": 21
+      }
+    },
+    "stories": [
+      {
+        "id": 17100201,
+        "conditionType": 1,
+        "conditionValue": 2,
+        "detail": {
+          "id": 17100201,
+          "name": 17100201,
+          "textId": 92100201,
+          "text": "\nソマリは尻尾が太く、まるで王者のような風格をした猫である。\n\nあるとき、純粋なアビシニアンから突然生まれた長毛の猫のため、アビシニアンとよく似ている。しかしアビシニアンよりも独占欲は弱い。\n\n聡明かつ穏やかで、まるで人の心を理解しているように見える。適度に活発で、生命力が強く、感情が豊かで、主人の関心を強く求める。",
+          "textCn": "索马里猫有一条粗大的尾巴，看起来就像一个国王。\n\n在某个时候，一只纯种阿比西尼亚猫突然诞生了一只长毛猫，所以它看起来和阿比西尼亚猫非常相似。然而，他们的占有欲不如阿比西尼亚人。\n\n他聪明又温柔，似乎能读懂人心。它们活跃度适中，生命力强，情绪化，强烈寻求主人的注意。"
+        }
+      },
+      {
+        "id": 17100202,
+        "conditionType": 1,
+        "conditionValue": 4,
+        "detail": {
+          "id": 17100202,
+          "name": 17100202,
+          "textId": 92100202,
+          "text": "\nメイは例えドレスを着ていなくとも、きっと王族だと悟られるだろう。それだけメイは庶民離れした雰囲気をしていた。\n\n幼い頃から優秀で穏やかで、行事のたびに優しく微笑んで手を振る姿に、国民たちは心惹かれた。今の国王こそ遊び惚けてばかりだが、この娘がいればきっとなんとかしてくれるだろうと思わせた。\n\n実際、王が本業を疎かにしている間、メイはこの国の王女として、また王位の継承者になるべく、国民の愛情と期待に応えようとしていた。\n「国家は国民がいて、初めて国家になる」という理念を固く信じ、自身が王位を継いだときには、国民が喜ぶ国にしたいと考えていた。そこでメイは政治を学び続けた。\n\n\nしかしメイは成長するにつれ、国民に幸せな日々を過ごしてもらうよりも先にやることがある、と気付いた。それは国家内の人類とレッドの間の確執を取り除くことだった。\n\nブリジットという護衛をつけてから、その考えはなおさら強まった。これほど素直な良い子を、レッドだからと嫌がる者がどこかにいるのだ。\nブリジットは気にしていなさそうだし、彼女は強いから抵抗だってできるだろうが…どこかでひどい目に遭っている女の子はいるに違いない。そう考えただけでメイは胸が締め付けられた。\n\nでは、どうやってこの確執を取り除こうか考えていたまさにその時、メイにソマリのレッドが覚醒した。\n運命がメイに啓示したかのようだった。メイはこれを良い機会だと考え、国民にすべてを明かし、それでも自分は何も変わらない、レッドは危険ではないのだと印象を変えさせようとした。\n\nだが――メイはそんな宣言をする前に、突然、国から行方をくらませた。",
+          "textCn": "即使梅不穿裙子，人们也一定会认出她是皇室成员。就这样，梅显得与普通人有多么不同。\n\n他从小就是一个优秀又温柔的人，每次活动都被他亲切的微笑和挥手的样子所吸引。现在的国王总是很开心，但我想，如果这个女孩在这里，他就能做点什么。\n\n事实上，当国王忽视了他的日常工作时，梅正在努力不辜负人民的爱戴和期望，成为这个国家的公主和王位继承人。\n他坚信“民族有人民才是民族”，继位后他要建设一个人民幸福的国家。在那里，梅继续学习政治。\n\n\n然而，随着梅年龄的增长，她意识到除了确保人们从此过上幸福的生活之外，还有更多的事情要做。是为了消除国家内部人类与红族之间的恩怨。\n\n当我聘请了一位名叫布里奇特的保镖后，这个想法变得更加强烈。一定有人会因为她红而讨厌这样诚实善良的女孩。\n布里奇特似乎并不在意，而且她有足够的力量进行反击……但肯定有一个女孩正在经历可怕的事情。想到这里，梅的胸口就揪紧了。\n\n于是，正当我思考如何化解这场恩怨的时候，梅身上的索马里红苏醒了。\n仿佛命运已经向梅展现了自己。梅认为这是一个向人们揭露一切的好机会，希望让他们相信一切都没有改变，红色并不危险。\n\n然而，还没等她做出这样的声明，梅就突然从国内消失了。"
+        }
+      },
+      {
+        "id": 17100203,
+        "conditionType": 1,
+        "conditionValue": 6,
+        "detail": {
+          "id": 17100203,
+          "name": 17100203,
+          "textId": 92100203,
+          "text": "\n目撃者からの報告\n\n◆あんなに優しくて愛らしい子は、他にいないだろう？　だからみんな、彼女が国王になってくれる日を期待しているよ。でも…あるときから、姿を見せなくなったんだ。噂はいろいろ立ってるね。王と一緒に遊び惚けてるとか、レッドに目覚めたから姿を隠したとか…物騒なところだと、大国にさらわれたとか、殺されたって話もあるね。…あんないい子が、そんなひどい目に遭っていて欲しくはないね。（通りすがりの人）\n\n◆できすぎでしょ。頭が良くて、優しくて、真面目な子が王族だなんて。そのまま女王として国を良くしましたとさ、めでたしめでたし…なんて、なるわけないでしょ。あんただって、ゲームとかアニメでさんざん見てきたんじゃない？　今もこれからも、大変な目に遭い続けるよ。…最後にハッピーエンドを迎えるかどうかは、メイとあんた達次第、だけどね。（エヴァンテ）",
+          "textCn": "目击者的报告\n\n◆没有哪个孩子如此善良可爱吗？所以大家都在期待着她成为国王的那一天。但是……在某个时候，他不再出现了。有很多谣言流传。有他与国王嬉戏的故事，有他被红唤醒而躲藏起来的故事……还有他被强国绑架或在乱地被杀的故事。 ……我不想让这么优秀的女孩遭受如此可怕的经历。 （路过的人）\n\n◆太过分了不是吗？一个聪明、善良、认真的孩子就是皇室。如果她只是成为女王，让这个国家变得更美好，她会很高兴……但事实并非如此。你可能在游戏和动漫中见过很多这样的场景，不是吗？　现在和将来我都会继续面对困难。 ……最终能不能有一个美好的结局，就看梅和你们了。 （埃万特）"
+        }
+      },
+      {
+        "id": 17100204,
+        "conditionType": 1,
+        "conditionValue": 8,
+        "detail": {
+          "id": 17100204,
+          "name": 17100204,
+          "textId": 92100204,
+          "text": "\nメイは諸事情から、表立って姿を消すことになった。だが――無事ではあった。\n\n何もできない時期ではあるが息抜きと考え、セーターを編み、読書をし、勉強をした。もとより城にいたときだって、気軽に外へ出てはいけないと言われていたから、対して変わらないと思っていた。\nそれに護衛のブリジットがいてくれるのだ。片時も離れずにそばにいる彼女と楽しくおしゃべりをしたり遊んだり、ブリジットが大好きな特訓の相手をした。\n\n特訓は、特に厄介だったという。何せブリジットは手加減を知らない。子供のように常に本気を出し、時にメイは目を回すこともあった。\n幸いレッドの力のおかげで、大怪我を負うことはなかったが――メイが座り込んでようやく、ブリジットは大慌てで謝り手当てし、「もう二度とこんなことしない！」と誓った。そして一週間も経てば、またメイが目を回して座り込むはめになるのだが。\n\nだが、自分を姫として扱わないブリジットがメイは大好きだった。そしてこの特訓もいずれ、自分にとって必要になるだろうという予感を持っていた。\n\n\n政治についてはよく勉強をしているが、プライドに加入してから日常生活での未熟さが露わになった。特に金銭面については、ブリジットと五十歩百歩だった。\nブリジットは物を無駄に買うが、メイは無駄にお金を渡してしまう。金貨一枚につきリンゴ一個などという破格の買い物をしようとしては、優しい人々のおかげで断られた。「プライドでは、大事なことをたくさん学ぶことができます。\nありがとうございます、リーダー様」。そう言って、メイは周囲の心配をよそに、優雅に微笑むのだった。",
+          "textCn": "由于种种情况，梅决定公开失踪。但是……没关系。\n\n虽然那段时间我什么都做不了，但我把它当作一种喘息的方式，织毛衣，看书，学习。当然，即使是在城堡里，也被告知不能随便外出，所以我想什么也不会改变。\n我的保镖布里奇特会和我在一起。他总是在她身边，和她聊天、玩耍，是布里奇特最喜欢的训练伙伴。\n\n据说特训特别麻烦。毕竟，布里奇特不知道如何忍住。她总是严肃得像个孩子，有时梅会翻白眼。\n幸运的是，借助瑞德的力量，她并没有受重伤，但直到梅坐下来，布里吉特才赶忙道歉并治疗她，并发誓：“我再也不会做这样的事情了！”一周后，梅再次坐下来，翻白眼。\n\n然而，梅爱的是布里奇特，但布里奇特并没有像对待公主一样对待她。我有一种预感，有一天这种特殊的训练对我来说是必要的。\n\n\n他受过良好的政治教育，但加入骄傲组织后，他在日常生活中的不成熟就变得明显了。尤其是在财务方面，我与布里奇特不相上下。\n布里奇特买了不必要的东西，但梅却浪费了钱。感谢好心人，当我试图用每金币买一个苹果时，我被拒绝了。 “在 普莱德，你可以学到很多重要的东西。\n谢谢领导。”说着，梅笑得很优雅，没有理会周围人的担忧。"
+        }
+      },
+      {
+        "id": 17100205,
+        "conditionType": 1,
+        "conditionValue": 10,
+        "detail": {
+          "id": 17100205,
+          "name": 17100205,
+          "textId": 92100205,
+          "text": "\n目撃者からの報告\n\n◆悪いやつからメイをまもってやらないと！　あいつは意外とうっかりしてるからな、俺が代わりにしっかりしないと大変な目に遭うんだ！　例えば…綺麗な靴を履いてるのに、ぼんやり空を見てて水たまりに足を突っ込もうとするんだ。だから、俺が腰を抱えて止めてやるんだ。そしたら「まぁ、まるでダンスみたいですね」なんて言って、手を取って踊りに誘うから、俺も楽しくなって踊ってたら…ふたりして、一緒に水たまりに足を突っ込んじまって、しかも足がもつれたせいで、倒れて全身びしょぬれだ！　あはは、あの時は面白かったなぁ…って、なんの話してたんだっけ？（ブリジット）\n\n◆メイちゃんは箱入り娘って感じで可愛いよね～。でも、さすがのエイプリルちゃんもちょっと罪悪感が出ちゃって、あんまりイタズラできたりしないんだよね。…あ、でも待って！　メイちゃんがイタズラするのは、他のみんなも予想できないんじゃないかな？　しかも、メイちゃんを叱るなんてこともなかなかできないだろうし…ふっふっふ、こいつは大穴だね！　よーし、メイちゃんとイタズラ大作戦やろーっと♪　何がいいかな、えーっと…やっぱりお城とか権力を使った派手なやつがいいかな？（エイプリル）\n\n◆さすがに…王族がプライド入りは…だめでしょう！　だって、もう一般人なんて絶対に目立てないじゃないですかぁ！　ううっ…でも、実際に彼女とお話したら…それはもう優しくて…自分が薄汚く思えて…。情けなくて泣きそうになってたら、また優しくしてくれて…ううっ、無限の罠です…逃れられないですぅ…！！（ソフィア）",
+          "textCn": "目击者的报告\n\n◆我们必须保护梅免受坏人的侵害！这家伙出奇的粗心，我要是不收拾他，他可就麻烦了！比如说……尽管我穿着漂亮的鞋子，但我还是呆呆地看着天空，试图踏进水坑里。所以我才会抱住你的腰阻止你。然后她说：“嗯，就像跳舞一样。”然后她拉着我的手邀请我跳舞，我很兴奋，开始跳舞……然后我们都把脚陷进水坑里，我们的脚缠在一起，我们摔倒了，浑身湿透了！哈哈，当时很有趣……我们在说什么？ （布丽吉特）\n\n◆小梅看起来就像是一个盒子里的女孩，非常可爱。不过，果然，阿普丽尔酱心里有些愧疚，并没有做太多的恶作剧。 ……啊，但是等等！我想其他人也无法预测小美的恶作剧吧。而且，骂美酱也很难……呼呼呼呼，这家伙就是个大混蛋！好吧，我们和小美来个大恶作剧吧♪我不知道我想要什么，呃……我想要一些华丽的东西，比如城堡或者使用力量的东西。 （艾普莉尔）\n\n◆果然……王族加入骄傲也没什么好处！毕竟普通人肯定已经不是什么出类拔萃的人了！呃……但是当我真正和她说话的时候……她对我很好……这让我觉得很肮脏……我觉得很可怜，我快要哭了，但他又对我好……呃，这是一个无尽的陷阱……我无法逃脱……！ ！ （索菲亚）"
+        }
+      }
+    ],
+    "voiceLines": [
+      {
+        "id": 18310601,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310601,
+          "nameTextId": 95000001,
+          "name": "メンバー募集",
+          "nameCn": "成员招募",
+          "textId": 101310601,
+          "text": "わたくしはメイと申します。この国のため、人類のため、そしてレッドのため…わたくしの力の限り、貢献させていただきます。よろしくお願いいたします。",
+          "textCn": "我叫梅。为了这个国家，为了人类，为了红色……我会尽自己最大的努力。感谢您的支持。",
+          "voicePath": "May_Get_1",
+          "sort": 10,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310602,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310602,
+          "nameTextId": 95000002,
+          "name": "ログインボイス",
+          "nameCn": "登录语音",
+          "textId": 102310601,
+          "text": "リーダー様、本日のご機嫌はいかがでしょう？　ふふ。",
+          "textCn": "尊敬的领导，您今天感觉怎么样？不适用。",
+          "voicePath": "May_In_1",
+          "sort": 20,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310603,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310603,
+          "nameTextId": 95000011,
+          "name": "待機ボイス1",
+          "nameCn": "待机语音1",
+          "textId": 97031061,
+          "text": "皆様のためなら、わたくしはなんでもしたいと思っているのです。皆様の幸せを見守り、皆様の期待に応えることこそ、わたくしの喜びなのです。",
+          "textCn": "我愿意为每个人做任何事。我的快乐在于守护你的幸福并满足你的期望。",
+          "voicePath": "May_Main_1",
+          "sort": 30,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310604,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310604,
+          "nameTextId": 95000012,
+          "name": "待機ボイス2",
+          "nameCn": "待机语音2",
+          "textId": 97031062,
+          "text": "リーダー様も皆様もとても優しくて…いつも、心があたたかく感じるのです。わたくしもそんな存在になりたいと、心から思います。",
+          "textCn": "领导和大家都很友善……心里总感觉很温暖。我真诚地希望自己也能成为这样的人。",
+          "voicePath": "May_Main_2",
+          "sort": 31,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310605,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310605,
+          "nameTextId": 95000013,
+          "name": "待機ボイス3",
+          "nameCn": "待机语音3",
+          "textId": 97031063,
+          "text": "ブリジットはわたくしの護衛ですが…それ以上に、良き友人だと思っています。リーダー様、どうかブリジット共々よろしくお願いいたします。",
+          "textCn": "布丽奇特是我的保镖……但更重要的是，我认为她是一个好朋友。亲爱的领导，请支持我和布丽吉特。",
+          "voicePath": "May_Main_3",
+          "sort": 32,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310606,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310606,
+          "nameTextId": 95000014,
+          "name": "待機ボイス4",
+          "nameCn": "待机语音4",
+          "textId": 97031064,
+          "text": "皆様と普通の仲間として仲良くなってこそ、 より多くのことが成し遂げられると思うのです。 ですからリーダー様も、 どうかわたくしと仲良くしてくださいね。",
+          "textCn": "我相信，和大家成为普通朋友一样，我们可以取得更多的成就。所以，领导，请和我做朋友吧。",
+          "voicePath": "May_Main_4",
+          "sort": 33,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310607,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310607,
+          "nameTextId": 95000021,
+          "name": "突破",
+          "nameCn": "关卡语音1",
+          "textId": 103310601,
+          "text": "これはリーダー様の優しさそのものですね。",
+          "textCn": "这就是领导的仁慈。",
+          "voicePath": "May_Stage_1",
+          "sort": 40,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310608,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310608,
+          "nameTextId": 95000031,
+          "name": "立ち絵獲得1",
+          "nameCn": "关卡语音2",
+          "textId": 101310611,
+          "text": "わたくしを支えてくださって、ありがとうございます。まだまだ、わたくしは成長しますから…期待していただけると嬉しいです。",
+          "textCn": "谢谢你对我的支持。我还在成长……所以如果你能期待的话我会很高兴。",
+          "voicePath": "May_Stage_2",
+          "sort": 41,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310609,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310609,
+          "nameTextId": 95000032,
+          "name": "立ち絵獲得2",
+          "nameCn": "关卡语音3",
+          "textId": 101310621,
+          "text": "リーダー様のことも皆様のことも、 守れる強さを手に入れられたと思います。 ですから、わたくしを頼ってください。 かならず力になりましょう…！",
+          "textCn": "我想我已经获得了保护队长和其他人的力量。所以请相信我。让我们帮忙...！",
+          "voicePath": "May_Stage_3",
+          "sort": 42,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310610,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310610,
+          "nameTextId": 95000041,
+          "name": "覚醒",
+          "nameCn": "升星语音",
+          "textId": 104310601,
+          "text": "リーダー様が与えてくださったこの力、必ず皆様のために使いましょう…！",
+          "textCn": "让我们利用领袖赋予我们的力量为大家谋福利……！",
+          "voicePath": "May_Star_1",
+          "sort": 50,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310611,
+        "conditionType": 1,
+        "conditionValue": 1,
+        "detail": {
+          "id": 18310611,
+          "nameTextId": 95000051,
+          "name": "好感度Lv1",
+          "nameCn": "互动语音1",
+          "textId": 105310601,
+          "text": "リーダー様、退屈なのですか？　ふふ。ではわたくしがお付き合いしましょう。おしゃべりでもお買い物でも、なんでも言ってくださいね。",
+          "textCn": "领导，你无聊吗？不适用。那么，让我加入你们吧。无论是聊天还是购物，请随时问我任何问题。",
+          "type": 1,
+          "voicePath": "May_Interaction_1",
+          "sort": 140,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310612,
+        "conditionType": 1,
+        "conditionValue": 3,
+        "detail": {
+          "id": 18310612,
+          "nameTextId": 95000052,
+          "name": "好感度Lv3",
+          "nameCn": "互动语音2",
+          "textId": 105310602,
+          "text": "リーダー様は頼もしい方ですね。ブリジットがいないときでも、リーダー様がいるとほっとします。",
+          "textCn": "领导是个可靠的人。即使布里奇特不在身边，当领导在的时候我也会感到安心。",
+          "type": 1,
+          "voicePath": "May_Interaction_2",
+          "sort": 141,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310613,
+        "conditionType": 1,
+        "conditionValue": 5,
+        "detail": {
+          "id": 18310613,
+          "nameTextId": 95000053,
+          "name": "好感度Lv5",
+          "nameCn": "互动语音3",
+          "textId": 105310603,
+          "text": "すべてを守れる存在になるためには、もっと強くなって、多くを知らねばなりません。ですから、わたくしをどこへなりとも連れて行ってください、リーダー様！",
+          "textCn": "为了成为能够守护一切的人，我必须变得更强，懂得更多。所以，领导，无论你去哪里，都请带上我！",
+          "type": 1,
+          "voicePath": "May_Interaction_3",
+          "sort": 142,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310614,
+        "conditionType": 1,
+        "conditionValue": 7,
+        "detail": {
+          "id": 18310614,
+          "nameTextId": 95000054,
+          "name": "好感度Lv7",
+          "nameCn": "互动语音4",
+          "textId": 105310604,
+          "text": "リーダー様と同じように辛抱強く、優しく、強く……そして、いつでも皆様を希望で満たす存在になりたいのです。",
+          "textCn": "我想像领导者一样耐心、善良、坚强……并且永远让每个人都充满希望。",
+          "type": 1,
+          "voicePath": "May_Interaction_4",
+          "sort": 143,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310615,
+        "conditionType": 1,
+        "conditionValue": 9,
+        "detail": {
+          "id": 18310615,
+          "nameTextId": 95000055,
+          "name": "好感度Lv9",
+          "nameCn": "互动语音5",
+          "textId": 105310605,
+          "text": "わたくしにとって、リーダー様は特別な存在です。わたくしを救い、知らない多くを教えてくれた方…いつまでも、この恩は忘れません。ですから、あなたが苦しく思ったときには、わたくしが手を差し伸べます。どうか、その手を迷わず取ってくださいね。",
+          "textCn": "对我来说，领导是一个特别的人。这位拯救了我并教会了我许多我不知道的事情的人……我永远不会忘记这份恩情。所以，当你感到苦恼的时候，我会向你伸出援手。请不要犹豫，握住我的手。",
+          "type": 1,
+          "voicePath": "May_Interaction_5",
+          "sort": 144,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310616,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310616,
+          "nameTextId": 95000061,
+          "name": "冒険者出陣",
+          "nameCn": "出击语音",
+          "textId": 108310601,
+          "text": "皆様を守ります！",
+          "textCn": "我们会保护大家！",
+          "voicePath": "May_Go_1",
+          "sort": 60,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310617,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310617,
+          "nameTextId": 95000071,
+          "name": "攻撃1",
+          "nameCn": "普通攻击1",
+          "textId": 111310601,
+          "text": "落ちついてください",
+          "textCn": "请冷静",
+          "voicePath": "May_Battle_N_1",
+          "sort": 70,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310618,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310618,
+          "nameTextId": 95000072,
+          "name": "攻撃2",
+          "nameCn": "普通攻击2",
+          "textId": 111310602,
+          "text": "えいっ",
+          "textCn": "Ei",
+          "voicePath": "May_Battle_N_2",
+          "sort": 71,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310619,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310619,
+          "nameTextId": 95000073,
+          "name": "攻撃3",
+          "nameCn": "普通攻击3",
+          "textId": 111310603,
+          "text": "わたくしの力を…！",
+          "textCn": "我的力量……！",
+          "voicePath": "May_Battle_N_3",
+          "sort": 72,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310620,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310620,
+          "nameTextId": 95000074,
+          "name": "攻撃4",
+          "nameCn": "普通攻击4",
+          "textId": 111310604,
+          "text": "やぁっ",
+          "textCn": "你好",
+          "voicePath": "May_Battle_N_4",
+          "sort": 73,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310621,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310621,
+          "nameTextId": 95000075,
+          "name": "攻撃5",
+          "nameCn": "普通攻击5",
+          "textId": 111310605,
+          "text": "任せてください！",
+          "textCn": "请交给我吧！",
+          "voicePath": "May_Battle_N_5",
+          "sort": 74,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310622,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310622,
+          "nameTextId": 95000081,
+          "name": "被ダメージ1",
+          "nameCn": "受击1",
+          "textId": 112310601,
+          "text": "やめてください！",
+          "textCn": "请停下来！",
+          "voicePath": "May_Battle_Hit_1",
+          "sort": 80,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310623,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310623,
+          "nameTextId": 95000082,
+          "name": "被ダメージ2",
+          "nameCn": "受击2",
+          "textId": 112310602,
+          "text": "ううっ！",
+          "textCn": "呃！",
+          "voicePath": "May_Battle_Hit_2",
+          "sort": 81,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310624,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310624,
+          "nameTextId": 95000083,
+          "name": "被ダメージ3",
+          "nameCn": "受击3",
+          "textId": 112310603,
+          "text": "うぅ…",
+          "textCn": "呃……",
+          "voicePath": "May_Battle_Hit_3",
+          "sort": 82,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310625,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310625,
+          "nameTextId": 95000084,
+          "name": "被ダメージ4",
+          "nameCn": "受击4",
+          "textId": 112310604,
+          "text": "下がれ！",
+          "textCn": "趴下！",
+          "voicePath": "May_Battle_Hit_4",
+          "sort": 83,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310626,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310626,
+          "nameTextId": 95000085,
+          "name": "被ダメージ5",
+          "nameCn": "受击5",
+          "textId": 112310605,
+          "text": "わたくしは負けませんっ…！",
+          "textCn": "我不会输……！",
+          "voicePath": "May_Battle_Hit_5",
+          "sort": 84,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310627,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310627,
+          "nameTextId": 95000091,
+          "name": "戦闘不能",
+          "nameCn": "战斗倒下",
+          "textId": 113310601,
+          "text": "皆様のためなら…この程度の傷、問題ありません…",
+          "textCn": "为了大家着想……这个程度的伤害是没问题的……",
+          "voicePath": "May_Battle_Die_1",
+          "sort": 90,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310628,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310628,
+          "nameTextId": 95000101,
+          "name": "特技1",
+          "nameCn": "技能语音1",
+          "textId": 114310601,
+          "text": "問題ありません！",
+          "textCn": "没问题！",
+          "voicePath": "May_Battle_H_1",
+          "sort": 100,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310629,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310629,
+          "nameTextId": 95000102,
+          "name": "特技2",
+          "nameCn": "技能语音2",
+          "textId": 114310602,
+          "text": "全てわたくしに任せてください！",
+          "textCn": "一切都交给我吧！",
+          "voicePath": "May_Battle_H_2",
+          "sort": 101,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310630,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310630,
+          "nameTextId": 95000111,
+          "name": "奥義1",
+          "nameCn": "必杀语音1",
+          "textId": 115310601,
+          "text": "皆様との約束のため、精いっぱい力を尽くしましょう！",
+          "textCn": "让我们竭尽全力兑现与大家的承诺！",
+          "voicePath": "May_Battle_C_1",
+          "sort": 110,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310631,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310631,
+          "nameTextId": 95000112,
+          "name": "奥義2",
+          "nameCn": "必杀语音2",
+          "textId": 115310602,
+          "text": "皆様の優しさや笑顔は…わたくしが守ります！",
+          "textCn": "你的善良和笑容，由我来守护！",
+          "voicePath": "May_Battle_C_2",
+          "sort": 111,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310632,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310632,
+          "nameTextId": 95000121,
+          "name": "戦闘勝利",
+          "nameCn": "胜利语音",
+          "textId": 106310601,
+          "text": "皆様の力になれて嬉しいです。でももっと頼ってもらえたら、もっと嬉しいです。",
+          "textCn": "很高兴能为大家提供帮助。但如果你能更加依赖我，我会更高兴。",
+          "voicePath": "May_Win_1",
+          "sort": 120,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310633,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310633,
+          "nameTextId": 95000131,
+          "name": "戦闘失敗",
+          "nameCn": "失败语音",
+          "textId": 107310601,
+          "text": "わたくしが弱いせいで、こんなことに…すみません…",
+          "textCn": "因为我的软弱，所以发生了这样的事情……对不起……",
+          "voicePath": "May_Fail_1",
+          "sort": 130,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310650,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310650,
+          "nameTextId": 95000140,
+          "name": "ハウス入り",
+          "nameCn": "进屋",
+          "textId": 116310601,
+          "text": "リーダー様、わたくしはここでお仕事ができるでしょうか…？",
+          "textCn": "领导，我可以在这里工作吗……？",
+          "voicePath": "May_Home_In_1",
+          "sort": 150,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310651,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310651,
+          "nameTextId": 95000141,
+          "name": "遣り取り1",
+          "nameCn": "通讯1",
+          "textId": 117310601,
+          "text": "少しでも世界が平和になるのなら…わたくしは、強くなりたいのです。",
+          "textCn": "如果世界能稍微和平一点的话……我想变得更强。",
+          "voicePath": "May_Home_Talk_1",
+          "sort": 151,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310652,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310652,
+          "nameTextId": 95000142,
+          "name": "遣り取り2",
+          "nameCn": "通讯2",
+          "textId": 117310602,
+          "text": "どんなことでも、わたくしにやらせていただけませんか？　わたくしはもっといろんな経験をしなくてはいけませんからっ。",
+          "textCn": "你愿意让我做任何事吗？我必须有更多的经历。",
+          "voicePath": "May_Home_Talk_2",
+          "sort": 152,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      },
+      {
+        "id": 18310653,
+        "conditionType": 1,
+        "conditionValue": 0,
+        "detail": {
+          "id": 18310653,
+          "nameTextId": 95000143,
+          "name": "遣り取り3",
+          "nameCn": "交换3",
+          "textId": 117310603,
+          "text": "ブリジットは今どちらにいるでしょうか？　皆様と仲良くやっているといいのですが…",
+          "textCn": "布里奇特现在在哪里？希望大家都好好相处...",
+          "voicePath": "May_Home_Talk_3",
+          "sort": 153,
+          "bubbleId": "14310600:2:447:255,14310601:2:394:261,14310602:2:447:255"
+        }
+      }
+    ],
+    "voiceUnlocks": [
+      {
+        "from": 1,
+        "to": 2,
+        "voiceId": 18310611
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "voiceId": 18310612
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "voiceId": 18310613
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "voiceId": 18310614
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "voiceId": 18310615
+      }
+    ]
+  },
+  "fashions": [
+    {
+      "id": 14310601,
+      "type": 2,
+      "setNum": 1,
+      "cardId": 11301006,
+      "unlockRemarkTextId": 81040003,
+      "unlockRemark": "シルバー",
+      "unlockRemarkCn": "银",
+      "unlockQuality": 3,
+      "showSpine": "CardShowSpine_11301006",
+      "showSpineType": "2",
+      "showSpineScale": 1000000,
+      "showSpinePosition": "-20:-557:0",
+      "showTexture": "img_11301006_2",
+      "showTextureScale": 10000,
+      "showTexturePosition": "61:-641:0",
+      "showTextureSize": "1040:1495",
+      "bubbleGroups": {
+        "unlock": [
+          {
+            "id": 101310611,
+            "textId": 101310611,
+            "text": "わたくしを支えてくださって、ありがとうございます。まだまだ、わたくしは成長しますから…期待していただけると嬉しいです。",
+            "textCn": "谢谢你对我的支持。我还在成长……所以如果你能期待的话我会很高兴。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Stage_2"
+          }
+        ],
+        "lottery": [
+          {
+            "id": 101310601,
+            "textId": 101310601,
+            "text": "わたくしはメイと申します。この国のため、人類のため、そしてレッドのため…わたくしの力の限り、貢献させていただきます。よろしくお願いいたします。",
+            "textCn": "我叫梅。为了这个国家，为了人类，为了红色……我会尽自己最大的努力。感谢您的支持。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "334:259",
+            "direction": 1,
+            "voicePath": "May_Get_1"
+          }
+        ],
+        "login": [
+          {
+            "id": 102310602,
+            "textId": 102310601,
+            "text": "リーダー様、本日のご機嫌はいかがでしょう？　ふふ。",
+            "textCn": "尊敬的领导，您今天感觉怎么样？不适用。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_In_1"
+          }
+        ],
+        "idle": [
+          {
+            "id": 97131061,
+            "textId": 97031061,
+            "text": "皆様のためなら、わたくしはなんでもしたいと思っているのです。皆様の幸せを見守り、皆様の期待に応えることこそ、わたくしの喜びなのです。",
+            "textCn": "我愿意为每个人做任何事。我的快乐在于守护你的幸福并满足你的期望。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Main_1"
+          },
+          {
+            "id": 97131062,
+            "textId": 97031062,
+            "text": "リーダー様も皆様もとても優しくて…いつも、心があたたかく感じるのです。わたくしもそんな存在になりたいと、心から思います。",
+            "textCn": "领导和大家都很友善……心里总感觉很温暖。我真诚地希望自己也能成为这样的人。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Main_2"
+          },
+          {
+            "id": 97131063,
+            "textId": 97031063,
+            "text": "ブリジットはわたくしの護衛ですが…それ以上に、良き友人だと思っています。リーダー様、どうかブリジット共々よろしくお願いいたします。",
+            "textCn": "布丽奇特是我的保镖……但更重要的是，我认为她是一个好朋友。亲爱的领导，请支持我和布丽吉特。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Main_3"
+          },
+          {
+            "id": 97131064,
+            "textId": 97031064,
+            "text": "皆様と普通の仲間として仲良くなってこそ、 より多くのことが成し遂げられると思うのです。 ですからリーダー様も、 どうかわたくしと仲良くしてくださいね。",
+            "textCn": "我相信，和大家成为普通朋友一样，我们可以取得更多的成就。所以，领导，请和我做朋友吧。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Main_4"
+          }
+        ],
+        "levelUp": [
+          {
+            "id": 103310611,
+            "textId": 103310601,
+            "text": "これはリーダー様の優しさそのものですね。",
+            "textCn": "这就是领导的仁慈。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "394:261",
+            "direction": 2,
+            "voicePath": "May_Stage_1"
+          }
+        ],
+        "qualityUp": [
+          {
+            "id": 103310611,
+            "textId": 103310601,
+            "text": "これはリーダー様の優しさそのものですね。",
+            "textCn": "这就是领导的仁慈。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "394:261",
+            "direction": 2,
+            "voicePath": "May_Stage_1"
+          }
+        ],
+        "starUp": [
+          {
+            "id": 104310611,
+            "textId": 104310601,
+            "text": "リーダー様が与えてくださったこの力、必ず皆様のために使いましょう…！",
+            "textCn": "让我们利用领袖赋予我们的力量为大家谋福利……！",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "394:261",
+            "direction": 2,
+            "voicePath": "May_Star_1"
+          }
+        ],
+        "touch": [
+          {
+            "id": 105310611,
+            "textId": 105310601,
+            "text": "リーダー様、退屈なのですか？　ふふ。ではわたくしがお付き合いしましょう。おしゃべりでもお買い物でも、なんでも言ってくださいね。",
+            "textCn": "领导，你无聊吗？不适用。那么，让我加入你们吧。无论是聊天还是购物，请随时问我任何问题。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Interaction_1"
+          },
+          {
+            "id": 105310612,
+            "textId": 105310602,
+            "text": "リーダー様は頼もしい方ですね。ブリジットがいないときでも、リーダー様がいるとほっとします。",
+            "textCn": "领导是个可靠的人。即使布里奇特不在身边，当领导在的时候我也会感到安心。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Interaction_2"
+          },
+          {
+            "id": 105310613,
+            "textId": 105310603,
+            "text": "すべてを守れる存在になるためには、もっと強くなって、多くを知らねばなりません。ですから、わたくしをどこへなりとも連れて行ってください、リーダー様！",
+            "textCn": "为了成为能够守护一切的人，我必须变得更强，懂得更多。所以，领导，无论你去哪里，都请带上我！",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Interaction_3"
+          },
+          {
+            "id": 105310614,
+            "textId": 105310604,
+            "text": "リーダー様と同じように辛抱強く、優しく、強く……そして、いつでも皆様を希望で満たす存在になりたいのです。",
+            "textCn": "我想像领导者一样耐心、善良、坚强……并且永远让每个人都充满希望。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Interaction_4"
+          },
+          {
+            "id": 105310615,
+            "textId": 105310605,
+            "text": "わたくしにとって、リーダー様は特別な存在です。わたくしを救い、知らない多くを教えてくれた方…いつまでも、この恩は忘れません。ですから、あなたが苦しく思ったときには、わたくしが手を差し伸べます。どうか、その手を迷わず取ってくださいね。",
+            "textCn": "对我来说，领导是一个特别的人。这位拯救了我并教会了我许多我不知道的事情的人……我永远不会忘记这份恩情。所以，当你感到苦恼的时候，我会向你伸出援手。请不要犹豫，握住我的手。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Interaction_5"
+          }
+        ],
+        "arrayUp": [
+          {
+            "id": 108310601,
+            "textId": 108310601,
+            "text": "皆様を守ります！",
+            "textCn": "我们会保护大家！",
+            "voicePath": "May_Go_1"
+          }
+        ],
+        "attack": [
+          {
+            "id": 111310602,
+            "voicePath": "May_Battle_N_2"
+          }
+        ],
+        "hit": [
+          {
+            "id": 112310602,
+            "voicePath": "May_Battle_Hit_2"
+          },
+          {
+            "id": 112310603,
+            "voicePath": "May_Battle_Hit_3"
+          }
+        ],
+        "skill": [
+          {
+            "id": 114310601,
+            "voicePath": "May_Battle_H_1"
+          }
+        ],
+        "uniqueSkill": [
+          {
+            "id": 115310602,
+            "voicePath": "May_Battle_C_2"
+          }
+        ],
+        "win": [
+          {
+            "id": 106310611,
+            "textId": 106310601,
+            "text": "皆様の力になれて嬉しいです。でももっと頼ってもらえたら、もっと嬉しいです。",
+            "textCn": "很高兴能为大家提供帮助。但如果你能更加依赖我，我会更高兴。",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Win_1"
+          }
+        ],
+        "lose": [
+          {
+            "id": 107310611,
+            "textId": 107310601,
+            "text": "わたくしが弱いせいで、こんなことに…すみません…",
+            "textCn": "因为我的软弱，所以发生了这样的事情……对不起……",
+            "expression": "exp_happy",
+            "bottomFrame": "Home:HomeWindowTalkPanel",
+            "position": "290:269",
+            "direction": 1,
+            "voicePath": "May_Fail_1"
+          }
+        ],
+        "homeEntry": [
+          {
+            "id": 116310601,
+            "textId": 116310601,
+            "text": "リーダー様、わたくしはここでお仕事ができるでしょうか…？",
+            "textCn": "领导，我可以在这里工作吗……？",
+            "voicePath": "May_Home_In_1",
+            "topPosition": 10
+          }
+        ],
+        "homeTalk": [
+          {
+            "id": 117310601,
+            "textId": 117310601,
+            "text": "少しでも世界が平和になるのなら…わたくしは、強くなりたいのです。",
+            "textCn": "如果世界能稍微和平一点的话……我想变得更强。",
+            "voicePath": "May_Home_Talk_1",
+            "topPosition": 10
+          },
+          {
+            "id": 117310602,
+            "textId": 117310602,
+            "text": "どんなことでも、わたくしにやらせていただけませんか？　わたくしはもっといろんな経験をしなくてはいけませんからっ。",
+            "textCn": "你愿意让我做任何事吗？我必须有更多的经历。",
+            "voicePath": "May_Home_Talk_2",
+            "topPosition": 10
+          },
+          {
+            "id": 117310603,
+            "textId": 117310603,
+            "text": "ブリジットは今どちらにいるでしょうか？　皆様と仲良くやっているといいのですが…",
+            "textCn": "布里奇特现在在哪里？希望大家都好好相处...",
+            "voicePath": "May_Home_Talk_3",
+            "topPosition": 10
+          }
+        ]
+      }
+    }
+  ]
+}

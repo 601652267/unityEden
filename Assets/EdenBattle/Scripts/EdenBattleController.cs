@@ -13,7 +13,7 @@ namespace EdenGallery
 {
     public sealed class EdenBattleController : MonoBehaviour
     {
-        private const string HeroId = "11300018";
+        private const string SpecialHeroId = "11300018";
         private const string EnemyId = "12010002";
         private const string BattlefieldId = "1001";
         private const string BattlefieldBundleDirectory =
@@ -30,7 +30,10 @@ namespace EdenGallery
         private readonly List<UnityObject> ownedObjects = new List<UnityObject>();
 
         private Camera battleCamera;
-        private Skill11300018OriginalPreview heroPreview;
+        private EdenRecoveredBattlePreview heroPreview;
+        private EdenBattleHeroPreview genericHeroPreview;
+        private string heroId = SpecialHeroId;
+        private string heroName = "拉比";
         private SkeletonAnimation enemy;
         private Transform enemyRoot;
         private SpriteRenderer backgroundRenderer;
@@ -75,19 +78,55 @@ namespace EdenGallery
 
             CreateBackground();
 
-            heroPreview =
-                gameObject.AddComponent<Skill11300018OriginalPreview>();
-            heroPreview.suppressBuiltInUi = true;
-            heroPreview.autoHideUiDuringPlayback = false;
-            heroPreview.useRecoveredBattleLayout = true;
-            heroPreview.useOriginalGameBattleLayout = true;
-            heroPreview.useUltimateVideo = true;
-            heroPreview.UltimatePresentationChanged +=
-                HandleUltimatePresentationChanged;
-            heroPreview.ApkUltimateHitTriggered +=
-                HandleApkUltimateHit;
+            ResolveSelectedHero();
+            CreateHero();
 
             CreateEnemy();
+        }
+
+        private void ResolveSelectedHero()
+        {
+            string requestedId = EdenGallerySceneNavigation.BattleCardId;
+            if (string.IsNullOrEmpty(requestedId))
+                requestedId = EdenGallerySceneNavigation.CardId;
+            if (!string.IsNullOrEmpty(requestedId))
+                heroId = requestedId;
+
+            string requestedName =
+                EdenGallerySceneNavigation.BattleDisplayName;
+            if (!string.IsNullOrEmpty(requestedName))
+                heroName = requestedName;
+            else if (!string.Equals(
+                heroId,
+                SpecialHeroId,
+                StringComparison.Ordinal))
+            {
+                heroName = heroId;
+            }
+        }
+
+        private void CreateHero()
+        {
+            if (EdenRecoveredSkillConfiguration.Supports(heroId))
+            {
+                heroPreview =
+                    gameObject.AddComponent<EdenRecoveredBattlePreview>();
+                heroPreview.Configure(heroId);
+                heroPreview.suppressBuiltInUi = true;
+                heroPreview.autoHideUiDuringPlayback = false;
+                heroPreview.useRecoveredBattleLayout = true;
+                heroPreview.useOriginalGameBattleLayout = true;
+                heroPreview.useUltimateVideo = true;
+                heroPreview.UltimatePresentationChanged +=
+                    HandleUltimatePresentationChanged;
+                heroPreview.ApkUltimateHitTriggered +=
+                    HandleApkUltimateHit;
+                return;
+            }
+
+            genericHeroPreview =
+                gameObject.AddComponent<EdenBattleHeroPreview>();
+            genericHeroPreview.Configure(heroId);
         }
 
         private IEnumerator Start()
@@ -408,32 +447,71 @@ namespace EdenGallery
 
         private void PlayNormalAttack()
         {
-            if (!CanPlayAction())
+            if (!CanPlayAction(HasNormalAttack()))
                 return;
+
+            if (heroPreview != null)
+            {
+                heroPreview.BeginNormalAttack();
+                BeginEnemyReaction(
+                    heroPreview.NormalHitTimes,
+                    0.48f);
+            }
+            else if (genericHeroPreview == null ||
+                !genericHeroPreview.BeginNormalAttack())
+            {
+                return;
+            }
+            else
+            {
+                BeginEnemyReaction(new[] { 0.45f }, 0.45f);
+            }
             statusText = "普通攻击";
-            heroPreview.BeginNormalAttack();
-            BeginEnemyReaction(
-                Skill11300018ApkBattleLogic.NormalHitTimes,
-                0.48f);
         }
 
         private void PlayBurst()
         {
-            if (!CanPlayAction())
+            if (!CanPlayAction(HasBurst()))
                 return;
+
+            if (heroPreview != null)
+            {
+                heroPreview.BeginSkill();
+                BeginEnemyReaction(
+                    heroPreview.BurstHitTimes,
+                    0.52f);
+            }
+            else if (genericHeroPreview == null ||
+                !genericHeroPreview.BeginBurst())
+            {
+                return;
+            }
+            else
+            {
+                BeginEnemyReaction(new[] { 0.55f }, 0.48f);
+            }
             statusText = "爆气";
-            heroPreview.BeginSkill();
-            BeginEnemyReaction(
-                Skill11300018ApkBattleLogic.BurstHitTimes,
-                0.52f);
         }
 
         private void PlayUltimate()
         {
-            if (!CanPlayAction())
+            if (!CanPlayAction(HasUltimate()))
                 return;
+
+            if (heroPreview != null)
+            {
+                heroPreview.BeginUltimate();
+            }
+            else if (genericHeroPreview == null ||
+                !genericHeroPreview.BeginUltimate())
+            {
+                return;
+            }
+            else
+            {
+                BeginEnemyReaction(new[] { 0.70f }, 0.55f);
+            }
             statusText = "奥义";
-            heroPreview.BeginUltimate();
         }
 
         private void HandleApkUltimateHit(
@@ -445,7 +523,7 @@ namespace EdenGallery
                 return;
 
             statusText = "奥义 " + hitIndex + "/" +
-                Skill11300018ApkBattleLogic.UltimateTotalHitCount +
+                heroPreview.UltimateTotalHitCount +
                 (isFinal ? "（最后一击）" : string.Empty);
             PlayEnemyAnimation(
                 new[]
@@ -461,10 +539,10 @@ namespace EdenGallery
         }
 
         private void HandleUltimatePresentationChanged(
-            Skill11300018OriginalPreview.UltimatePresentationPhase phase)
+            EdenRecoveredBattlePreview.UltimatePresentationPhase phase)
         {
             if (phase ==
-                Skill11300018OriginalPreview.UltimatePresentationPhase.None)
+                EdenRecoveredBattlePreview.UltimatePresentationPhase.None)
             {
                 RestoreBattlePresentation();
                 return;
@@ -474,7 +552,7 @@ namespace EdenGallery
             HideBattlefieldForUltimate();
 
             if (phase ==
-                Skill11300018OriginalPreview.UltimatePresentationPhase.Defender)
+                EdenRecoveredBattlePreview.UltimatePresentationPhase.Defender)
             {
                 ShowEnemyAtUltimateCenter();
             }
@@ -590,21 +668,64 @@ namespace EdenGallery
             ultimatePresentationActive = false;
         }
 
-        private bool CanPlayAction()
+        private bool CanPlayAction(bool actionAvailable)
         {
-            if (heroPreview == null || !heroPreview.IsReady)
+            if (!actionAvailable)
+                return false;
+
+            if (!IsHeroReady())
             {
-                statusText = heroPreview == null
-                    ? "11300018 战斗控制器不可用"
-                    : heroPreview.LoadingStatus;
+                statusText = GetHeroLoadingStatus();
                 return false;
             }
-            if (heroPreview.IsBusy)
+            if (IsHeroBusy())
             {
                 statusText = "请等待当前动作结束";
                 return false;
             }
             return true;
+        }
+
+        private bool IsHeroReady()
+        {
+            return heroPreview != null
+                ? heroPreview.IsReady
+                : genericHeroPreview != null && genericHeroPreview.IsReady;
+        }
+
+        private bool IsHeroBusy()
+        {
+            return heroPreview != null
+                ? heroPreview.IsBusy
+                : genericHeroPreview != null && genericHeroPreview.IsBusy;
+        }
+
+        private string GetHeroLoadingStatus()
+        {
+            if (heroPreview != null)
+                return heroPreview.LoadingStatus;
+            if (genericHeroPreview != null)
+                return genericHeroPreview.LoadingStatus;
+            return heroId + " 战斗控制器不可用";
+        }
+
+        private bool HasNormalAttack()
+        {
+            return heroPreview != null ||
+                (genericHeroPreview != null &&
+                 genericHeroPreview.HasNormalAttack);
+        }
+
+        private bool HasBurst()
+        {
+            return heroPreview != null ||
+                (genericHeroPreview != null && genericHeroPreview.HasBurst);
+        }
+
+        private bool HasUltimate()
+        {
+            return heroPreview != null ||
+                (genericHeroPreview != null && genericHeroPreview.HasUltimate);
         }
 
         private void BeginEnemyReaction(float[] hitTimes, float recovery)
@@ -804,10 +925,11 @@ namespace EdenGallery
                 460f,
                 36f);
             DrawPanel(statusRect, new Color(0.035f, 0.06f, 0.11f, 0.82f));
-            string currentStatus = heroPreview != null &&
-                !heroPreview.IsReady
-                ? heroPreview.LoadingStatus
-                : "APK 原逻辑版 · " + statusText;
+            string currentStatus = !IsHeroReady()
+                ? GetHeroLoadingStatus()
+                : (heroPreview != null
+                    ? "APK 原逻辑版 · " + statusText
+                    : "角色战斗 · " + statusText);
             GUI.Label(statusRect, currentStatus, smallLabelStyle);
 
             float sideWidth = Mathf.Min(330f, width * 0.25f);
@@ -829,7 +951,7 @@ namespace EdenGallery
                     heroNameRect.y + 2f,
                     heroNameRect.width,
                     28f),
-                "拉比",
+                heroName,
                 labelStyle);
             GUI.Label(
                 new Rect(
@@ -837,7 +959,7 @@ namespace EdenGallery
                     heroNameRect.y + 28f,
                     heroNameRect.width,
                     24f),
-                HeroId,
+                heroId,
                 smallLabelStyle);
             GUI.Label(
                 new Rect(
@@ -898,21 +1020,21 @@ namespace EdenGallery
                 buttonWidth,
                 buttonHeight);
 
-            bool ready = heroPreview != null &&
-                heroPreview.IsReady &&
-                !heroPreview.IsBusy;
-            GUI.enabled = ready;
+            bool ready = IsHeroReady() && !IsHeroBusy();
             Color previousColor = GUI.backgroundColor;
             GUI.backgroundColor =
                 new Color(0.20f, 0.38f, 0.70f, 1f);
+            GUI.enabled = ready && HasNormalAttack();
             if (GUI.Button(normalRect, "普通攻击  [A]", buttonStyle))
                 PlayNormalAttack();
             GUI.backgroundColor =
                 new Color(0.42f, 0.30f, 0.78f, 1f);
+            GUI.enabled = ready && HasBurst();
             if (GUI.Button(burstRect, "爆气  [S]", buttonStyle))
                 PlayBurst();
             GUI.backgroundColor =
                 new Color(0.76f, 0.28f, 0.48f, 1f);
+            GUI.enabled = ready && HasUltimate();
             if (GUI.Button(ultimateRect, "奥义  [U]", buttonStyle))
                 PlayUltimate();
             GUI.backgroundColor = previousColor;

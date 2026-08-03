@@ -3347,6 +3347,13 @@ namespace EdenGallery
                     GUIStyle.none))
             {
                 StopVoicePlayback(true);
+                EdenGallerySceneNavigation.OpenCharacterBattle(
+                    characterIndex,
+                    stageIndex,
+                    character == null ? string.Empty : character.cardId,
+                    character == null
+                        ? string.Empty
+                        : EdenGalleryUISettings.GetDisplayName(character));
                 SceneManager.LoadScene(
                     EdenGallerySceneNavigation.CharacterBattleSceneName,
                     LoadSceneMode.Single);

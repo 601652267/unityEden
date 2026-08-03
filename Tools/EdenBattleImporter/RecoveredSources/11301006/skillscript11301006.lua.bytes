@@ -1,0 +1,71 @@
+--[[
+	必杀技通用配置结构
+	配合timeline一同使用
+]]
+local SkillScript = {
+	--技能使用到的timeline动画名字
+	timelineName = "Fx_timeline_11301006_xp",
+	--受击者伤害触发次数,用来表示分段伤害
+	totalHitCount = 16,
+}
+--[[
+FX_timeline_11301006_XP 梅   该技能攻击敌方随机三人（敌方全体） 不需要移动位置
+施法角色在第1499.85毫秒消失不见 随后在4499.55毫秒出现  在第5799.42毫秒消失
+最后在第8665.8毫秒再次出现   整个特效在第10665.6毫秒结束      受击角色在第7432.59毫秒第一次受伤
+7599.24第二次   7765.89第三次  7932.54第四次   8065.86第五次  8199.18第六次
+8365.83第七次   8565.81第八次  8732.46第九次  8965.77第十次  9165.75第十一次
+9332.4第十二次   9499.05第十三次    9665.7第十四次  9832.35第十五次  9999第十六次
+梅，受击角色在第5999.4毫秒出现
+]]
+--播放必杀技表现
+function SkillScript.Play(time,timelineEndCall)
+
+	--攻击方移动到屏幕中间
+	MoveAtkCard(0,BattleConfig.positionZero,0)
+
+	--必杀技通用起手骨骼状态，不循环
+	ChangeAtkState(0,"uniqueskill",false)
+
+	--背景变黑
+	DisplaySkillMask(0,1)
+
+	--攻击方消失
+	MoveAtkCard(1499,BattleConfig.positionInvisible,0)
+	--攻击方出现
+	MoveAtkCard(4499,BattleConfig.positionZero,0)
+	--攻击方消失
+	MoveAtkCard(5799,BattleConfig.positionInvisible,0)
+
+	--受击方消失
+	SetDefCardsActive(0,false)
+	--受击方出现
+	SetDefCardsActive(5999,true)
+
+	--受击动作
+	ChangeDefState(7432,"hit_1")
+	ChangeDefState(7599,"hit_2")
+	ChangeDefState(7765,"hit_1")
+	ChangeDefState(7932,"hit_2")
+	ChangeDefState(8065,"hit_1")
+	ChangeDefState(8199,"hit_2")
+	ChangeDefState(8365,"hit_1")
+	ChangeDefState(8565,"hit_2")
+	ChangeDefState(8732,"hit_1")
+	ChangeDefState(8965,"hit_2")
+	ChangeDefState(9165,"hit_1")
+	ChangeDefState(9332,"hit_2")
+	ChangeDefState(9499,"hit_1")
+	ChangeDefState(9665,"hit_2")
+	ChangeDefState(9832,"hit_1")
+	ChangeDefState(9999,"hit_2",true)
+
+	--攻击方移回原位
+	MoveAtkCard(8665,nil,0)
+	--攻击者待机
+	ChangeAtkState(10000,"idle",true)
+
+	--背景变亮 10665
+	ClearSkillMask(time - 1,nil,1,timelineEndCall)
+end
+
+return SkillScript
