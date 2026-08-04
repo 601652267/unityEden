@@ -1,8 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 public sealed class EdenBattle11301023 : EdenRecoveredCharacterBattle
 {
     public override string CardId
     {
         get { return "11301023"; }
+    }
+
+    public override void ConfigureSpawnedEffect(
+        EdenRecoveredBattlePreview preview,
+        string bundleFile,
+        GameObject effect)
+    {
+        if (preview == null || effect == null)
+            return;
+
+        if (bundleFile == "eft_fx_11301023_attack.aab")
+        {
+            FlipEffectHierarchyX(effect);
+            return;
+        }
+
+        if (bundleFile == "eft_fx_11301023_skill.aab")
+        {
+            FlipEffectHierarchyX(effect);
+            return;
+        }
     }
 
     public override EdenRecoveredSkillConfiguration CreateConfiguration()
@@ -13,10 +38,18 @@ public sealed class EdenBattle11301023 : EdenRecoveredCharacterBattle
             timelineName = "FX_timeline_11301023_xp",
             videoFileName = "Fx_timeline_11301023_xp.m4v",
             ultimateTotalHitCount = 8,
-            normalReturnTime = 1.20f,
+            normalReturnTime = 1.60f,
             normalCleanupTime = 1.60f,
-            burstReturnTime = 1.55f,
+            burstReturnTime = 2.05f,
             burstCleanupTime = 2.05f,
+            // 11301023 的普通攻击和爆气都是近战。人物在动作返回
+            // 时刻隐藏一帧并直接恢复到出生位置；尚未结束的烟雾、
+            // 刀光尾迹继续播放到各自 cleanupTime，不再让人物为了
+            // 等待装饰粒子而保持攻击末帧。
+            normalReturnMode = EdenRecoveredAttackReturnMode
+                .HideAndTeleportAtReturnTime,
+            burstReturnMode = EdenRecoveredAttackReturnMode
+                .HideAndTeleportAtReturnTime,
             ultimateVideoStartTime = 1.500000f,
             ultimateVideoEndTime = 6.000000f,
             ultimateAttackerInvisibleTime = 2.000000f,

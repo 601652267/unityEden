@@ -1,0 +1,1276 @@
+[
+  {
+    "file": "common.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/common.aab",
+    "removed_prefix_bytes": 0,
+    "size": 186797,
+    "sha256": "4a708caf1ed6e72c639ff86539652ebd7cfec0d65f266a64021669e8748f87bc"
+  },
+  {
+    "file": "eft_fx_11301005_attack_2.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_11301005_attack_2.aab",
+    "removed_prefix_bytes": 0,
+    "size": 45405,
+    "sha256": "abcb4622ab1c06cc479103dd8a07ee6bf1c1048ab8574c0749cd4889320977c6"
+  },
+  {
+    "file": "eft_fx_11301005_attack_air.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_11301005_attack_air.aab",
+    "removed_prefix_bytes": 0,
+    "size": 46278,
+    "sha256": "5e542150b391bb63e66d569d4619fe8939f7c82e945258a0622c07f761903ebb"
+  },
+  {
+    "file": "eft_fx_11301005_attack.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_11301005_attack.aab",
+    "removed_prefix_bytes": 0,
+    "size": 50583,
+    "sha256": "2d0cb5d5dc7ffd7e44cd40d104e79c29cb6e86b13683f571b95c0fa5f663b4e4"
+  },
+  {
+    "file": "eft_fx_11301005_skill_2.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_11301005_skill_2.aab",
+    "removed_prefix_bytes": 0,
+    "size": 55485,
+    "sha256": "b0aad68abb06a42d5fbe4e8fb3ad4090a09569cedd10dda2efc037b9956c36c9"
+  },
+  {
+    "file": "eft_fx_11301005_skill.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_11301005_skill.aab",
+    "removed_prefix_bytes": 0,
+    "size": 94176,
+    "sha256": "20fc34852cdfca51eca1baa43a55074ce4833d8ab4b193ae95f4b196bc3e6570"
+  },
+  {
+    "file": "eft_fx_timeline_11301005_xp.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/eft_fx_timeline_11301005_xp.aab",
+    "removed_prefix_bytes": 0,
+    "size": 246811,
+    "sha256": "3ea07d872650884779b6bfbce0a2d26129d474b416ba5c37fc516d75e7a24d3a"
+  },
+  {
+    "file": "m_cardspine_11301005.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/m_cardspine_11301005.aab",
+    "removed_prefix_bytes": 0,
+    "size": 236104,
+    "sha256": "92eff1a784bc8140e6b09f661ef4393897ba473f10164effc5d54377f833232f"
+  },
+  {
+    "file": "m_soulgames.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/m_soulgames.aab",
+    "removed_prefix_bytes": 0,
+    "size": 31914,
+    "sha256": "608e215b558aaea56e024b0b6cc5d98c92bf4e114373ddb17ce786d5520ec717"
+  },
+  {
+    "file": "st_beam_01_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_beam_01_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5305,
+    "sha256": "8bc2cf62e462fb6a5512b6118b608b943c426e62d22275633dba997958d12bbe"
+  },
+  {
+    "file": "st_blz_wingenteranim.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_blz_wingenteranim.aab",
+    "removed_prefix_bytes": 0,
+    "size": 19603,
+    "sha256": "0eea54a836758aae904c2f372d71cba00a6c7c2f500b316f2223abebda0707bd"
+  },
+  {
+    "file": "st_cardspine_11301005.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_cardspine_11301005.aab",
+    "removed_prefix_bytes": 0,
+    "size": 193104,
+    "sha256": "d637c05d598f82c6815548adf90b6cd55f827ea2d978fbde85000855193470bc"
+  },
+  {
+    "file": "st_flare_blue_mask01_01.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_flare_blue_mask01_01.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4812,
+    "sha256": "dc1b3745545fc4d86270e8941767526a8095509507068fcd49922957952c5a86"
+  },
+  {
+    "file": "st_flare_red_mask01.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_flare_red_mask01.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10629,
+    "sha256": "06d0c70ace4a1f65d82d2eb7fd0a99fe9d45873fd1a689086edd81ca4cb4699f"
+  },
+  {
+    "file": "st_fx_bomb_002_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_bomb_002_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 13423,
+    "sha256": "563340d2670718f752400f5e14fb36691a3e323e7d543add990ddf39a1b628ca"
+  },
+  {
+    "file": "st_fx_bomb_010_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_bomb_010_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 44356,
+    "sha256": "ec31c8bdcca336944a1bd121fabd0845539f1f8d486c5e3709b4a7c39801e2d6"
+  },
+  {
+    "file": "st_fx_dilie_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_dilie_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 34869,
+    "sha256": "762995222af1a302d6f052319b4b71f743d5a74c999c93bd042a3b609fa52458"
+  },
+  {
+    "file": "st_fx_dilie_002_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_dilie_002_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8983,
+    "sha256": "aee60f387408080d1d2688c4c720e144da3d216f9a7b03319ace28b896fdad68"
+  },
+  {
+    "file": "st_fx_floor_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_floor_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 30688,
+    "sha256": "04a5bc59560ae076c9a1e0977f79fc6e19faaa93945dbb1ddd12d3444ef84e5a"
+  },
+  {
+    "file": "st_fx_glow_001_sh 1.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_glow_001_sh 1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 14715,
+    "sha256": "31850c3dc187d0222dbade4f8b5e31521346930415568b563727238ccfdb61fd"
+  },
+  {
+    "file": "st_fx_glow_001_sh_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_glow_001_sh_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 14715,
+    "sha256": "35aa5bd205a23c6b4e3849f5430a0f5e79e49abee8aace7292c613eddc61186d"
+  },
+  {
+    "file": "st_fx_glow_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_glow_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 14693,
+    "sha256": "2617fd552055880538f52f4601f1e48b1159b8549a7d26b9fc0a4824a12a9c4e"
+  },
+  {
+    "file": "st_fx_glow_003_sh 1.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_glow_003_sh 1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 11937,
+    "sha256": "10612c5720343c0c2d52c7a099a57d84c9294d345001e9388ac8ba42ae346a10"
+  },
+  {
+    "file": "st_fx_glow_003_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_glow_003_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8234,
+    "sha256": "e7bee08fb1a99feb66a257a6f20f77d41520af80a1be77ffc9770baaa809dec9"
+  },
+  {
+    "file": "st_fx_glow_005_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_glow_005_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 17186,
+    "sha256": "74fc104dc295f019b6e52c9124db3f7c36054abd44bd430929f8ce301a2bb827"
+  },
+  {
+    "file": "st_fx_line_026_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_line_026_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 23534,
+    "sha256": "1c9a5889bbaaa056363b8faf88958e87d2e38dde207ed0c515aa2209236fb604"
+  },
+  {
+    "file": "st_fx_quan_004_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_quan_004_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 39978,
+    "sha256": "853bdf1e8e8b076a600ae33e004fd51f5b40886f34a99b558ff6c0606e988e6e"
+  },
+  {
+    "file": "st_fx_quan_014_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_quan_014_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8275,
+    "sha256": "7eb570ed9512e2f20469c9d1a9d4961ac5cabeabad2db42a148d5cddc82aca13"
+  },
+  {
+    "file": "st_fx_shandian_003_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_shandian_003_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10989,
+    "sha256": "d0e21507252ecda005a7001e39483ec9ac6cce4ef8deafb9ce74c569b4ebbe7d"
+  },
+  {
+    "file": "st_fx_shazi_005_sh_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_shazi_005_sh_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 16793,
+    "sha256": "1a2fe4e05d68c4e869f9f963b792c5e6654217542391f202d2e2ab7d660d157a"
+  },
+  {
+    "file": "st_fx_shizi_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_shizi_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 68854,
+    "sha256": "711ee14b673679efad882bfdcdbc7461aea09690caf7764dda504e0e0bf50b01"
+  },
+  {
+    "file": "st_fx_smoke_028_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_smoke_028_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5267,
+    "sha256": "405c6df8e48f3cd2836ced780918a17c4292009a5226327de9493f7408c7e389"
+  },
+  {
+    "file": "st_fx_smoke_037_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_smoke_037_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 41200,
+    "sha256": "4b35e1f5c741e08b3486545141e3643f232a5412339f287214025bf1f2441587"
+  },
+  {
+    "file": "st_fx_stone_002_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_stone_002_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8394,
+    "sha256": "ad6bcfa5569e1b75e0bfe9abc8fe4463423f50069c096798bbaa324adc296ee6"
+  },
+  {
+    "file": "st_fx_stone_003_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_stone_003_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 29100,
+    "sha256": "b88a98cf24270a6535ef8e9e6094e543a6e5a7d38aacee6c50049eb9c98746db"
+  },
+  {
+    "file": "st_fx_stone_004_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_stone_004_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 31176,
+    "sha256": "30dcb8eb8230492dd954992d9ff865fab8abaa4a3146fe22101860569d28a179"
+  },
+  {
+    "file": "st_fx_stone_007_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_stone_007_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 37405,
+    "sha256": "0373f605e2457a0ae25e842b7b631f0deb90c1c762d33ddc3e42fca9f0fc4ce4"
+  },
+  {
+    "file": "st_fx_tex_002_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_fx_tex_002_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 25897,
+    "sha256": "5414254fef3573cfc385815b3d0b4598b7e5edc72733e6e7964e4f92a5c454a5"
+  },
+  {
+    "file": "st_fx_trail_004_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_fx_trail_004_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 30055,
+    "sha256": "8c019d6153bb61fd78ae5541031b5e3a8d6389f469414acff5c52a97d2ed8e62"
+  },
+  {
+    "file": "st_glow_01_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_glow_01_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 6445,
+    "sha256": "e26c21c1672637ceaaada4190df8dd8e9ed68b86e479f8126abaf5d16f49ac11"
+  },
+  {
+    "file": "st_glow_02_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_glow_02_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3784,
+    "sha256": "c3e01d0a3e6ba89bc17660de24957a012e5c99e078b492ce1fd01b1a2f3358d4"
+  },
+  {
+    "file": "st_glow_04_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_glow_04_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5835,
+    "sha256": "4c0c8d73771011216c11e0ff655f0bc32e356e4991f9240a0e63664502fb87fa"
+  },
+  {
+    "file": "st_glow_11_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_glow_11_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5083,
+    "sha256": "4059e624fc98944a46e4f8eab8b2924a6dc38c3c4ab3f722c9aca1ed3f5e7312"
+  },
+  {
+    "file": "st_glow_66_w.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_glow_66_w.aab",
+    "removed_prefix_bytes": 0,
+    "size": 13684,
+    "sha256": "c524a0f784ec909ca1b964a20998b5f2bb189e481b75561d2f5882cdbdaaa576"
+  },
+  {
+    "file": "st_glow_point_r_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_glow_point_r_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4222,
+    "sha256": "ce5753fe6c2d6affbb6ee72112cc3161d41e3d52164ccc209e0f1076681944ab"
+  },
+  {
+    "file": "st_glow_white005.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_glow_white005.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4404,
+    "sha256": "54be69b5e72f9e1d1b5abb7f94e0fd2842d36aecfa74d79f3dfc376a0546e924"
+  },
+  {
+    "file": "st_ground_cp_004.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_ground_cp_004.aab",
+    "removed_prefix_bytes": 0,
+    "size": 24875,
+    "sha256": "93160f300ae8f1f89e065db7b9bb3ef284fb5a99db63412ac9c7f0074370b98d"
+  },
+  {
+    "file": "st_knife_01_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_knife_01_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9587,
+    "sha256": "47f71f4f6b12771d68c463c06ed8266af77d04d8abc06f155d81163937920cb7"
+  },
+  {
+    "file": "st_light_cp_001.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_light_cp_001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10272,
+    "sha256": "ac37872692aeef9e1b61eaf5eac97b5b1866707d418f4d39687bb706f426fb98"
+  },
+  {
+    "file": "st_light_cp_271.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_light_cp_271.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10565,
+    "sha256": "3effeb7dada51277bfe11302df544f77490c81196cedcdf536bc82bf7abd2a19"
+  },
+  {
+    "file": "st_mask_cp_088.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_mask_cp_088.aab",
+    "removed_prefix_bytes": 0,
+    "size": 6015,
+    "sha256": "0b14282016c22d0b7619941e77b4f3064be1aea2813dd5d0f4a5f0b85a44ff44"
+  },
+  {
+    "file": "st_mask_cp_089.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_mask_cp_089.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4116,
+    "sha256": "876892894bf3c968c71b6b1dd4c33dd12d9b597d1e4d689fabb1c6eb686df92b"
+  },
+  {
+    "file": "st_ring_02_w.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_ring_02_w.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9253,
+    "sha256": "75c7023436c9af3e57f73dfbb5f2e2267789432bc93b5862c37338841028aa7d"
+  },
+  {
+    "file": "st_ring_glow_white10_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_ring_glow_white10_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9936,
+    "sha256": "32ee0af0a75893eaea4d82aa01416e29bc5df8d714089b33defd83839bc025af"
+  },
+  {
+    "file": "st_sequence_12_w.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sequence_12_w.aab",
+    "removed_prefix_bytes": 0,
+    "size": 25121,
+    "sha256": "bb90ecd7e375b6c77c15cc280a2f49baadfc61ae506ceb8502746cbc120c7d9e"
+  },
+  {
+    "file": "st_sequence_21_w.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sequence_21_w.aab",
+    "removed_prefix_bytes": 0,
+    "size": 15510,
+    "sha256": "a58a6ec6dda1a25240a416f16631c5a80219af02e8034dff2777aa3dfa9004f4"
+  },
+  {
+    "file": "st_sequence_cp_010_green.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sequence_cp_010_green.aab",
+    "removed_prefix_bytes": 0,
+    "size": 19798,
+    "sha256": "1f84fe77064acd272b64f9a41f7ed6c93f7aed35a10d05cb436002ff4b92e44c"
+  },
+  {
+    "file": "st_sequence_cp_015.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_015.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8800,
+    "sha256": "80ba47da7c7aaa1a138fde9a01fa65b5634592e1aa1770a3ef06e3e6432e7b74"
+  },
+  {
+    "file": "st_sequence_cp_016.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sequence_cp_016.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10207,
+    "sha256": "b1d8ff99386c5e04e18f5c0b14e27119098e5ec4aa2be44e61d771a4d58f435f"
+  },
+  {
+    "file": "st_sequence_cp_017.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_017.aab",
+    "removed_prefix_bytes": 0,
+    "size": 28260,
+    "sha256": "52f6ea69c9724d669edd4d3fe63b1e8c00faefb80cb83200f38d8648d4479914"
+  },
+  {
+    "file": "st_sequence_cp_030.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_030.aab",
+    "removed_prefix_bytes": 0,
+    "size": 24258,
+    "sha256": "0607338798d42798c46ff9e6876b87b7fc33912db75d704dfc0a08dc59f2861b"
+  },
+  {
+    "file": "st_sequence_cp_032_blue.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_032_blue.aab",
+    "removed_prefix_bytes": 0,
+    "size": 50553,
+    "sha256": "ab4b2779bc6b96505c917ce469a75fe8bc638a051e850b6d71a514f1a4315275"
+  },
+  {
+    "file": "st_sequence_cp_032.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_032.aab",
+    "removed_prefix_bytes": 0,
+    "size": 45461,
+    "sha256": "4d11a73ac36427600f16e39ce1c61989af12ac0abe4c7d0fd809dbb2e879b7bf"
+  },
+  {
+    "file": "st_sequence_cp_033.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_033.aab",
+    "removed_prefix_bytes": 0,
+    "size": 43208,
+    "sha256": "b253de843a552583dcf8f65d5d92439b36854c7c9d13fd773925aa0c4de99d92"
+  },
+  {
+    "file": "st_sequence_cp_041.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_041.aab",
+    "removed_prefix_bytes": 0,
+    "size": 22515,
+    "sha256": "d9867bcc7ea0ab29141bb7822c6eeb350c3f790813f01bdd0b7353936a1f0701"
+  },
+  {
+    "file": "st_sequence_cp_043.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_043.aab",
+    "removed_prefix_bytes": 0,
+    "size": 62384,
+    "sha256": "9d66fc58f96cf85e8db817f2e95e6aea4be7d01d11e4130abf0824eacd7bd226"
+  },
+  {
+    "file": "st_sequence_cp_077.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_077.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9998,
+    "sha256": "f14335c06460506762cd8711d8f02301d01b493b1f0db7acf8c8862b8c7c47d0"
+  },
+  {
+    "file": "st_sequence_cp_078.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_078.aab",
+    "removed_prefix_bytes": 0,
+    "size": 77046,
+    "sha256": "fa966391f771cf358a85f3b1c6380644d3269ce4fd92b805d8af690d10ac51f6"
+  },
+  {
+    "file": "st_sequence_cp_080.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_080.aab",
+    "removed_prefix_bytes": 0,
+    "size": 58520,
+    "sha256": "affa02d04c2b477ae230c20eda8f8dcdb5dbab6d06144b8dadcf324ae39071df"
+  },
+  {
+    "file": "st_sequence_cp_089.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_089.aab",
+    "removed_prefix_bytes": 0,
+    "size": 26419,
+    "sha256": "be6d685bbc26ef6f68d8c3be588463a33138e93e211d1d49d1ac4ef6639583f1"
+  },
+  {
+    "file": "st_sequence_cp_092.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sequence_cp_092.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7320,
+    "sha256": "0712a580465a10145c02bba8e53407740d8d2da61c6d31430a416e206808c974"
+  },
+  {
+    "file": "st_sequence_cp_203.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_203.aab",
+    "removed_prefix_bytes": 0,
+    "size": 42234,
+    "sha256": "a89bbe6f46f3bda18c09d2203c7275056ae0f760e4109322fbc06517cd10d6ac"
+  },
+  {
+    "file": "st_sequence_cp_232.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sequence_cp_232.aab",
+    "removed_prefix_bytes": 0,
+    "size": 74099,
+    "sha256": "8d0493fd646b563defc3df0ea86c72b93ea913a91f6f75a1b9271e9cc912d3ab"
+  },
+  {
+    "file": "st_sfx_daoguang_012.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_daoguang_012.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8610,
+    "sha256": "cbcc02b2acd7d491f86c92de7ad403fe8342e5229f2d525e6c6cefb36b6acfa8"
+  },
+  {
+    "file": "st_sfx_fz_006.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_fz_006.aab",
+    "removed_prefix_bytes": 0,
+    "size": 30682,
+    "sha256": "1cba9dc54b519b2c6c0c73edb4f4e80f1682099483b704d73dc8979ff450f268"
+  },
+  {
+    "file": "st_sfx_ramp_01.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_ramp_01.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2998,
+    "sha256": "d7113504848b7644c30dfab1a18affdd1822ca80343240ede0775952dcecb094"
+  },
+  {
+    "file": "st_sfx_tx_001.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 23590,
+    "sha256": "ea73eeef4b24dff31d8a488f4aa12d002d08599ffe0826e1d13e77177cb4dd7c"
+  },
+  {
+    "file": "st_sfx_tx_014_green.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_014_green.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5700,
+    "sha256": "ffae88277bf76689bfcab765672c7d59318d7da246317d2658d4d628bcdd16c8"
+  },
+  {
+    "file": "st_sfx_tx_018.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_018.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3010,
+    "sha256": "ab60eea377e02ceb1145cd01d6e57b46c4fc48eac7592a78698b4b39abfd7097"
+  },
+  {
+    "file": "st_sfx_tx_019.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_019.aab",
+    "removed_prefix_bytes": 0,
+    "size": 11970,
+    "sha256": "a7fe0e81979150ae02f6776ee4bb072c6b9110b3131cc4c0da15d3a12170a911"
+  },
+  {
+    "file": "st_sfx_tx_044.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_044.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9563,
+    "sha256": "7b608de38ceded83def762ca673222cd182d145fb39eb036ca7b5edf77e7b6ca"
+  },
+  {
+    "file": "st_sfx_tx_069.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_069.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7266,
+    "sha256": "2291c9002905548efe6d80e0335d2384ec8f075d1d77f76371e1ba8625bc6522"
+  },
+  {
+    "file": "st_sfx_tx_075.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_075.aab",
+    "removed_prefix_bytes": 0,
+    "size": 24547,
+    "sha256": "6a8f05cddbd045bd83dbe7a579fcb8b2be834b6e8d4342658230cc705bfa4fcd"
+  },
+  {
+    "file": "st_sfx_tx_081.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_081.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9972,
+    "sha256": "3d4dab630fc9d7dacd0aa283afb2012d6fb6021eb54a393f011a05f588e87a45"
+  },
+  {
+    "file": "st_sfx_tx_114.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_114.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9783,
+    "sha256": "45d483b7259a885464114869c76758af552a11488f3daf61b2ca2e47879eea84"
+  },
+  {
+    "file": "st_sfx_tx_125.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_125.aab",
+    "removed_prefix_bytes": 0,
+    "size": 25670,
+    "sha256": "34ab253b9eaec22824bb4d3229f026709374800c39d5838b39bbf216ff8ca463"
+  },
+  {
+    "file": "st_sfx_tx_147.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_147.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7930,
+    "sha256": "9992e45e98c12bee88ee0c97e0928db388bd287e58aa1bedd913ae9702c9c78a"
+  },
+  {
+    "file": "st_sfx_tx_202.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_202.aab",
+    "removed_prefix_bytes": 0,
+    "size": 6268,
+    "sha256": "eafaba9181927b28025fd9c34f585343839f40d86e07c95cbe1cc18e2482725b"
+  },
+  {
+    "file": "st_sfx_tx_219.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_219.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2810,
+    "sha256": "7ed7cd52c9c40afb41f1b83e1a55e3758143c3d8c46bee1989eef1481eab52b8"
+  },
+  {
+    "file": "st_sfx_tx_235.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_235.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2526,
+    "sha256": "178412cae4601ea23c2047cb6c26594f0a8a044c1a5cf7192600ed70daa41f96"
+  },
+  {
+    "file": "st_sfx_tx_254.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_254.aab",
+    "removed_prefix_bytes": 0,
+    "size": 232964,
+    "sha256": "df93b6af403a490b75dff8495b42676c0c493cc20f5e9e206f0d92819b55da17"
+  },
+  {
+    "file": "st_sfx_tx_255.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_255.aab",
+    "removed_prefix_bytes": 0,
+    "size": 23175,
+    "sha256": "d963d89f1d7fe8393662edd6d5fe5d7f4d01fcff90d846ddb765dcdaada1c8e8"
+  },
+  {
+    "file": "st_sfx_tx_277.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_277.aab",
+    "removed_prefix_bytes": 0,
+    "size": 51006,
+    "sha256": "7c6669d950a821daf5a64ffc60fd8fac98e2d9d295773b1803dcef431f439cc3"
+  },
+  {
+    "file": "st_sfx_tx_279.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_279.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7824,
+    "sha256": "3dc34e97cb440ac6d7140b3e494ac7ffccac19acedf05e14aad741c2c84108ae"
+  },
+  {
+    "file": "st_sfx_tx_296.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_296.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7368,
+    "sha256": "7d9741606c78050489d4dd89931790e988243c7a3fcb6c1d61dd41459b55760f"
+  },
+  {
+    "file": "st_sfx_tx_299.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_299.aab",
+    "removed_prefix_bytes": 0,
+    "size": 84380,
+    "sha256": "76f86c78928e01f6a8dd04fbbf9680e383a65e5ad4fb5dd492e72f55bd472419"
+  },
+  {
+    "file": "st_sfx_tx_315.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_315.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8091,
+    "sha256": "e2fb558698d2c56c9edf69807cd92efeb9407f8f18336d74038f3785cb4f525a"
+  },
+  {
+    "file": "st_sfx_tx_357.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_357.aab",
+    "removed_prefix_bytes": 0,
+    "size": 303047,
+    "sha256": "0bde4445b67c10dc37678e50e15871a2d216baeb5fbbb50a721943f4d110e998"
+  },
+  {
+    "file": "st_sfx_tx_375_2.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_375_2.aab",
+    "removed_prefix_bytes": 0,
+    "size": 69238,
+    "sha256": "bce7567809890b0bfab12705aa7b2df7cd9af0ef7da72f85170eca2fccf8f630"
+  },
+  {
+    "file": "st_sfx_tx_432.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_432.aab",
+    "removed_prefix_bytes": 0,
+    "size": 11093,
+    "sha256": "3f52534e6b96153a0f7840152044ec102e8a79bbc5aba06fa64dc869ece5a407"
+  },
+  {
+    "file": "st_sfx_tx_439.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_439.aab",
+    "removed_prefix_bytes": 0,
+    "size": 38557,
+    "sha256": "d861fb740dc10ac0b71fc153398e0df4333f172537e1be20f6451b46e0168dcc"
+  },
+  {
+    "file": "st_sfx_tx_440.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_440.aab",
+    "removed_prefix_bytes": 0,
+    "size": 24983,
+    "sha256": "aa693019d6f2f67ee3da94b784da03bc5aa07b0c6317df8e6f294df38e630a58"
+  },
+  {
+    "file": "st_sfx_tx_443.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_443.aab",
+    "removed_prefix_bytes": 0,
+    "size": 95270,
+    "sha256": "2f4ca560d01bbfd992edbfbca0ae41cf650788577cca32e8fd3eb2acdfb2ee4b"
+  },
+  {
+    "file": "st_sfx_tx_465.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_465.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8354,
+    "sha256": "8392c859c8979626e42d7ce2a2a298e69f4e0180cf19d35e1860d1b9e6cfc05f"
+  },
+  {
+    "file": "st_sfx_tx_471.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_471.aab",
+    "removed_prefix_bytes": 0,
+    "size": 28221,
+    "sha256": "e2a2c50bd67bf896a9402370aa8f5db195d546e8163579401f09943f4b118293"
+  },
+  {
+    "file": "st_sfx_tx_484_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_484_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 11239,
+    "sha256": "b91d582b2d9c9421f31f9a7a62876f3c8982be1a8b951b81241729411b9cd9a6"
+  },
+  {
+    "file": "st_sfx_tx_484.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_484.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7681,
+    "sha256": "2ad25742d13b4e81f0cb59cfd2c8185d21b6f749a76a9b8e52aa231af57659cc"
+  },
+  {
+    "file": "st_sfx_tx_544.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_544.aab",
+    "removed_prefix_bytes": 0,
+    "size": 37913,
+    "sha256": "a2994a1920da6661284892bc3449306490ebb8f94960945ce3229c41f2a752dc"
+  },
+  {
+    "file": "st_sfx_tx_554.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_554.aab",
+    "removed_prefix_bytes": 0,
+    "size": 17078,
+    "sha256": "abac204765a481ab159ab4e6a4f78b247e6d0e73068606bac49626374a808298"
+  },
+  {
+    "file": "st_sfx_tx_561.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_561.aab",
+    "removed_prefix_bytes": 0,
+    "size": 13130,
+    "sha256": "306c82117323d07ab554da5f28cb30db50e72c761fce983bad2ea6fe1ee8b43f"
+  },
+  {
+    "file": "st_sfx_tx_568.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_568.aab",
+    "removed_prefix_bytes": 0,
+    "size": 71077,
+    "sha256": "e1290063e0757c0b90a6efae69151052fa7518011b6476a1df4b86beff9c733b"
+  },
+  {
+    "file": "st_sfx_tx_569.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_569.aab",
+    "removed_prefix_bytes": 0,
+    "size": 28524,
+    "sha256": "47ee815454c74e473f529ef9686b286096bfb1ad080f0a296e1bba1dd72cfbf7"
+  },
+  {
+    "file": "st_sfx_tx_570.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_570.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2380,
+    "sha256": "99ff05e2401f324f715a77043de926fdf2a553099fce30436097c93cce68a0f1"
+  },
+  {
+    "file": "st_sfx_tx_579.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_579.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4123,
+    "sha256": "5b65ce955b0e12ff85006ea24c6e84c1400a205edcf1f53575824951cb84c2e6"
+  },
+  {
+    "file": "st_sfx_tx_584.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_584.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3905,
+    "sha256": "64a36f31996ad93ffaaf4ffb5dee5de571718db7d0641e85517ef2a1ff1a672e"
+  },
+  {
+    "file": "st_sfx_tx_586.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_586.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3798,
+    "sha256": "014424552ebba09f274e40f740aecc09dc8a2521b416865681c8f421b75d987d"
+  },
+  {
+    "file": "st_sfx_tx_593.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_593.aab",
+    "removed_prefix_bytes": 0,
+    "size": 51115,
+    "sha256": "5d90265683462857e336b49b2865a99663d6d44ff678691549f46f8b2e45efde"
+  },
+  {
+    "file": "st_sfx_tx_603.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_603.aab",
+    "removed_prefix_bytes": 0,
+    "size": 13828,
+    "sha256": "607d96e5640496506059fbbc6086cce026bf56c56f7746398f9e1c721c4ca3a8"
+  },
+  {
+    "file": "st_sfx_tx_604.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_604.aab",
+    "removed_prefix_bytes": 0,
+    "size": 17566,
+    "sha256": "518a799fd656b73d727aa21cfa33ec40277e8255fe9e36d5cdc8c0a4468c29e5"
+  },
+  {
+    "file": "st_sfx_tx_643.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_643.aab",
+    "removed_prefix_bytes": 0,
+    "size": 15339,
+    "sha256": "527d30215f526e360d6b8776e99dc3b32663d6ed5d19297ffb9a8c6754cb94bd"
+  },
+  {
+    "file": "st_sfx_tx_650.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_650.aab",
+    "removed_prefix_bytes": 0,
+    "size": 13257,
+    "sha256": "9702991b1b41237517a3612e0b40fe4639ea66fdb87731c452edaa97bd858758"
+  },
+  {
+    "file": "st_sfx_tx_653.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_653.aab",
+    "removed_prefix_bytes": 0,
+    "size": 15862,
+    "sha256": "c5d3d77f352a2c7187e2f296e109bd328bd64ee60a3467d4943fd65cc945b744"
+  },
+  {
+    "file": "st_sfx_tx_668.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_668.aab",
+    "removed_prefix_bytes": 0,
+    "size": 8957,
+    "sha256": "02bbc35c80c9e0eda987f7a22fc677d0e4e9552f549e6388bc05d4cd293ad041"
+  },
+  {
+    "file": "st_sfx_tx_675.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_675.aab",
+    "removed_prefix_bytes": 0,
+    "size": 30559,
+    "sha256": "669dfb3b7c00cecad858df7a42a5860ffcfe3c1d5c04b0e8b251c23920db1c10"
+  },
+  {
+    "file": "st_sfx_tx_680.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_680.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4123,
+    "sha256": "bbe73770e33f1d3d3d39ecda8160ae3bb5708ec3d286223d16ff2f30ec75e7d9"
+  },
+  {
+    "file": "st_sfx_tx_686.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_686.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10762,
+    "sha256": "6f3524ae42124483561e4947875f0656cab00b0495ef4889189982851455f05d"
+  },
+  {
+    "file": "st_sfx_tx_752.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_752.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4973,
+    "sha256": "8ded0c73deeb105bd645b438b91e26067feca6c2baa6b5c648768b63be4dfaf3"
+  },
+  {
+    "file": "st_sfx_tx_799.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_799.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3297,
+    "sha256": "717bd331c6621137c5e963e1578c5ea46dcdde68e12ea62cea9c26b97bcf013b"
+  },
+  {
+    "file": "st_sfx_tx_831.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_831.aab",
+    "removed_prefix_bytes": 0,
+    "size": 41938,
+    "sha256": "47dc1ef7a0c370ae64f9df60d49b5565426628ea263b7365d2d8ab12d7059902"
+  },
+  {
+    "file": "st_sfx_tx_cloud_002.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_cloud_002.aab",
+    "removed_prefix_bytes": 0,
+    "size": 37755,
+    "sha256": "fcc7014d36363a428050b4a6db596a5945726902518697fda9c3c692d248d34c"
+  },
+  {
+    "file": "st_sfx_tx_flash_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_flash_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 23695,
+    "sha256": "f2f15c7b86db6b04f195307fd11bd5a73da405f4e1f2b724ce4e408110d465d3"
+  },
+  {
+    "file": "st_sfx_tx_glow_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_glow_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9296,
+    "sha256": "60b45bcdf156047f1e776be6c2e2063e59fd865fd7982749ceee8bd88b9ea479"
+  },
+  {
+    "file": "st_sfx_tx_labi_sphere.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_labi_sphere.aab",
+    "removed_prefix_bytes": 0,
+    "size": 43367,
+    "sha256": "12a26113d4ec62a6512c18bc61b28b0b38bda12ceab95161d2511513213bdc21"
+  },
+  {
+    "file": "st_sfx_tx_lightning_001.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_lightning_001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 47007,
+    "sha256": "263a118e1044f569a43b646e3c6144f50137abaabb2527098aeee40d549f49c8"
+  },
+  {
+    "file": "st_sfx_tx_lightning_010.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_lightning_010.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5329,
+    "sha256": "23756ab75f675f49f4f0a74a314ee835f0def968870c00fdfb249c2c507603e5"
+  },
+  {
+    "file": "st_sfx_tx_lightning_011.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_lightning_011.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10297,
+    "sha256": "297c8a4e2c5854207498bd841a532b473fc6554673345000de7039e5fa651fa4"
+  },
+  {
+    "file": "st_sfx_tx_line_044.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_line_044.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3304,
+    "sha256": "72842ea20b7f398492a254fa02fc8b4ebb54d9beccd3f6e0596f763e1a3ab6ab"
+  },
+  {
+    "file": "st_sfx_tx_line_1001.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_line_1001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7592,
+    "sha256": "0ddee97874f5f456af3d7411ef4a4cd6a69d22b84e172e80e5b8f8ce36edad30"
+  },
+  {
+    "file": "st_sfx_tx_line_1017.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_line_1017.aab",
+    "removed_prefix_bytes": 0,
+    "size": 10005,
+    "sha256": "8e44590544032d6a75d6fc4f5b858dbd58fc3721afdb8a821d306ce8578f3dc6"
+  },
+  {
+    "file": "st_sfx_tx_lzq_ci_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_lzq_ci_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 6270,
+    "sha256": "6ed57b1e92127d9bf6abaa3de90bf00df7a7106b16bad153f131123eaf6dade9"
+  },
+  {
+    "file": "st_sfx_tx_mask_002_b.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_mask_002_b.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2424,
+    "sha256": "ac6d00e792194eba2bc26055b9027d906deb3360401002f4334da2a92983ab05"
+  },
+  {
+    "file": "st_sfx_tx_mask_004_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_mask_004_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 6812,
+    "sha256": "1d5e8537427ca6cbb80bb345b20bd023f8fb107d25cd4df32327c9ea00d377b3"
+  },
+  {
+    "file": "st_sfx_tx_particles_shuye.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_particles_shuye.aab",
+    "removed_prefix_bytes": 0,
+    "size": 15432,
+    "sha256": "f96d7df0ca1d13e636a70059a38c0a3b64dd9446c1d9501b4656b56516f4bf12"
+  },
+  {
+    "file": "st_sfx_tx_quan_012_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_quan_012_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 483319,
+    "sha256": "cf1bd6b783597a7b2d59b78bb93beab62f870057c65e0e7d6b9d30649422641e"
+  },
+  {
+    "file": "st_sfx_tx_ring_001.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_ring_001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 11436,
+    "sha256": "e8c54e0d68e29a52666723754e64fec67a15972dab5bd9846c0714fad26b0111"
+  },
+  {
+    "file": "st_sfx_tx_shandian_011_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shandian_011_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 122128,
+    "sha256": "edeb5bc271099aaef1e63985f018afd49c0eb1f6c0db5a0ab95f5898826e32ff"
+  },
+  {
+    "file": "st_sfx_tx_shandian_012_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shandian_012_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 48883,
+    "sha256": "9b3101eb2e269561f8a070c31240c8b6c10efe1726aa3d00c9b38624bb491c44"
+  },
+  {
+    "file": "st_sfx_tx_shandian_013_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shandian_013_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 18972,
+    "sha256": "ff24269e533d632d39de3ff2dd104be034c523f02b41e03bcb88128eaa2f2afd"
+  },
+  {
+    "file": "st_sfx_tx_shandian_014_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shandian_014_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 54422,
+    "sha256": "310406f3748ce045b4b64e03d8e9130998950750f992e6736f5af30a6ccc06fc"
+  },
+  {
+    "file": "st_sfx_tx_shandian_015_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shandian_015_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 61613,
+    "sha256": "9da69940ce7b722ffe970f25664dacccff7ea2cbc8b75036cae0bbe07ec10f88"
+  },
+  {
+    "file": "st_sfx_tx_shuye_01.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shuye_01.aab",
+    "removed_prefix_bytes": 0,
+    "size": 207755,
+    "sha256": "9b18f352049be07f475f203146f29ce6442d34ad2a14236ba791c7abf7266de9"
+  },
+  {
+    "file": "st_sfx_tx_shuye_02.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shuye_02.aab",
+    "removed_prefix_bytes": 0,
+    "size": 160226,
+    "sha256": "b420b8e7300f6a5790c6355c85d950011c4cf6951e863ea28f9fd94d432b1207"
+  },
+  {
+    "file": "st_sfx_tx_shuye_03.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shuye_03.aab",
+    "removed_prefix_bytes": 0,
+    "size": 161528,
+    "sha256": "a41b0c9c9e6c6c6e58da359a41ecdbba0312f17410357c828298a944f8c6fabf"
+  },
+  {
+    "file": "st_sfx_tx_shuye_04.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_shuye_04.aab",
+    "removed_prefix_bytes": 0,
+    "size": 142628,
+    "sha256": "f53cf319abda1d4c414f97c40bf3e629f683cbda250feab0540fac1a67d53d68"
+  },
+  {
+    "file": "st_sfx_tx_smoke_002_1.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_002_1.aab",
+    "removed_prefix_bytes": 0,
+    "size": 23994,
+    "sha256": "bbd52a72a7eb07c7175a244ac803e80d3260ea8b2317504c8ac3373dd84e2133"
+  },
+  {
+    "file": "st_sfx_tx_smoke_002_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_002_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 44112,
+    "sha256": "c896548f9f5b616e864d9ca676a59b9dfa8e89541796bdca5c2d692ffe067d1b"
+  },
+  {
+    "file": "st_sfx_tx_smoke_005_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_005_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9759,
+    "sha256": "49aff1f13525ca66f7381e2b87220569928c8584617fd15ed6d457bafdfbc4ff"
+  },
+  {
+    "file": "st_sfx_tx_smoke_006_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_006_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 76078,
+    "sha256": "b58a2ab4af63259ca07fed30f6020dabb089000ee34241458a5765c63e20bd83"
+  },
+  {
+    "file": "st_sfx_tx_smoke_020_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_020_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 21770,
+    "sha256": "c721c99e186cf1168db57e113e7b93bb68f930b68b8e1b110642f2d080449a89"
+  },
+  {
+    "file": "st_sfx_tx_smoke_028_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_028_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 16768,
+    "sha256": "7cfcac57e87a8d8fc8caa077a0a5937f2496d724b971f3dec979898ca8167b75"
+  },
+  {
+    "file": "st_sfx_tx_smoke_028.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_028.aab",
+    "removed_prefix_bytes": 0,
+    "size": 64274,
+    "sha256": "dbb1d54522fd2906cdffd80052ffa96618b0800a7e7113bbafbfa6d1f238e447"
+  },
+  {
+    "file": "st_sfx_tx_smoke_036.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_036.aab",
+    "removed_prefix_bytes": 0,
+    "size": 68732,
+    "sha256": "579d0314a584be1a8f787ea72673f9ea16a630e0b4b2fbf5d12b514f7c79c7d4"
+  },
+  {
+    "file": "st_sfx_tx_smoke_037.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_037.aab",
+    "removed_prefix_bytes": 0,
+    "size": 24175,
+    "sha256": "84eedf214740785558d7e92db12e15cae29e50217e5b7171629871ab083f0235"
+  },
+  {
+    "file": "st_sfx_tx_smoke_039.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_smoke_039.aab",
+    "removed_prefix_bytes": 0,
+    "size": 414357,
+    "sha256": "12a12ea5397a16f65a2b900d2cac4df4b05818e4f5038e4fa421ed3bd1cadff4"
+  },
+  {
+    "file": "st_sfx_tx_smoke_040.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_040.aab",
+    "removed_prefix_bytes": 0,
+    "size": 21934,
+    "sha256": "9f6a04d713907c8b2296be24c3cbe3cf989070a3959ef4a3d7279242856508cf"
+  },
+  {
+    "file": "st_sfx_tx_smoke_050.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_sfx_tx_smoke_050.aab",
+    "removed_prefix_bytes": 0,
+    "size": 83359,
+    "sha256": "6092ccd6b8b4dc7633547ab51e88d66cbbbf55ebba8ef0ce991ba4c03f53fd88"
+  },
+  {
+    "file": "st_sfx_tx_sphere_001.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_sfx_tx_sphere_001.aab",
+    "removed_prefix_bytes": 0,
+    "size": 62404,
+    "sha256": "0d2a121fdb49d9cd998d6116df7227ab4479e40ef974df45e501019d9ae4eafa"
+  },
+  {
+    "file": "st_single_cp_004.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_single_cp_004.aab",
+    "removed_prefix_bytes": 0,
+    "size": 3969,
+    "sha256": "af7c6ff054d3d9f59d37a4220d14c5b385dfc7296d581886e7b462abfd48efe8"
+  },
+  {
+    "file": "st_single_cp_007.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_single_cp_007.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4315,
+    "sha256": "f4bec64506ab2855fff610f3862df8b0f7e06880f61d4e1176339a5af2a8067d"
+  },
+  {
+    "file": "st_single_cp_099.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_single_cp_099.aab",
+    "removed_prefix_bytes": 0,
+    "size": 5761,
+    "sha256": "1bf93e9d12fd2d8eeb3bdf130d9c56e0075bb1a5ee3dc3b7e58e50dc7e7fd325"
+  },
+  {
+    "file": "st_skeleton.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_skeleton.aab",
+    "removed_prefix_bytes": 0,
+    "size": 9093,
+    "sha256": "88a0fcb0a6940e643e9b029f8faa09c8d33ee2121f4aec28efdf65932c718cad"
+  },
+  {
+    "file": "st_smoke_01_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_smoke_01_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 26780,
+    "sha256": "d7c331c23206052912a1c2d9ec3f519938de2c37f71c8ca5a22f5b7ba7d0f3bc"
+  },
+  {
+    "file": "st_smoke_02_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_smoke_02_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 32120,
+    "sha256": "63e0dbe1b279ae1fa4be856f89618968f5efc64c5f81c52b6881998c208e209e"
+  },
+  {
+    "file": "st_smoke_03_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_smoke_03_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 329114,
+    "sha256": "5813dfe76afbc35bb69cfcaa477e0f0dbdd10cd302701d616266b9b3e4c86ae3"
+  },
+  {
+    "file": "st_smoke_13_kf.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_smoke_13_kf.aab",
+    "removed_prefix_bytes": 0,
+    "size": 60418,
+    "sha256": "ef497720dd6e471f822ca7004be57846875522a5cc6bc90bf3c0fc09063f2f9c"
+  },
+  {
+    "file": "st_soulgames.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_soulgames.aab",
+    "removed_prefix_bytes": 0,
+    "size": 53594,
+    "sha256": "60f20a0899c4c7deee4abb5db0344fd49be5ad7a03f6981f4786080509cb23ab"
+  },
+  {
+    "file": "st_spark_cp_005.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_spark_cp_005.aab",
+    "removed_prefix_bytes": 0,
+    "size": 18295,
+    "sha256": "dd9f889e33b88db11fadc6ec0b99c73b4498aaa4fbf793fdaea55f31acbb4867"
+  },
+  {
+    "file": "st_spark_cp_017-blue.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_spark_cp_017-blue.aab",
+    "removed_prefix_bytes": 0,
+    "size": 2406,
+    "sha256": "df35912079007c441e3372d7c924c5b6f3fff420d7c22af9a704fc537846f041"
+  },
+  {
+    "file": "st_stf_tx_xiantiao_001_sh.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_stf_tx_xiantiao_001_sh.aab",
+    "removed_prefix_bytes": 0,
+    "size": 45405,
+    "sha256": "e008da46f8011e4988245b60ce4658e309b546ae6522a103f5cdf79a7e34ef35"
+  },
+  {
+    "file": "st_stone_cp_001a.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_stone_cp_001a.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7864,
+    "sha256": "8961d49a62d2e8917f3539b84d96a4f7ff2117d219d0eb23e84f6cdb04f24914"
+  },
+  {
+    "file": "st_tongyong_shitou.aab",
+    "source": "/Users/zhuhaiming/Desktop/edenAssetsObb/main.19.jp.co.yoozoo.projectyellow/assets/ResEx/st_tongyong_shitou.aab",
+    "removed_prefix_bytes": 0,
+    "size": 7925,
+    "sha256": "0622aa850049aeab3f9dbe1d92161525906dcf8175d94bfdf7d0efe890185b52"
+  },
+  {
+    "file": "st_turbulence_006.aab",
+    "source": "/Users/zhuhaiming/Desktop/unity/unityEden/Assets/StreamingAssets/Skill11300018Original/st_turbulence_006.aab",
+    "removed_prefix_bytes": 0,
+    "size": 4350,
+    "sha256": "a83d2d46e1cea831dd1988bda17309cd6b77fc83bb0e5fb08693507ea5e4232e"
+  }
+]

@@ -503,6 +503,25 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
             RecoveredConfig.normalEffectBundles.Length);
 
         float sequenceStart = Time.time;
+
+        // Start the approach first. Effect start times are absolute offsets
+        // from sequenceStart, so a melee character can move while this
+        // coroutine waits for the authored slash/impact moment. With the
+        // default delay of 0f this still starts movement and effects in the
+        // same frame, preserving every older character's timing.
+        if (RecoveredConfig.normalMovesToTarget)
+        {
+            StartCoroutine(MoveCharacter(
+                characterStart,
+                attackApproach,
+                0.24f));
+        }
+        if (RecoveredConfig.normalEffectStartTime > 0f)
+        {
+            yield return WaitForSequenceTime(
+                sequenceStart,
+                RecoveredConfig.normalEffectStartTime);
+        }
         for (int index = 0;
              index < RecoveredConfig.normalEffectBundles.Length;
             index++)
@@ -513,18 +532,50 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
         }
         if (RecoveredConfig.normalMovesToTarget)
         {
-            StartCoroutine(MoveCharacter(
-                characterStart,
-                attackApproach,
-                0.24f));
+            bool hideAndTeleportAfterEffects =
+                RecoveredConfig.normalReturnMode ==
+                EdenRecoveredAttackReturnMode
+                    .HideAndTeleportAfterEffects;
+            bool hideAndTeleportAtReturnTime =
+                RecoveredConfig.normalReturnMode ==
+                EdenRecoveredAttackReturnMode
+                    .HideAndTeleportAtReturnTime;
+            float returnTime = RecoveredConfig.normalReturnTime;
+            if (hideAndTeleportAfterEffects)
+            {
+                // cleanupTime is the recovered point at which the action's
+                // visible effect is considered complete. A melee character
+                // using the invisible reset must never leave before it.
+                returnTime = Mathf.Max(
+                    returnTime,
+                    RecoveredConfig.normalCleanupTime);
+            }
+
+            // Both timestamps are absolute offsets from sequenceStart rather
+            // than delays relative to the effect spawn time.
             yield return WaitForSequenceTime(
                 sequenceStart,
-                RecoveredConfig.normalReturnTime);
-            Vector3 returnFrom = character.transform.localPosition;
-            yield return MoveCharacter(
-                returnFrom,
-                characterStart,
-                0.28f);
+                returnTime);
+            if (hideAndTeleportAfterEffects ||
+                hideAndTeleportAtReturnTime)
+            {
+                // The AfterEffects mode clears first because its configured
+                // return point is also the effect completion point. The
+                // AtReturnTime mode deliberately leaves decorative particles
+                // alive; the common cleanup below removes them later.
+                if (hideAndTeleportAfterEffects)
+                    ClearEffects();
+                yield return HideAndTeleportCharacterHome();
+            }
+            else
+            {
+                Vector3 returnFrom =
+                    character.transform.localPosition;
+                yield return MoveCharacter(
+                    returnFrom,
+                    characterStart,
+                    0.28f);
+            }
         }
         yield return WaitForSequenceTime(
             sequenceStart,
@@ -551,6 +602,23 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
             RecoveredConfig.burstEffectBundles.Length);
 
         float sequenceStart = Time.time;
+
+        // Burst movement follows the same ordering as normal attacks: begin
+        // moving first, then create the effects at the per-character absolute
+        // start time. A zero-valued field retains the legacy same-frame spawn.
+        if (RecoveredConfig.burstMovesToTarget)
+        {
+            StartCoroutine(MoveCharacter(
+                characterStart,
+                attackApproach,
+                0.26f));
+        }
+        if (RecoveredConfig.burstEffectStartTime > 0f)
+        {
+            yield return WaitForSequenceTime(
+                sequenceStart,
+                RecoveredConfig.burstEffectStartTime);
+        }
         for (int index = 0;
              index < RecoveredConfig.burstEffectBundles.Length;
             index++)
@@ -561,18 +629,41 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
         }
         if (RecoveredConfig.burstMovesToTarget)
         {
-            StartCoroutine(MoveCharacter(
-                characterStart,
-                attackApproach,
-                0.26f));
+            bool hideAndTeleportAfterEffects =
+                RecoveredConfig.burstReturnMode ==
+                EdenRecoveredAttackReturnMode
+                    .HideAndTeleportAfterEffects;
+            bool hideAndTeleportAtReturnTime =
+                RecoveredConfig.burstReturnMode ==
+                EdenRecoveredAttackReturnMode
+                    .HideAndTeleportAtReturnTime;
+            float returnTime = RecoveredConfig.burstReturnTime;
+            if (hideAndTeleportAfterEffects)
+            {
+                returnTime = Mathf.Max(
+                    returnTime,
+                    RecoveredConfig.burstCleanupTime);
+            }
+
             yield return WaitForSequenceTime(
                 sequenceStart,
-                RecoveredConfig.burstReturnTime);
-            Vector3 returnFrom = character.transform.localPosition;
-            yield return MoveCharacter(
-                returnFrom,
-                characterStart,
-                0.30f);
+                returnTime);
+            if (hideAndTeleportAfterEffects ||
+                hideAndTeleportAtReturnTime)
+            {
+                if (hideAndTeleportAfterEffects)
+                    ClearEffects();
+                yield return HideAndTeleportCharacterHome();
+            }
+            else
+            {
+                Vector3 returnFrom =
+                    character.transform.localPosition;
+                yield return MoveCharacter(
+                    returnFrom,
+                    characterStart,
+                    0.30f);
+            }
         }
         yield return WaitForSequenceTime(
             sequenceStart,
@@ -926,6 +1017,75 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
             prefab.transform.localPosition * effectScale;
         Vector3 containerPosition = targetPosition - scaledPrefabRoot;
         return SpawnEffect(file, containerPosition, timeline);
+    }
+
+    /// <summary>
+    /// Places a recovered effect root at a semantic Stage anchor. Offsets are
+    /// expressed in the APK prefab's original coordinate units and converted
+    /// with the same per-bundle scale used by SpawnEffect. Keeping all
+    /// TransformPoint work here prevents character scripts from depending on
+    /// the generated effect/container/Stage parent hierarchy.
+    /// </summary>
+    public void AlignSpawnedEffectToStageAnchor(
+        GameObject effect,
+        string bundleFile,
+        EdenRecoveredEffectAnchor anchor,
+        Vector3 prefabSpaceOffset)
+    {
+        if (effect == null || stage == null)
+            return;
+
+        Vector3 anchorPosition;
+        switch (anchor)
+        {
+            case EdenRecoveredEffectAnchor.CurrentCaster:
+                anchorPosition = character != null
+                    ? character.transform.localPosition
+                    : characterStart;
+                break;
+            case EdenRecoveredEffectAnchor.AttackApproach:
+                anchorPosition = attackApproach;
+                break;
+            case EdenRecoveredEffectAnchor.EnemyFocus:
+                anchorPosition = enemyFocus;
+                break;
+            case EdenRecoveredEffectAnchor.CharacterStart:
+                anchorPosition = characterStart;
+                break;
+            case EdenRecoveredEffectAnchor.UltimateCast:
+                anchorPosition = ultimateCastPosition;
+                break;
+            default:
+                anchorPosition = Vector3.zero;
+                break;
+        }
+
+        Vector3 stageOffset =
+            prefabSpaceOffset * GetNormalEffectScale(bundleFile);
+        effect.transform.position = stage.TransformPoint(
+            anchorPosition + stageOffset);
+    }
+
+    /// <summary>
+    /// Applies an APK-prefab-space correction to an effect that is already in
+    /// the correct semantic area. This preserves previously calibrated visual
+    /// placement while still performing the offset in Stage space instead of
+    /// relying on a particular generated parent hierarchy.
+    /// </summary>
+    public void OffsetSpawnedEffectInStage(
+        GameObject effect,
+        string bundleFile,
+        Vector3 prefabSpaceOffset)
+    {
+        if (effect == null || stage == null)
+            return;
+
+        Vector3 currentStagePosition =
+            stage.InverseTransformPoint(effect.transform.position);
+        Vector3 stageOffset =
+            prefabSpaceOffset * GetNormalEffectScale(bundleFile);
+        effect.transform.position = stage.TransformPoint(
+            currentStagePosition + stageOffset);
     }
 
     private float GetNormalEffectScale(string file)
@@ -1761,6 +1921,24 @@ public sealed class EdenRecoveredBattlePreview : MonoBehaviour
             yield return null;
         }
         character.transform.localPosition = end;
+    }
+
+    /// <summary>
+    /// Performs the non-visible return used by recovered melee characters.
+    /// The first yield guarantees that the hidden state reaches a rendered
+    /// frame before the position changes. The character is then teleported to
+    /// its original position and changed to idle while still hidden, so the
+    /// player never sees either a backward slide or the final frozen attack
+    /// pose at the home position.
+    /// </summary>
+    private IEnumerator HideAndTeleportCharacterHome()
+    {
+        SetCharacterVisible(false);
+        yield return null;
+
+        character.transform.localPosition = characterStart;
+        PlaySpineAnimation("idle", true);
+        SetCharacterVisible(true);
     }
 
     private void ResetPreview()
